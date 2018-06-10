@@ -28,6 +28,7 @@ import lombok.Data;
 import net.runelite.api.GameObject;
 import net.runelite.api.Tile;
 
+<<<<<<< HEAD
 /**
  * An event where a {@link GameObject} on a {@link Tile} has been replaced.
  */
@@ -45,5 +46,12 @@ public class GameObjectChanged
 	/**
 	 * The new game object on the tile.
 	 */
+=======
+@Data
+public class GameObjectChanged
+{
+	private Tile tile;
+	private GameObject previous;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private GameObject gameObject;
 }

@@ -34,22 +34,34 @@ import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.LineComponent;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.components.PanelComponent;
 
 public class LocationOverlay extends Overlay
 {
 	private final Client client;
 	private final DevToolsPlugin plugin;
+<<<<<<< HEAD
 	private final PanelComponent panelComponent = new PanelComponent();
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	LocationOverlay(Client client, DevToolsPlugin plugin)
 	{
+<<<<<<< HEAD
 		this.client = client;
 		this.plugin = plugin;
 		panelComponent.setPreferredSize(new Dimension(150, 0));
 		setPosition(OverlayPosition.TOP_LEFT);
+=======
+		setPosition(OverlayPosition.TOP_LEFT);
+		this.client = client;
+		this.plugin = plugin;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Override
@@ -60,7 +72,12 @@ public class LocationOverlay extends Overlay
 			return null;
 		}
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
+=======
+		PanelComponent panelComponent = new PanelComponent();
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		WorldPoint localWorld = client.getLocalPlayer().getWorldLocation();
 		LocalPoint localPoint = client.getLocalPlayer().getLocalLocation();
 
@@ -68,9 +85,14 @@ public class LocationOverlay extends Overlay
 
 		if (client.isInInstancedRegion())
 		{
+<<<<<<< HEAD
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left("Instance")
 				.build());
+=======
+			panelComponent.setWidth(150);
+			panelComponent.getLines().add(new PanelComponent.Line("Instance"));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 			int[][][] instanceTemplateChunks = client.getInstanceTemplateChunks();
 			int z = client.getPlane();
@@ -80,6 +102,7 @@ public class LocationOverlay extends Overlay
 			int chunkY = (chunkData >> 3 & 0x7FF) * CHUNK_SIZE;
 			int chunkX = (chunkData >> 14 & 0x3FF) * CHUNK_SIZE;
 
+<<<<<<< HEAD
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left("Chunk " + localPoint.getRegionX() / CHUNK_SIZE + "," + localPoint.getRegionY() / CHUNK_SIZE)
 				.right(rotation + " " + chunkX + " " + chunkY)
@@ -105,16 +128,35 @@ public class LocationOverlay extends Overlay
 			.left("Tile")
 			.right(localWorld.getX() + ", " + localWorld.getY() + ", " + client.getPlane())
 			.build());
+=======
+			panelComponent.getLines().add(new PanelComponent.Line(
+				"Chunk " + localPoint.getRegionX() / CHUNK_SIZE + "," + localPoint.getRegionY() / CHUNK_SIZE,
+				rotation + " " + chunkX + " " + chunkY
+			));
+		}
+
+		panelComponent.getLines().add(new PanelComponent.Line(
+			"Tile",
+			localWorld.getX() + ", " + localWorld.getY() + ", " + client.getPlane()
+		));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		for (int i = 0; i < client.getMapRegions().length; i++)
 		{
 			int region = client.getMapRegions()[i];
 
+<<<<<<< HEAD
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left((i == 0) ? "Map regions" : " ")
 				.right(String.valueOf(region))
 				.rightColor((region == regionID) ? Color.GREEN : Color.WHITE)
 				.build());
+=======
+			panelComponent.getLines().add(new PanelComponent.Line(
+				(i == 0) ? "Map regions" : " ", new Color(255, 255, 255, 255),
+				String.valueOf(region), (region == regionID) ? new Color(0, 255, 0, 255) : new Color(255, 255, 255, 255)
+			));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		return panelComponent.render(graphics);

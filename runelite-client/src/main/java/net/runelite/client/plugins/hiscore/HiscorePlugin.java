@@ -81,9 +81,12 @@ public class HiscorePlugin extends Plugin
 	private NavigationButton navButton;
 	private HiscorePanel hiscorePanel;
 
+<<<<<<< HEAD
 	@Inject
 	private NameAutocompleter autocompleter;
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Provides
 	HiscoreConfig provideConfig(ConfigManager configManager)
 	{
@@ -98,6 +101,7 @@ public class HiscorePlugin extends Plugin
 		BufferedImage icon;
 		synchronized (ImageIO.class)
 		{
+<<<<<<< HEAD
 			icon = ImageIO.read(getClass().getResourceAsStream("normal.png"));
 		}
 
@@ -105,6 +109,14 @@ public class HiscorePlugin extends Plugin
 			.tooltip("Hiscore")
 			.icon(icon)
 			.priority(5)
+=======
+			icon = ImageIO.read(getClass().getResourceAsStream("hiscore.gif"));
+		}
+
+		navButton = NavigationButton.builder()
+			.name("Hiscore")
+			.icon(icon)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			.panel(hiscorePanel)
 			.build();
 
@@ -114,16 +126,22 @@ public class HiscorePlugin extends Plugin
 		{
 			menuManager.addPlayerMenuItem(LOOKUP);
 		}
+<<<<<<< HEAD
 		if (config.autocomplete())
 		{
 			hiscorePanel.addInputKeyListener(autocompleter);
 		}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
+<<<<<<< HEAD
 		hiscorePanel.removeInputKeyListener(autocompleter);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		pluginToolbar.removeNavigation(navButton);
 		menuManager.removePlayerMenuItem(LOOKUP);
 	}
@@ -139,6 +157,7 @@ public class HiscorePlugin extends Plugin
 			{
 				menuManager.addPlayerMenuItem(LOOKUP);
 			}
+<<<<<<< HEAD
 
 			if (event.getKey().equals("autocomplete"))
 			{
@@ -151,6 +170,8 @@ public class HiscorePlugin extends Plugin
 					hiscorePanel.removeInputKeyListener(autocompleter);
 				}
 			}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 

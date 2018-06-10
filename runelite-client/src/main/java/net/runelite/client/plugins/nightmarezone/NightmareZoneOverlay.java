@@ -24,6 +24,10 @@
  */
 package net.runelite.client.plugins.nightmarezone;
 
+<<<<<<< HEAD
+=======
+import java.awt.Color;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import javax.inject.Inject;
@@ -36,7 +40,10 @@ import net.runelite.client.game.ItemManager;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayPriority;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.LineComponent;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
 import net.runelite.client.util.StackFormatter;
@@ -96,11 +103,21 @@ class NightmareZoneOverlay extends Overlay
 
 		renderAbsorptionCounter();
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
 		panelComponent.getChildren().add(LineComponent.builder()
 			.left("Points: ")
 			.right(StackFormatter.formatNumber(client.getVar(Varbits.NMZ_POINTS)))
 			.build());
+=======
+		panelComponent.getLines().clear();
+		panelComponent.getLines().add(new PanelComponent.Line(
+				"Points: ",
+				Color.WHITE,
+				StackFormatter.formatNumber(client.getVar(Varbits.NMZ_POINTS)),
+				Color.WHITE
+		));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		return panelComponent.render(graphics);
 	}

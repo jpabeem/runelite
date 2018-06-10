@@ -34,7 +34,10 @@ import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayPriority;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.LineComponent;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.components.PanelComponent;
 
 public class BarrowsBrotherSlainOverlay extends Overlay
@@ -67,16 +70,29 @@ public class BarrowsBrotherSlainOverlay extends Overlay
 			barrowsBrothers.setHidden(true);
 		}
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
+=======
+		panelComponent.getLines().clear();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		for (BarrowsBrothers brother : BarrowsBrothers.values())
 		{
 			String slain = client.getVar(brother.getKilledVarbit()) > 0 ? "✓" : "";
+<<<<<<< HEAD
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left(brother.getName())
 				.right(slain)
 				.rightColor(slain.isEmpty() ? Color.WHITE : Color.GREEN)
 				.build());
+=======
+			panelComponent.getLines().add(new PanelComponent.Line(
+				brother.getName(),
+				Color.WHITE,
+				slain,
+				slain.isEmpty() ? Color.WHITE : Color.GREEN
+			));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		return panelComponent.render(graphics);

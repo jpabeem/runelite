@@ -27,10 +27,17 @@ package net.runelite.client;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+<<<<<<< HEAD
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
+=======
+import lombok.extern.slf4j.Slf4j;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @Singleton
 @Slf4j
@@ -41,17 +48,24 @@ public class RuneLiteProperties
 	private static final String RUNESCAPE_VERSION = "runescape.version";
 	private static final String DISCORD_APP_ID = "runelite.discord.appid";
 	private static final String DISCORD_INVITE = "runelite.discord.invite";
+<<<<<<< HEAD
 	private static final String GITHUB_LINK = "runelite.github.link";
 	private static final String PATREON_LINK = "runelite.patreon.link";
 	private static final String LAUNCHER_VERSION_PROPERTY = "runelite.launcher.version";
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	private final Properties properties = new Properties();
 
 	@Inject
 	public RuneLiteProperties()
 	{
+<<<<<<< HEAD
 		final InputStream in = getClass().getResourceAsStream("runelite.properties");
 
+=======
+		InputStream in = getClass().getResourceAsStream("runelite.properties");
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		try
 		{
 			properties.load(in);
@@ -86,6 +100,7 @@ public class RuneLiteProperties
 	{
 		return properties.getProperty(DISCORD_INVITE);
 	}
+<<<<<<< HEAD
 
 	public String getGithubLink()
 	{
@@ -103,3 +118,6 @@ public class RuneLiteProperties
 		return System.getProperty(LAUNCHER_VERSION_PROPERTY);
 	}
 }
+=======
+}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b

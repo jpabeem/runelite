@@ -24,6 +24,10 @@
  */
 package net.runelite.client.plugins.chatcommands;
 
+<<<<<<< HEAD
+=======
+import java.awt.Color;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
@@ -56,4 +60,139 @@ public interface ChatCommandsConfig extends Config
 	{
 		return true;
 	}
+<<<<<<< HEAD
+=======
+
+	@ConfigItem(
+		position = 2,
+		keyName = "hexColorPublic",
+		name = "Public chat",
+		description = "Color of Public chat"
+	)
+	default Color getPublicRecolor()
+	{
+		return Color.decode("#0000FF");
+	}
+
+	@ConfigItem(
+		position = 3,
+		keyName = "hexColorPublicH",
+		name = "Public chat highlight",
+		description = "Color of Public chat highlight"
+	)
+	default Color getPublicHRecolor()
+	{
+		return Color.decode("#000000");
+	}
+
+	@ConfigItem(
+		position = 4,
+		keyName = "hexColorPrivate",
+		name = "Private chat",
+		description = "Color of Private chat"
+	)
+	default Color getPrivateRecolor()
+	{
+		return Color.decode("#0088FF");
+	}
+
+	@ConfigItem(
+		position = 5,
+		keyName = "hexColorPrivateH",
+		name = "Private chat highlight",
+		description = "Color of Private chat highlight"
+	)
+	default Color getPrivateHRecolor()
+	{
+		return Color.decode("#002783");
+	}
+
+	@ConfigItem(
+		position = 6,
+		keyName = "hexColorCc",
+		name = "Clan chat",
+		description = "Color of Clan chat"
+	)
+	default Color getCcRecolor()
+	{
+		return Color.decode("#7f0000");
+	}
+
+	@ConfigItem(
+		position = 7,
+		keyName = "hexColorCcH",
+		name = "Clan chat Highlight",
+		description = "Color of Clan chat highlight"
+	)
+	default Color getCcHRecolor()
+	{
+		return Color.decode("#000000");
+	}
+
+	@ConfigItem(
+		position = 8,
+		keyName = "transparentHexColorPublic",
+		name = "Transparent public chat",
+		description = "Color of Public chat"
+	)
+	default Color getTransparentPublicRecolor()
+	{
+		return Color.decode("#9090FF");
+	}
+
+	@ConfigItem(
+		position = 9,
+		keyName = "transparentHexColorPublicH",
+		name = "Transparent public chat highlight",
+		description = "Color of Public chat highlight"
+	)
+	default Color getTransparentPublicHRecolor()
+	{
+		return Color.decode("#FFFFFF");
+	}
+
+	@ConfigItem(
+		position = 10,
+		keyName = "transparentHexColorPrivate",
+		name = "Transparent private chat",
+		description = "Color of Private chat"
+	)
+	default Color getTransparentPrivateRecolor()
+	{
+		return Color.decode("#FFFFFF");
+	}
+
+	@ConfigItem(
+		position = 11,
+		keyName = "transparentHexColorPrivateH",
+		name = "Transparent private chat highlight",
+		description = "Color of Private chat highlight"
+	)
+	default Color getTransparentPrivateHRecolor()
+	{
+		return Color.decode("#00FFFF");
+	}
+
+	@ConfigItem(
+		position = 12,
+		keyName = "transparentHexColorCc",
+		name = "Transparent clan chat",
+		description = "Color of Clan chat"
+	)
+	default Color getTransparentCcRecolor()
+	{
+		return Color.decode("#Ef5050");
+	}
+
+	@ConfigItem(
+		position = 13,
+		keyName = "transparentHexColorCcH",
+		name = "Transparent clan chat Highlight",
+		description = "Color of Clan chat highlight"
+	)
+	default Color getTransparentCcHRecolor()
+	{
+		return Color.decode("#FFFFFF");
+	}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

@@ -33,7 +33,10 @@ import javax.inject.Inject;
 import net.runelite.client.plugins.cluescrolls.clues.ClueScroll;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPriority;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.ComponentConstants;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.components.PanelComponent;
 
 public class ClueScrollOverlay extends Overlay
@@ -60,8 +63,12 @@ public class ClueScrollOverlay extends Overlay
 			return null;
 		}
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
 		panelComponent.setPreferredSize(new Dimension(ComponentConstants.STANDARD_WIDTH, 0));
+=======
+		panelComponent.getLines().clear();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		clue.makeOverlayHint(panelComponent, plugin);
 

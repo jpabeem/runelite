@@ -24,15 +24,22 @@
  */
 package net.runelite.mixins;
 
+<<<<<<< HEAD
 import net.runelite.api.NPCComposition;
 import net.runelite.api.events.NpcDespawned;
 import net.runelite.api.mixins.Copy;
 import net.runelite.api.mixins.FieldHook;
+=======
+import net.runelite.api.mixins.Copy;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.mixins.Inject;
 import net.runelite.api.mixins.Mixin;
 import net.runelite.api.mixins.Replace;
 import net.runelite.api.mixins.Shadow;
+<<<<<<< HEAD
 import static net.runelite.client.callback.Hooks.eventBus;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSModel;
 import net.runelite.rs.api.RSNPC;
@@ -48,9 +55,12 @@ public abstract class RSNPCMixin implements RSNPC
 	private int npcIndex;
 
 	@Inject
+<<<<<<< HEAD
 	private boolean dead;
 
 	@Inject
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Override
 	public int getId()
 	{
@@ -100,6 +110,7 @@ public abstract class RSNPCMixin implements RSNPC
 		npcIndex = id;
 	}
 
+<<<<<<< HEAD
 	@FieldHook(value = "composition", before = true)
 	@Inject
 	public void onCompositionChanged(RSNPCComposition composition)
@@ -110,6 +121,8 @@ public abstract class RSNPCMixin implements RSNPC
 		}
 	}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Copy("getModel")
 	public abstract RSModel rs$getModel();
 
@@ -140,6 +153,7 @@ public abstract class RSNPCMixin implements RSNPC
 			setSpotAnimFrame(spotAnimFrame);
 		}
 	}
+<<<<<<< HEAD
 
 	@Inject
 	@Override
@@ -166,4 +180,6 @@ public abstract class RSNPCMixin implements RSNPC
 	{
 		this.dead = dead;
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

@@ -26,6 +26,7 @@ package net.runelite.api;
 
 import lombok.Data;
 
+<<<<<<< HEAD
 /**
  * A menu entry in a right-click menu.
  */
@@ -58,6 +59,16 @@ public class MenuEntry
 	/**
 	 * A second additional parameter for the action.
 	 */
+=======
+@Data
+public class MenuEntry
+{
+	private String option;
+	private String target;
+	private int identifier;
+	private int type;
+	private int param0;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private int param1;
 
 	@Override

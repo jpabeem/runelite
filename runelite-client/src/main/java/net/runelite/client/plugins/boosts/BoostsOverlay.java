@@ -36,7 +36,10 @@ import net.runelite.client.game.SkillIconManager;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayPriority;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.LineComponent;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
 
@@ -48,7 +51,10 @@ class BoostsOverlay extends Overlay
 	private final Client client;
 	private final BoostsConfig config;
 	private final InfoBoxManager infoBoxManager;
+<<<<<<< HEAD
 	private final PanelComponent panelComponent = new PanelComponent();
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	private BoostsPlugin plugin;
@@ -56,6 +62,11 @@ class BoostsOverlay extends Overlay
 	@Inject
 	private SkillIconManager iconManager;
 
+<<<<<<< HEAD
+=======
+	private PanelComponent panelComponent;
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private boolean overlayActive;
 
 	@Inject
@@ -71,9 +82,15 @@ class BoostsOverlay extends Overlay
 	@Override
 	public Dimension render(Graphics2D graphics)
 	{
+<<<<<<< HEAD
 		Instant lastChange = plugin.getLastChange();
 		panelComponent.getChildren().clear();
 
+=======
+		panelComponent = new PanelComponent();
+
+		Instant lastChange = plugin.getLastChange();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (!config.displayIndicators()
 			&& config.displayNextChange()
 			&& lastChange != null
@@ -82,10 +99,19 @@ class BoostsOverlay extends Overlay
 			int nextChange = plugin.getChangeTime();
 			if (nextChange > 0)
 			{
+<<<<<<< HEAD
 				panelComponent.getChildren().add(LineComponent.builder()
 					.left("Next change in")
 					.right(String.valueOf(nextChange))
 					.build());
+=======
+				panelComponent.getLines().add(new PanelComponent.Line(
+					"Next change in",
+					Color.WHITE,
+					String.valueOf(nextChange),
+					Color.WHITE
+				));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 
@@ -146,6 +172,7 @@ class BoostsOverlay extends Overlay
 					}
 				}
 
+<<<<<<< HEAD
 				panelComponent.getChildren().add(LineComponent.builder()
 					.left(skill.getName())
 					.right(str)
@@ -155,6 +182,18 @@ class BoostsOverlay extends Overlay
 		}
 
 		return panelComponent.render(graphics);
+=======
+				panelComponent.getLines().add(new PanelComponent.Line(
+					skill.getName(),
+					Color.WHITE,
+					str,
+					strColor
+				));
+			}
+		}
+
+		return panelComponent.getLines().isEmpty() ? null : panelComponent.render(graphics);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	private Color getTextColor(int boost)

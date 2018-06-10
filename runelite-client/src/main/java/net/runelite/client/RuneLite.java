@@ -34,6 +34,7 @@ import com.google.inject.Injector;
 import com.google.inject.Provider;
 import java.applet.Applet;
 import java.io.File;
+<<<<<<< HEAD
 import java.util.Locale;
 import javax.inject.Singleton;
 import joptsimple.ArgumentAcceptingOptionSpec;
@@ -41,6 +42,12 @@ import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import joptsimple.util.EnumConverter;
 import lombok.Getter;
+=======
+import java.util.Optional;
+import javax.inject.Singleton;
+import joptsimple.OptionParser;
+import joptsimple.OptionSet;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.client.account.SessionManager;
@@ -69,10 +76,14 @@ public class RuneLite
 	private static final File LOGS_DIR = new File(RUNELITE_DIR, "logs");
 	private static final File LOGS_FILE_NAME = new File(LOGS_DIR, "application");
 
+<<<<<<< HEAD
 	@Getter
 	private static Injector injector;
 
 	@Getter
+=======
+	private static Injector injector;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private static OptionSet options;
 
 	@Inject
@@ -124,6 +135,7 @@ public class RuneLite
 
 	public static void main(String[] args) throws Exception
 	{
+<<<<<<< HEAD
 		Locale.setDefault(Locale.ENGLISH);
 
 		final OptionParser parser = new OptionParser();
@@ -162,6 +174,14 @@ public class RuneLite
 				throw new RuntimeException("Developers should enable assertions; Add `-ea` to your JVM arguments`");
 			}
 		}
+=======
+		OptionParser parser = new OptionParser();
+		parser.accepts("developer-mode");
+		parser.accepts("no-rs");
+		parser.accepts("debug");
+		parser.accepts("disable-update-check");
+		setOptions(parser.parse(args));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		PROFILES_DIR.mkdirs();
 
@@ -174,6 +194,7 @@ public class RuneLite
 			logger.setLevel(Level.DEBUG);
 		}
 
+<<<<<<< HEAD
 		Thread.setDefaultUncaughtExceptionHandler((thread, throwable) ->
 		{
 			log.error("Uncaught exception:", throwable);
@@ -193,6 +214,29 @@ public class RuneLite
 		final Applet client = new ClientLoader().loadRs(updateMode);
 
 		final boolean isOutdated = !(client instanceof Client);
+=======
+		setInjector(Guice.createInjector(new RuneLiteModule()));
+		injector.getInstance(RuneLite.class).start();
+	}
+
+	public void start() throws Exception
+	{
+		// Load RuneLite or Vanilla client
+		final boolean hasRs = !getOptions().has("no-rs");
+		final boolean disableUpdateCheck = getOptions().has("disable-update-check");
+		final Optional<Applet> optionalClient = hasRs
+			? new ClientLoader().loadRs(disableUpdateCheck)
+			: Optional.empty();
+
+		if (!optionalClient.isPresent() && hasRs)
+		{
+			System.exit(-1);
+			return;
+		}
+
+		final Applet client = optionalClient.orElse(null);
+		final boolean isOutdated = client == null || !(client instanceof Client);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		if (!isOutdated)
 		{
@@ -214,7 +258,10 @@ public class RuneLite
 		eventBus.register(commandManager);
 		eventBus.register(pluginManager);
 		eventBus.register(clanManager);
+<<<<<<< HEAD
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (this.client != null)
 		{
 			eventBus.register(itemManager.get());
@@ -257,11 +304,25 @@ public class RuneLite
 	}
 
 	@VisibleForTesting
+<<<<<<< HEAD
+=======
+	public void setClient(Client client)
+	{
+		this.client = client;
+	}
+
+	public static Injector getInjector()
+	{
+		return injector;
+	}
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static void setInjector(Injector injector)
 	{
 		RuneLite.injector = injector;
 	}
 
+<<<<<<< HEAD
 	@VisibleForTesting
 	public static void setOptions(OptionSet options)
 	{
@@ -272,5 +333,15 @@ public class RuneLite
 	public void setClient(Client client)
 	{
 		this.client = client;
+=======
+	public static OptionSet getOptions()
+	{
+		return options;
+	}
+
+	public static void setOptions(OptionSet options)
+	{
+		RuneLite.options = options;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

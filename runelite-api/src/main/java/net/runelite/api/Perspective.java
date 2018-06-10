@@ -34,16 +34,22 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+<<<<<<< HEAD
 import javax.annotation.Nonnull;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.model.Jarvis;
 import net.runelite.api.model.Triangle;
 import net.runelite.api.model.Vertex;
 
+<<<<<<< HEAD
 /**
  * A utility class containing methods to help with conversion between
  * in-game features to canvas areas.
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public class Perspective
 {
 	private static final double UNIT = Math.PI / 1024d; // How much of the circle each unit of SINE/COSINE is
@@ -69,14 +75,22 @@ public class Perspective
 	 * Translates two-dimensional ground coordinates within the 3D world to
 	 * their corresponding coordinates on the game screen.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
+=======
+	 * @param client
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param x ground coordinate on the x axis
 	 * @param y ground coordinate on the y axis
 	 * @param plane ground plane on the z axis
 	 * @return a {@link Point} on screen corresponding to the position in
 	 * 3D-space
 	 */
+<<<<<<< HEAD
 	public static Point worldToCanvas(@Nonnull Client client, int x, int y, int plane)
+=======
+	public static Point worldToCanvas(Client client, int x, int y, int plane)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return worldToCanvas(client, x, y, plane, 0);
 	}
@@ -85,7 +99,11 @@ public class Perspective
 	 * Translates two-dimensional ground coordinates within the 3D world to
 	 * their corresponding coordinates on the game screen.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
+=======
+	 * @param client
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param x ground coordinate on the x axis
 	 * @param y ground coordinate on the y axis
 	 * @param plane ground plane on the z axis
@@ -93,7 +111,11 @@ public class Perspective
 	 * @return a {@link Point} on screen corresponding to the position in
 	 * 3D-space
 	 */
+<<<<<<< HEAD
 	public static Point worldToCanvas(@Nonnull Client client, int x, int y, int plane, int zOffset)
+=======
+	public static Point worldToCanvas(Client client, int x, int y, int plane, int zOffset)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return worldToCanvas(client, x, y, plane, x, y, zOffset);
 	}
@@ -101,6 +123,7 @@ public class Perspective
 	/**
 	 * Translates two-dimensional ground coordinates within the 3D world to
 	 * their corresponding coordinates on the game screen. Calculating heights
+<<<<<<< HEAD
 	 * based on the coordinates of the tile provided, rather than the world
 	 * coordinates.
 	 * <p>
@@ -109,6 +132,14 @@ public class Perspective
 	 * vertically warped, based on the terrain below.
 	 *
 	 * @param client the game client
+=======
+	 * based on the coordinates of the tile provided, rather than the world coordinates
+	 *
+	 * Using the position of each vertex, rather than the location of the object, to determine the
+	 * height of each vertex causes the mesh to be vertically warped, based on the terrain below
+	 *
+	 * @param client
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param x ground coordinate on the x axis
 	 * @param y ground coordinate on the y axis
 	 * @param plane ground plane on the z axis
@@ -117,7 +148,11 @@ public class Perspective
 	 * @return a {@link Point} on screen corresponding to the position in
 	 * 3D-space
 	 */
+<<<<<<< HEAD
 	public static Point worldToCanvas(@Nonnull Client client, int x, int y, int plane, int tileX, int tileY)
+=======
+	public static Point worldToCanvas(Client client, int x, int y, int plane, int tileX, int tileY)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return worldToCanvas(client, x, y, plane, tileX, tileY, 0);
 	}
@@ -125,6 +160,7 @@ public class Perspective
 	/**
 	 * Translates two-dimensional ground coordinates within the 3D world to
 	 * their corresponding coordinates on the game screen. Calculating heights
+<<<<<<< HEAD
 	 * based on the coordinates of the tile provided, rather than the world
 	 * coordinates.
 	 * <p>
@@ -133,6 +169,14 @@ public class Perspective
 	 * vertically warped, based on the terrain below.
 	 *
 	 * @param client the game client
+=======
+	 * based on the coordinates of the tile provided, rather than the world coordinates
+	 *
+	 * Using the position of each vertex, rather than the location of the object, to determine the
+	 * height of each vertex causes the mesh to be vertically warped, based on the terrain below
+	 *
+	 * @param client
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param x ground coordinate on the x axis
 	 * @param y ground coordinate on the y axis
 	 * @param plane ground plane on the z axis
@@ -142,7 +186,11 @@ public class Perspective
 	 * @return a {@link Point} on screen corresponding to the position in
 	 * 3D-space
 	 */
+<<<<<<< HEAD
 	public static Point worldToCanvas(@Nonnull Client client, int x, int y, int plane, int tileX, int tileY, int zOffset)
+=======
+	public static Point worldToCanvas(Client client, int x, int y, int plane, int tileX, int tileY, int zOffset)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		if (x >= 128 && y >= 128 && x <= 13056 && y <= 13056)
 		{
@@ -182,13 +230,21 @@ public class Perspective
 	 * Translates two-dimensional ground coordinates within the 3D world to
 	 * their corresponding coordinates on the Minimap.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
+=======
+	 * @param client
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param x ground coordinate on the x axis
 	 * @param y ground coordinate on the y axis
 	 * @return a {@link Point} on screen corresponding to the position in
 	 * 3D-space
 	 */
+<<<<<<< HEAD
 	public static Point worldToMiniMap(@Nonnull Client client, int x, int y)
+=======
+	public static Point worldToMiniMap(Client client, int x, int y)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return worldToMiniMap(client, x, y, 6400);
 	}
@@ -197,14 +253,22 @@ public class Perspective
 	 * Translates two-dimensional ground coordinates within the 3D world to
 	 * their corresponding coordinates on the Minimap.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
+=======
+	 * @param client
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param x ground coordinate on the x axis
 	 * @param y ground coordinate on the y axis
 	 * @param distance max distance from local player to minimap point
 	 * @return a {@link Point} on screen corresponding to the position in
 	 * 3D-space
 	 */
+<<<<<<< HEAD
 	public static Point worldToMiniMap(@Nonnull Client client, int x, int y, int distance)
+=======
+	public static Point worldToMiniMap(Client client, int x, int y, int distance)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		int angle = client.getMapAngle() & 0x7FF;
 
@@ -236,13 +300,21 @@ public class Perspective
 	/**
 	 * Calculates the above ground height of a tile point.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
+=======
+	 * @param client
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param localX the ground coordinate on the x axis
 	 * @param localY the ground coordinate on the y axis
 	 * @param plane the client plane/ground level
 	 * @return the offset from the ground of the tile
 	 */
+<<<<<<< HEAD
 	public static int getTileHeight(@Nonnull Client client, int localX, int localY, int plane)
+=======
+	public static int getTileHeight(Client client, int localX, int localY, int plane)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		int sceneX = localX >> LOCAL_COORD_BITS;
 		int sceneY = localY >> LOCAL_COORD_BITS;
@@ -270,12 +342,20 @@ public class Perspective
 	/**
 	 * Calculates a tile polygon from offset worldToScreen() points.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
+=======
+	 * @param client
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param localLocation local location of the tile
 	 * @return a {@link Polygon} on screen corresponding to the given
 	 * localLocation.
 	 */
+<<<<<<< HEAD
 	public static Polygon getCanvasTilePoly(@Nonnull Client client, @Nonnull LocalPoint localLocation)
+=======
+	public static Polygon getCanvasTilePoly(Client client, LocalPoint localLocation)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return getCanvasTileAreaPoly(client, localLocation, 1);
 	}
@@ -283,6 +363,7 @@ public class Perspective
 	/**
 	 * Returns a polygon representing an area.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
 	 * @param localLocation the center location of the AoE
 	 * @param size the size of the area (ie. 3x3 AoE evaluates to size 3)
@@ -295,6 +376,25 @@ public class Perspective
 		// Shift over one half tile as localLocation is the center point of the tile, and then shift the area size
 		Point southWestCorner = new Point(localLocation.getX() - (size * LOCAL_TILE_SIZE / 2),
 			localLocation.getY() - (size * LOCAL_TILE_SIZE / 2));
+=======
+	 * @param client
+	 * @param localLocation Center location of the AoE
+	 * @param size size of the area. Ex. Lizardman Shaman AoE is a 3x3, so
+	 * size = 3
+	 * @return a polygon representing the tiles in the area
+	 */
+	public static Polygon getCanvasTileAreaPoly(Client client, LocalPoint localLocation, int size)
+	{
+		int plane = client.getPlane();
+		int halfTile = LOCAL_TILE_SIZE / 2;
+
+		// If the size is 5, we need to shift it up and left 2 units, then expand by 5 units to make a 5x5
+		int aoeSize = size / 2;
+
+		// Shift over one half tile as localLocation is the center point of the tile, and then shift the area size
+		Point southWestCorner = new Point(localLocation.getX() - (aoeSize * LOCAL_TILE_SIZE) - halfTile + 1,
+			localLocation.getY() - (aoeSize * LOCAL_TILE_SIZE) - halfTile + 1);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		// expand by size
 		Point northEastCorner = new Point(southWestCorner.getX() + size * LOCAL_TILE_SIZE - 1,
 			southWestCorner.getY() + size * LOCAL_TILE_SIZE - 1);
@@ -325,14 +425,20 @@ public class Perspective
 	/**
 	 * Calculates text position and centers depending on string length.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
 	 * @param graphics the game graphics
+=======
+	 * @param client
+	 * @param graphics
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param localLocation local location of the tile
 	 * @param text string for width measurement
 	 * @param zOffset offset from ground plane
 	 * @return a {@link Point} on screen corresponding to the given
 	 * localLocation.
 	 */
+<<<<<<< HEAD
 	public static Point getCanvasTextLocation(
 		@Nonnull Client client,
 		@Nonnull Graphics2D graphics,
@@ -340,6 +446,9 @@ public class Perspective
 		@Nonnull String text,
 		int zOffset
 	)
+=======
+	public static Point getCanvasTextLocation(Client client, Graphics2D graphics, LocalPoint localLocation, String text, int zOffset)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		int plane = client.getPlane();
 
@@ -360,20 +469,29 @@ public class Perspective
 	/**
 	 * Calculates image position and centers depending on image size.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
 	 * @param graphics the game graphics
+=======
+	 * @param client
+	 * @param graphics
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param localLocation local location of the tile
 	 * @param image image for size measurement
 	 * @param zOffset offset from ground plane
 	 * @return a {@link Point} on screen corresponding to the given
 	 * localLocation.
 	 */
+<<<<<<< HEAD
 	public static Point getCanvasImageLocation(
 		@Nonnull Client client,
 		@Nonnull Graphics2D graphics,
 		@Nonnull LocalPoint localLocation,
 		@Nonnull BufferedImage image,
 		int zOffset)
+=======
+	public static Point getCanvasImageLocation(Client client, Graphics2D graphics, LocalPoint localLocation, BufferedImage image, int zOffset)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		int plane = client.getPlane();
 
@@ -393,16 +511,24 @@ public class Perspective
 	/**
 	 * Calculates image position and centers depending on image size.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
+=======
+	 * @param client
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param localLocation local location of the tile
 	 * @param image image for size measurement
 	 * @return a {@link Point} on screen corresponding to the given
 	 * localLocation.
 	 */
+<<<<<<< HEAD
 	public static Point getMiniMapImageLocation(
 		@Nonnull Client client,
 		@Nonnull LocalPoint localLocation,
 		@Nonnull BufferedImage image)
+=======
+	public static Point getMiniMapImageLocation(Client client, LocalPoint localLocation, BufferedImage image)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		Point p = Perspective.worldToMiniMap(client, localLocation.getX(), localLocation.getY());
 
@@ -420,6 +546,7 @@ public class Perspective
 	/**
 	 * Calculates sprite position and centers depending on sprite size.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
 	 * @param graphics the game graphics
 	 * @param localLocation local location of the tile
@@ -433,6 +560,17 @@ public class Perspective
 		@Nonnull LocalPoint localLocation,
 		@Nonnull SpritePixels sprite,
 		int zOffset)
+=======
+	 * @param client
+	 * @param graphics
+	 * @param localLocation local location of the tile
+	 * @param sprite SpritePixel for size measurement
+	 * @param zOffset offset from ground plane
+	 * @return a {@link Point} on screen corresponding to the given
+	 * localLocation.
+	 */
+	public static Point getCanvasSpriteLocation(Client client, Graphics2D graphics, LocalPoint localLocation, SpritePixels sprite, int zOffset)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		int plane = client.getPlane();
 
@@ -450,6 +588,7 @@ public class Perspective
 	}
 
 	/**
+<<<<<<< HEAD
 	 * You don't want this. Use {@link TileObject#getClickbox()} instead.
 	 * <p>
 	 * Get the on-screen clickable area of {@code model} as though it's for the
@@ -464,6 +603,21 @@ public class Perspective
 	 * @return the clickable area of the model
 	 */
 	public static Area getClickbox(@Nonnull Client client, Model model, int orientation, int tileX, int tileY)
+=======
+	 * You don't want this. Use {@link TileObject#getClickbox()} instead
+	 *
+	 * Get the on-screen clickable area of {@code model} as though it's for the object on the tile at
+	 * 	({@code tileX}, {@code tileY}) and rotated to angle {@code orientation}
+	 *
+	 * @param client
+	 * @param model the model to calculate a clickbox for
+	 * @param orientation the orientation of the model (0-2048, where 0 is north)
+	 * @param tileX the X coordinate of the tile that the object using the model is on
+	 * @param tileY the Y coordinate of the tile that the object using the model is on
+	 * @return the clickable area of {@code model}, rotated to angle {@code orientation}, at the height of tile ({@code tileX}, {@code tileY})
+	 */
+	public static Area getClickbox(Client client, Model model, int orientation, int tileX, int tileY)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		if (model == null)
 		{
@@ -490,6 +644,7 @@ public class Perspective
 		return clickBox;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Determine if a given point is off-screen.
 	 *
@@ -510,6 +665,9 @@ public class Perspective
 		int tileX,
 		int tileY
 	)
+=======
+	private static Area get2DGeometry(Client client, List<Triangle> triangles, int orientation, int tileX, int tileY)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		int radius = 5;
 		Area geometry = new Area();
@@ -546,43 +704,62 @@ public class Perspective
 				continue;
 			}
 
+<<<<<<< HEAD
 			if (isOffscreen(client, a) && isOffscreen(client, b) && isOffscreen(client, c))
 			{
 				continue;
 			}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			int minX = Math.min(Math.min(a.getX(), b.getX()), c.getX());
 			int minY = Math.min(Math.min(a.getY(), b.getY()), c.getY());
 
 			// For some reason, this calculation is always 4 pixels short of the actual in-client one
+<<<<<<< HEAD
 			int maxX = Math.max(Math.max(a.getX(), b.getX()), c.getX()) + 4;
 			int maxY = Math.max(Math.max(a.getY(), b.getY()), c.getY()) + 4;
+=======
+			int maxX = Math.max(Math.max(a.getX(), b.getX()), c.getX()) + client.getViewportXOffset();
+			int maxY = Math.max(Math.max(a.getY(), b.getY()), c.getY()) + client.getViewportYOffset();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 			// ...and the rectangles in the fixed client are shifted 4 pixels right and down
 			if (!client.isResized())
 			{
+<<<<<<< HEAD
 				minX += client.getViewportXOffset();
 				minY += client.getViewportYOffset();
 				maxX += client.getViewportXOffset();
 				maxY += client.getViewportYOffset();
+=======
+				minX += 4;
+				minY += 4;
+				maxX += 4;
+				maxY += 4;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 
 			Rectangle clickableRect = new Rectangle(
 				minX - radius, minY - radius,
 				maxX - minX + radius, maxY - minY + radius
 			);
+<<<<<<< HEAD
 
 			if (geometry.contains(clickableRect))
 			{
 				continue;
 			}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			geometry.add(new Area(clickableRect));
 		}
 
 		return geometry;
 	}
 
+<<<<<<< HEAD
 	private static Area getAABB(
 		@Nonnull Client client,
 		@Nonnull List<Vertex> vertices,
@@ -590,6 +767,9 @@ public class Perspective
 		int tileX,
 		int tileY
 	)
+=======
+	private static Area getAABB(Client client, List<Vertex> vertices, int orientation, int tileX, int tileY)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		int maxX = 0;
 		int minX = 0;
@@ -708,18 +888,27 @@ public class Perspective
 	/**
 	 * Calculates text position and centers on minimap depending on string length.
 	 *
+<<<<<<< HEAD
 	 * @param client the game client
 	 * @param graphics the game graphics
+=======
+	 * @param client
+	 * @param graphics
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * @param localLocation local location of the tile
 	 * @param text string for width measurement
 	 * @return a {@link Point} on screen corresponding to the given
 	 * localLocation.
 	 */
+<<<<<<< HEAD
 	public static Point getCanvasTextMiniMapLocation(
 		@Nonnull Client client,
 		@Nonnull Graphics2D graphics,
 		@Nonnull LocalPoint localLocation,
 		@Nonnull String text)
+=======
+	public static Point getCanvasTextMiniMapLocation(Client client, Graphics2D graphics, LocalPoint localLocation, String text)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		Point p = Perspective.worldToMiniMap(client, localLocation.getX(), localLocation.getY());
 

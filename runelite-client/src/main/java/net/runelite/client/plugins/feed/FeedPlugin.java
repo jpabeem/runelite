@@ -91,9 +91,14 @@ public class FeedPlugin extends Plugin
 		}
 
 		navButton = NavigationButton.builder()
+<<<<<<< HEAD
 			.tooltip("News Feed")
 			.icon(icon)
 			.priority(8)
+=======
+			.name("News Feed")
+			.icon(icon)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			.panel(feedPanel)
 			.build();
 

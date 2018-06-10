@@ -27,16 +27,22 @@ package net.runelite.client;
 import com.google.common.escape.Escaper;
 import com.google.common.escape.Escapers;
 import com.google.inject.Inject;
+<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+<<<<<<< HEAD
 import java.time.Instant;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -44,9 +50,12 @@ import java.util.concurrent.ScheduledExecutorService;
 import javax.inject.Provider;
 import javax.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
+<<<<<<< HEAD
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.config.RuneLiteConfig;
 import net.runelite.client.ui.ClientUI;
 import net.runelite.client.util.OSType;
@@ -62,32 +71,48 @@ public class Notifier
 		.addEscape('"', "'")
 		.build();
 
+<<<<<<< HEAD
 	// Notifier properties
 	private static final Color FLASH_COLOR = new Color(255, 0, 0, 70);
 	private static final int FLASH_DURATION = 2000;
 	private static final String MESSAGE_COLOR = "FF0000";
 
 	private final Provider<Client> client;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private final String appName;
 	private final RuneLiteConfig runeLiteConfig;
 	private final Provider<ClientUI> clientUI;
 	private final ScheduledExecutorService executorService;
 	private final Path notifyIconPath;
+<<<<<<< HEAD
 	private Instant flashStart;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	private Notifier(
 			final Provider<ClientUI> clientUI,
+<<<<<<< HEAD
 			final Provider<Client> client,
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			final RuneLiteConfig runeliteConfig,
 			final RuneLiteProperties runeLiteProperties,
 			final ScheduledExecutorService executorService)
 	{
+<<<<<<< HEAD
 		this.client = client;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		this.appName = runeLiteProperties.getTitle();
 		this.clientUI = clientUI;
 		this.runeLiteConfig = runeliteConfig;
 		this.executorService = executorService;
+<<<<<<< HEAD
+=======
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		this.notifyIconPath = RuneLite.RUNELITE_DIR.toPath().resolve("icon.png");
 		storeIcon();
 	}
@@ -118,13 +143,18 @@ public class Notifier
 
 		if (runeLiteConfig.enableTrayNotifications())
 		{
+<<<<<<< HEAD
 			sendNotification(appName, message, type);
+=======
+			sendNotification(appName, message, type, null);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		if (runeLiteConfig.enableNotificationSound())
 		{
 			Toolkit.getDefaultToolkit().beep();
 		}
+<<<<<<< HEAD
 
 		if (runeLiteConfig.enableGameMessageNotification())
 		{
@@ -166,16 +196,27 @@ public class Notifier
 		{
 			flashStart = null;
 		}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	private void sendNotification(
 		final String title,
 		final String message,
+<<<<<<< HEAD
 		final TrayIcon.MessageType type)
 	{
 		final String escapedTitle = SHELL_ESCAPE.escape(title);
 		final String escapedMessage = SHELL_ESCAPE.escape(message);
 		final String escapedSubtitle = null;
+=======
+		final TrayIcon.MessageType type,
+		final String subtitle)
+	{
+		final String escapedTitle = SHELL_ESCAPE.escape(title);
+		final String escapedMessage = SHELL_ESCAPE.escape(message);
+		final String escapedSubtitle = subtitle != null ? SHELL_ESCAPE.escape(subtitle) : null;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		switch (OSType.getOSType())
 		{

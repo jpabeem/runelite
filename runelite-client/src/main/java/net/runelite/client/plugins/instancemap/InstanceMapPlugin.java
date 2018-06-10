@@ -28,9 +28,16 @@ import com.google.common.eventbus.Subscribe;
 import com.google.inject.Binder;
 import javax.inject.Inject;
 import net.runelite.api.events.GameStateChanged;
+<<<<<<< HEAD
 import net.runelite.api.events.WidgetMenuOptionClicked;
 import net.runelite.api.widgets.WidgetInfo;
 import static net.runelite.api.widgets.WidgetInfo.WORLD_MAP_OPTION;
+=======
+import net.runelite.api.events.MapRegionChanged;
+import net.runelite.api.events.WidgetMenuOptionClicked;
+import net.runelite.api.widgets.WidgetInfo;
+import static net.runelite.api.widgets.WidgetInfo.WORLD_MAP;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.input.MouseManager;
 import net.runelite.client.menus.MenuManager;
@@ -44,7 +51,11 @@ import net.runelite.client.ui.overlay.Overlay;
 )
 public class InstanceMapPlugin extends Plugin
 {
+<<<<<<< HEAD
 	private final WidgetMenuOption openMapOption = new WidgetMenuOption("Show", "Instance Map", WidgetInfo.WORLD_MAP_OPTION);
+=======
+	private final WidgetMenuOption openMapOption = new WidgetMenuOption("Show", "Instance Map", WidgetInfo.WORLD_MAP);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	private InstanceMapInputListener inputListener;
@@ -96,6 +107,15 @@ public class InstanceMapPlugin extends Plugin
 	}
 
 	@Subscribe
+<<<<<<< HEAD
+=======
+	public void regionChange(MapRegionChanged event)
+	{
+		overlay.onRegionChange(event);
+	}
+
+	@Subscribe
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public void gameStateChange(GameStateChanged event)
 	{
 		overlay.onGameStateChange(event);
@@ -109,7 +129,11 @@ public class InstanceMapPlugin extends Plugin
 	@Subscribe
 	public void onWidgetMenuOptionClicked(WidgetMenuOptionClicked event)
 	{
+<<<<<<< HEAD
 		if (event.getWidget() != WORLD_MAP_OPTION)
+=======
+		if (event.getWidget() != WORLD_MAP)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			return;
 		}

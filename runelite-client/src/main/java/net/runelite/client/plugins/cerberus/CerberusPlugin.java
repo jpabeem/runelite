@@ -25,18 +25,27 @@
 
 package net.runelite.client.plugins.cerberus;
 
+<<<<<<< HEAD
 import com.google.common.collect.ComparisonChain;
 import com.google.common.eventbus.Subscribe;
 import java.util.ArrayList;
 import java.util.Collections;
+=======
+import com.google.common.eventbus.Subscribe;
+import java.util.ArrayList;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import lombok.Getter;
+<<<<<<< HEAD
 import net.runelite.api.GameState;
 import net.runelite.api.NPC;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.GameTick;
+=======
+import net.runelite.api.NPC;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.events.NpcDespawned;
 import net.runelite.api.events.NpcSpawned;
 import net.runelite.client.plugins.Plugin;
@@ -66,6 +75,7 @@ public class CerberusPlugin extends Plugin
 	}
 
 	@Subscribe
+<<<<<<< HEAD
 	public void onGameStateChange(GameStateChanged event)
 	{
 		if (event.getGameState() == GameState.LOGIN_SCREEN || event.getGameState() == GameState.HOPPING)
@@ -79,6 +89,23 @@ public class CerberusPlugin extends Plugin
 	{
 		final NPC npc = event.getNpc();
 		CerberusGhost.fromNPC(npc).ifPresent(ghost -> ghosts.add(npc));
+=======
+	public void onNpcSpawned(final NpcSpawned event)
+	{
+		final NPC npc = event.getNpc();
+
+		CerberusGhost.fromNPC(npc).ifPresent(ghost ->
+		{
+			if (ghosts.size() == CerberusGhost.values().length)
+			{
+				// Reset ghosts as this is new ghost wave
+				ghosts.clear();
+			}
+
+			ghosts.add(npc);
+			ghosts.sort((a, b) -> Integer.compare(b.getLocalLocation().getY(), a.getLocalLocation().getY()));
+		});
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Subscribe
@@ -86,6 +113,7 @@ public class CerberusPlugin extends Plugin
 	{
 		ghosts.remove(event.getNpc());
 	}
+<<<<<<< HEAD
 
 	@Subscribe
 	public void onGameTick(GameTick gameTick)
@@ -104,4 +132,6 @@ public class CerberusPlugin extends Plugin
 			// what ghost will attack first
 			.result());
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

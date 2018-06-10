@@ -32,7 +32,10 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Collection;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -151,8 +154,11 @@ public class ItemManager
 	 */
 	public ItemPrice getItemPriceAsync(int itemId)
 	{
+<<<<<<< HEAD
 		itemId = ItemMapping.mapFirst(itemId);
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		ItemPrice itemPrice = itemPriceCache.getIfPresent(itemId);
 		if (itemPrice != null && itemPrice != EMPTY)
 		{
@@ -164,6 +170,7 @@ public class ItemManager
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Look up an item's price from the price cache
 	 *
 	 * @param itemId
@@ -183,17 +190,24 @@ public class ItemManager
 	}
 
 	/**
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * Look up bulk item prices asynchronously
 	 *
 	 * @param itemIds array of item Ids
 	 * @return a future called with the looked up prices
 	 */
+<<<<<<< HEAD
 	public CompletableFuture<ItemPrice[]> getItemPriceBatch(Collection<Integer> itemIds)
+=======
+	public CompletableFuture<ItemPrice[]> getItemPriceBatch(List<Integer> itemIds)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		final List<Integer> lookup = new ArrayList<>();
 		final List<ItemPrice> existing = new ArrayList<>();
 		for (int itemId : itemIds)
 		{
+<<<<<<< HEAD
 			for (int mappedItemId : ItemMapping.map(itemId))
 			{
 				ItemPrice itemPrice = itemPriceCache.getIfPresent(mappedItemId);
@@ -205,6 +219,16 @@ public class ItemManager
 				{
 					lookup.add(mappedItemId);
 				}
+=======
+			ItemPrice itemPrice = itemPriceCache.getIfPresent(itemId);
+			if (itemPrice != null)
+			{
+				existing.add(itemPrice);
+			}
+			else
+			{
+				lookup.add(itemId);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 		// All cached?
@@ -220,12 +244,21 @@ public class ItemManager
 			{
 				// Do a query for the items not in the cache
 				ItemPrice[] itemPrices = itemClient.lookupItemPrice(lookup.toArray(new Integer[lookup.size()]));
+<<<<<<< HEAD
 				for (int itemId : lookup)
 				{
 					itemPriceCache.put(itemId, NONE);
 				}
 				if (itemPrices != null)
 				{
+=======
+				if (itemPrices != null)
+				{
+					for (int itemId : lookup)
+					{
+						itemPriceCache.put(itemId, NONE);
+					}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 					for (ItemPrice itemPrice : itemPrices)
 					{
 						itemPriceCache.put(itemPrice.getItem().getId(), itemPrice);
@@ -237,12 +270,15 @@ public class ItemManager
 			}
 			catch (Exception ex)
 			{
+<<<<<<< HEAD
 				// cache unable to lookup
 				for (int itemId : lookup)
 				{
 					itemPriceCache.put(itemId, NONE);
 				}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				future.completeExceptionally(ex);
 			}
 		});
@@ -258,8 +294,11 @@ public class ItemManager
 	 */
 	public ItemPrice getItemPrice(int itemId) throws IOException
 	{
+<<<<<<< HEAD
 		itemId = ItemMapping.mapFirst(itemId);
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		ItemPrice itemPrice = itemPriceCache.getIfPresent(itemId);
 		if (itemPrice != null && itemPrice != EMPTY)
 		{

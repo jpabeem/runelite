@@ -33,9 +33,13 @@ import net.runelite.client.plugins.raids.solver.Room;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayPriority;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import net.runelite.client.ui.overlay.components.TitleComponent;
+=======
+import net.runelite.client.ui.overlay.components.PanelComponent;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 public class RaidsOverlay extends Overlay
 {
@@ -63,6 +67,7 @@ public class RaidsOverlay extends Overlay
 			return null;
 		}
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
 
 		if (plugin.getRaid() == null || plugin.getRaid().getLayout() == null)
@@ -78,6 +83,19 @@ public class RaidsOverlay extends Overlay
 		panelComponent.getChildren().add(TitleComponent.builder()
 			.text("Raid scouter")
 			.build());
+=======
+		panelComponent.getLines().clear();
+
+		if (plugin.getRaid() == null || plugin.getRaid().getLayout() == null)
+		{
+			panelComponent.setTitleColor(Color.RED);
+			panelComponent.setTitle("Unable to scout this raid!");
+			return panelComponent.render(graphics);
+		}
+
+		panelComponent.setTitleColor(Color.WHITE);
+		panelComponent.setTitle("Raid scouter");
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		Color color = Color.WHITE;
 		String layout = plugin.getRaid().getLayout().toCode().replaceAll("#", "").replaceAll("¤", "");
@@ -87,11 +105,17 @@ public class RaidsOverlay extends Overlay
 			color = Color.RED;
 		}
 
+<<<<<<< HEAD
 		panelComponent.getChildren().add(LineComponent.builder()
 			.left("Layout")
 			.right(layout)
 			.rightColor(color)
 			.build());
+=======
+		panelComponent.getLines().add(new PanelComponent.Line(
+				"Layout", Color.WHITE, layout, color
+		));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		int bossMatches = 0;
 		int bossCount = 0;
@@ -127,12 +151,18 @@ public class RaidsOverlay extends Overlay
 						color = Color.RED;
 					}
 
+<<<<<<< HEAD
 					panelComponent.getChildren().add(LineComponent.builder()
 						.left(room.getType().getName())
 						.right(room.getBoss().getName())
 						.rightColor(color)
 						.build());
 
+=======
+					panelComponent.getLines().add(new PanelComponent.Line(
+						room.getType().getName(), Color.WHITE, room.getBoss().getName(), color
+					));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 					break;
 
 				case PUZZLE:
@@ -145,11 +175,17 @@ public class RaidsOverlay extends Overlay
 						color = Color.RED;
 					}
 
+<<<<<<< HEAD
 					panelComponent.getChildren().add(LineComponent.builder()
 						.left(room.getType().getName())
 						.right(room.getPuzzle().getName())
 						.rightColor(color)
 						.build());
+=======
+					panelComponent.getLines().add(new PanelComponent.Line(
+						room.getType().getName(), Color.WHITE, room.getPuzzle().getName(), color
+					));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 					break;
 			}
 		}

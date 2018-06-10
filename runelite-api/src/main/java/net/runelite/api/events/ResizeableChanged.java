@@ -28,6 +28,7 @@ package net.runelite.api.events;
 
 import lombok.Data;
 
+<<<<<<< HEAD
 /**
  * An event where the client window has been resized.
  */
@@ -37,5 +38,10 @@ public class ResizeableChanged
 	/**
 	 * Whether the window is resized.
 	 */
+=======
+@Data
+public class ResizeableChanged
+{
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private boolean isResized;
 }

@@ -31,11 +31,18 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
+<<<<<<< HEAD
 @Target(ElementType.METHOD)
+=======
+@Target({ElementType.METHOD, ElementType.FIELD})
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 @Documented
 public @interface FieldHook
 {
 	String value();
+<<<<<<< HEAD
 
 	boolean before() default false;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

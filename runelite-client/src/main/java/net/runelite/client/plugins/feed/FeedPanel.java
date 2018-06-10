@@ -1,6 +1,9 @@
 /*
  * Copyright (c) 2018, Lotto <https://github.com/devLotto>
+<<<<<<< HEAD
  * Copyright (c) 2018, Psikoi <https://github.com/psikoi>
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,10 +30,15 @@ package net.runelite.client.plugins.feed;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+<<<<<<< HEAD
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+=======
+import java.awt.Dimension;
+import java.awt.Font;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.font.FontRenderContext;
@@ -50,7 +58,10 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import lombok.extern.slf4j.Slf4j;
+<<<<<<< HEAD
 import net.runelite.client.ui.ColorScheme;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.PluginPanel;
 import net.runelite.client.util.LinkBrowser;
@@ -67,8 +78,13 @@ import okhttp3.ResponseBody;
 @Slf4j
 class FeedPanel extends PluginPanel
 {
+<<<<<<< HEAD
 	private static final ImageIcon RUNELITE_ICON;
 	private static final ImageIcon OSRS_ICON;
+=======
+	private static BufferedImage RUNELITE_ICON;
+	private static BufferedImage OSRS_ICON;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	private static final Color TWEET_BACKGROUND = new Color(15, 15, 15);
 	private static final Color OSRS_NEWS_BACKGROUND = new Color(36, 30, 19);
@@ -78,11 +94,14 @@ class FeedPanel extends PluginPanel
 	private static final int CONTENT_WIDTH = 148;
 	private static final int TIME_WIDTH = 20;
 
+<<<<<<< HEAD
 	/**
 	 * Holds all feed items.
 	 */
 	private final JPanel feedContainer = new JPanel();
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private static final Comparator<FeedItem> FEED_ITEM_COMPARATOR = (o1, o2) ->
 	{
 		if (o1.getType() != o2.getType())
@@ -106,13 +125,33 @@ class FeedPanel extends PluginPanel
 		{
 			synchronized (ImageIO.class)
 			{
+<<<<<<< HEAD
 				RUNELITE_ICON = new ImageIcon(ImageIO.read(FeedPanel.class.getResourceAsStream("runelite.png")));
 				OSRS_ICON = new ImageIcon(ImageIO.read(FeedPanel.class.getResourceAsStream("osrs.png")));
+=======
+				RUNELITE_ICON = ImageIO.read(FeedPanel.class.getResourceAsStream("runelite.png"));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 		catch (IOException e)
 		{
+<<<<<<< HEAD
 			throw new RuntimeException(e);
+=======
+			log.warn("Client icon failed to load", e);
+		}
+
+		try
+		{
+			synchronized (ImageIO.class)
+			{
+				OSRS_ICON = ImageIO.read(FeedPanel.class.getResourceAsStream("osrs.png"));
+			}
+		}
+		catch (IOException e)
+		{
+			log.warn("OSRS icon failed to load", e);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 
@@ -123,6 +162,7 @@ class FeedPanel extends PluginPanel
 	{
 		this.config = config;
 		this.feedSupplier = feedSupplier;
+<<<<<<< HEAD
 
 		setBorder(new EmptyBorder(10, 10, 10, 10));
 		setBackground(ColorScheme.DARK_GRAY_COLOR);
@@ -137,6 +177,8 @@ class FeedPanel extends PluginPanel
 
 		add(title, BorderLayout.NORTH);
 		add(feedContainer, BorderLayout.CENTER);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	void rebuildFeed()
@@ -150,7 +192,11 @@ class FeedPanel extends PluginPanel
 
 		SwingUtilities.invokeLater(() ->
 		{
+<<<<<<< HEAD
 			feedContainer.removeAll();
+=======
+			removeAll();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 			feed.getItems()
 				.stream()
@@ -219,14 +265,22 @@ class FeedPanel extends PluginPanel
 			case OSRS_NEWS:
 				if (OSRS_ICON != null)
 				{
+<<<<<<< HEAD
 					avatar.setIcon(OSRS_ICON);
+=======
+					avatar.setIcon(new ImageIcon(OSRS_ICON));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				}
 				avatarAndRight.setBackground(OSRS_NEWS_BACKGROUND);
 				break;
 			default:
 				if (RUNELITE_ICON != null)
 				{
+<<<<<<< HEAD
 					avatar.setIcon(RUNELITE_ICON);
+=======
+					avatar.setIcon(new ImageIcon(RUNELITE_ICON));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				}
 				avatarAndRight.setBackground(BLOG_POST_BACKGROUND);
 				break;
@@ -286,14 +340,20 @@ class FeedPanel extends PluginPanel
 			public void mouseEntered(MouseEvent e)
 			{
 				avatarAndRight.setBackground(hoverColor);
+<<<<<<< HEAD
 				avatarAndRight.setCursor(new Cursor(Cursor.HAND_CURSOR));
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e)
 			{
 				avatarAndRight.setBackground(backgroundColor);
+<<<<<<< HEAD
 				avatarAndRight.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 
 			@Override
@@ -310,7 +370,11 @@ class FeedPanel extends PluginPanel
 			}
 		});
 
+<<<<<<< HEAD
 		feedContainer.add(avatarAndRight);
+=======
+		add(avatarAndRight);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	private String durationToString(Duration duration)

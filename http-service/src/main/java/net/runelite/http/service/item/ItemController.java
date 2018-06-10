@@ -28,6 +28,10 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import java.time.Duration;
 import java.time.Instant;
+<<<<<<< HEAD
+=======
+import java.util.ArrayList;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -196,6 +200,7 @@ public class ItemController
 			itemIds = Arrays.copyOf(itemIds, MAX_BATCH_LOOKUP);
 		}
 
+<<<<<<< HEAD
 		List<PriceEntry> prices = itemService.getPrices(itemIds);
 
 		return prices.stream()
@@ -211,5 +216,26 @@ public class ItemController
 				return itemPrice;
 			})
 			.toArray(ItemPrice[]::new);
+=======
+		List<ItemPrice> itemPrices = new ArrayList<>(itemIds.length);
+		for (int itemId : itemIds)
+		{
+			ItemEntry item = itemService.getItem(itemId);
+			PriceEntry priceEntry = itemService.getPrice(itemId, null);
+
+			if (item == null || priceEntry == null)
+			{
+				continue;
+			}
+
+			ItemPrice itemPrice = new ItemPrice();
+			itemPrice.setItem(item.toItem());
+			itemPrice.setPrice(priceEntry.getPrice());
+			itemPrice.setTime(priceEntry.getTime());
+			itemPrices.add(itemPrice);
+		}
+
+		return itemPrices.toArray(new ItemPrice[itemPrices.size()]);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

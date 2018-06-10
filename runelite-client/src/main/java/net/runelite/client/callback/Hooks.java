@@ -28,21 +28,34 @@ import com.google.common.eventbus.EventBus;
 import com.google.inject.Injector;
 import java.awt.Color;
 import java.awt.Dimension;
+<<<<<<< HEAD
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;
 import java.awt.Image;
 import java.awt.RenderingHints;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
+<<<<<<< HEAD
 import java.awt.image.BufferedImage;
 import java.awt.image.VolatileImage;
 import net.runelite.api.Actor;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
 import net.runelite.api.GraphicsObject;
+=======
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.awt.RenderingHints;
+import net.runelite.api.Actor;
+import net.runelite.api.ChatMessageType;
+import net.runelite.api.Client;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.Hitsplat;
 import net.runelite.api.ItemComposition;
 import net.runelite.api.KeyFocusListener;
@@ -56,10 +69,17 @@ import net.runelite.api.RenderOverview;
 import net.runelite.api.TextureProvider;
 import net.runelite.api.WorldMapManager;
 import net.runelite.api.coords.LocalPoint;
+<<<<<<< HEAD
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.FocusChanged;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.events.GraphicsObjectCreated;
+=======
+import net.runelite.api.events.ActorDeath;
+import net.runelite.api.events.ChatMessage;
+import net.runelite.api.events.FocusChanged;
+import net.runelite.api.events.GameTick;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.events.HitsplatApplied;
 import net.runelite.api.events.MenuOpened;
 import net.runelite.api.events.MenuOptionClicked;
@@ -67,14 +87,21 @@ import net.runelite.api.events.PostItemComposition;
 import net.runelite.api.events.ProjectileMoved;
 import net.runelite.api.events.SetMessage;
 import net.runelite.api.widgets.Widget;
+<<<<<<< HEAD
 import static net.runelite.api.widgets.WidgetInfo.WORLD_MAP_VIEW;
 import net.runelite.client.Notifier;
+=======
+import static net.runelite.api.widgets.WidgetID.WORLD_MAP;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.RuneLite;
 import net.runelite.client.chat.ChatMessageManager;
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.input.MouseManager;
 import net.runelite.client.task.Scheduler;
+<<<<<<< HEAD
 import net.runelite.client.ui.ClientUI;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.DrawManager;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayRenderer;
@@ -104,11 +131,17 @@ public class Hooks
 	private static final ClientThread clientThread = injector.getInstance(ClientThread.class);
 	private static final GameTick tick = new GameTick();
 	private static final DrawManager renderHooks = injector.getInstance(DrawManager.class);
+<<<<<<< HEAD
 	private static final Notifier notifier = injector.getInstance(Notifier.class);
 	private static final ClientUI clientUi = injector.getInstance(ClientUI.class);
 
 	private static Dimension lastStretchedDimensions;
 	private static VolatileImage stretchedImage;
+=======
+
+	private static Dimension lastStretchedDimensions;
+	private static BufferedImage stretchedImage;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private static Graphics2D stretchedGraphics;
 
 	private static long lastCheck;
@@ -123,9 +156,12 @@ public class Hooks
 			_deferredEventBus.replay();
 
 			eventBus.post(tick);
+<<<<<<< HEAD
 
 			int tick = client.getTickCount();
 			client.setTickCount(tick + 1);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		clientThread.invoke();
@@ -167,15 +203,22 @@ public class Hooks
 	 */
 	private static void checkWorldMap()
 	{
+<<<<<<< HEAD
 		Widget widget = client.getWidget(WORLD_MAP_VIEW);
 
+=======
+		Widget widget = client.getWidget(WORLD_MAP, 0);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (widget != null)
 		{
 			return;
 		}
 
 		RenderOverview renderOverview = client.getRenderOverview();
+<<<<<<< HEAD
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (renderOverview == null)
 		{
 			return;
@@ -268,7 +311,11 @@ public class Hooks
 			return;
 		}
 
+<<<<<<< HEAD
 		Image image = mainBufferProvider.getImage();
+=======
+		BufferedImage image = (BufferedImage) mainBufferProvider.getImage();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		final Graphics2D graphics2d = (Graphics2D) image.getGraphics();
 
 		try
@@ -280,6 +327,7 @@ public class Hooks
 			log.warn("Error during overlay rendering", ex);
 		}
 
+<<<<<<< HEAD
 		notifier.processFlash(graphics2d);
 
 		// Stretch the game image if the user has that enabled
@@ -290,11 +338,23 @@ public class Hooks
 
 			if (lastStretchedDimensions == null || !lastStretchedDimensions.equals(stretchedDimensions)
 				|| (stretchedImage != null && stretchedImage.validate(gc) == VolatileImage.IMAGE_INCOMPATIBLE))
+=======
+		// Stretch the game image if the user has that enabled
+		if (!client.isResized() && client.isStretchedEnabled())
+		{
+			Dimension stretchedDimensions = client.getStretchedDimensions();
+
+			if (lastStretchedDimensions == null || !lastStretchedDimensions.equals(stretchedDimensions))
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			{
 				/*
 					Reuse the resulting image instance to avoid creating an extreme amount of objects
 				 */
+<<<<<<< HEAD
 				stretchedImage = gc.createCompatibleVolatileImage(stretchedDimensions.width, stretchedDimensions.height);
+=======
+				stretchedImage = new BufferedImage(stretchedDimensions.width, stretchedDimensions.height, BufferedImage.TYPE_INT_RGB);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 				if (stretchedGraphics != null)
 				{
@@ -453,6 +513,19 @@ public class Hooks
 		shouldProcessGameTick = true;
 	}
 
+<<<<<<< HEAD
+=======
+	public static void onSetCombatInfo(Actor actor, int combatInfoId, int gameCycle, int var3, int var4, int healthRatio, int health)
+	{
+		if (healthRatio == 0)
+		{
+			ActorDeath death = new ActorDeath();
+			death.setActor(actor);
+			eventBus.post(death);
+		}
+	}
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static void postItemComposition(ItemComposition itemComposition)
 	{
 		PostItemComposition event = new PostItemComposition();
@@ -491,10 +564,13 @@ public class Hooks
 		event.setHitsplat(hitsplat);
 		eventBus.post(event);
 	}
+<<<<<<< HEAD
 
 	public static void onGraphicsObjectCreated(GraphicsObject go, int var1, int var2, int var3, int var4, int var5, int var6, int var7)
 	{
 		GraphicsObjectCreated event = new GraphicsObjectCreated(go);
 		eventBus.post(event);
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

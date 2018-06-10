@@ -24,6 +24,7 @@
  */
 package net.runelite.api.widgets;
 
+<<<<<<< HEAD
 /**
  * Utility class mapping widget IDs to global constants.
  * <p>
@@ -34,6 +35,8 @@ package net.runelite.api.widgets;
  * For a more direct group-child widget mapping, use the
  * {@link WidgetInfo} enum class.
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public class WidgetID
 {
 	public static final int FAIRY_RING_CODE_GROUP_ID = 381;
@@ -87,20 +90,30 @@ public class WidgetID
 	public static final int PUZZLE_BOX_GROUP_ID = 306;
 	public static final int NIGHTMARE_ZONE_GROUP_ID = 202;
 	public static final int BLAST_FURNACE_GROUP_ID = 474;
+<<<<<<< HEAD
 	public static final int WORLD_MAP_GROUP_ID = 595;
+=======
+	public static final int WORLD_MAP = 595;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int PYRAMID_PLUNDER_GROUP_ID = 428;
 	public static final int RAIDS_REWARD_GROUP_ID = 539;
 	public static final int EXPERIENCE_TRACKER_GROUP_ID = 122;
 	public static final int TITHE_FARM_GROUP_ID = 241;
 	public static final int KINGDOM_GROUP_ID = 392;
 	public static final int BARROWS_GROUP_ID = 24;
+<<<<<<< HEAD
 	public static final int BLAST_MINE_GROUP_ID = 598;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	static class WorldMap
 	{
 		static final int OPTION = 36;
+<<<<<<< HEAD
 		static final int TOOLTIP = 35;
 		static final int MAPVIEW = 3;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	static class SlayerRewards
@@ -226,6 +239,7 @@ public class WidgetID
 
 	static class FixedViewport
 	{
+<<<<<<< HEAD
 		static final int CLAN_CHAT_TAB = 31;
 		static final int FRIENDS_TAB = 32;
 		static final int IGNORES_TAB = 33;
@@ -257,10 +271,15 @@ public class WidgetID
 		static final int ROOT_INTERFACE_CONTAINER = 62;
 		static final int BANK_CONTAINER = 64;
 		static final int INTERFACE_CONTAINER = 65;
+=======
+		static final int INVENTORY_TAB = 51;
+		static final int PRAYER_TAB = 53;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	static class ResizableViewport
 	{
+<<<<<<< HEAD
 		static final int CLAN_CHAT_TAB = 35;
 		static final int FRIENDS_TAB = 36;
 		static final int IGNORES_TAB = 37;
@@ -289,16 +308,25 @@ public class WidgetID
 		static final int EQUIPMENT_ICON = 62;
 		static final int PRAYER_ICON = 63;
 		static final int MAGIC_ICON = 64;
+=======
+		static final int INVENTORY_TAB = 54;
+		static final int PRAYER_TAB = 56;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	static class ResizableViewportBottomLine
 	{
+<<<<<<< HEAD
 		static final int LOGOUT_BUTTON_OVERLAY = 29;
 		static final int INVENTORY_TAB = 51;
 		static final int PRAYER_TAB = 53;
 		static final int QUESTS_ICON = 57;
 		static final int INVENTORY_ICON = 58;
 		static final int PRAYER_ICON = 60;
+=======
+		static final int INVENTORY_TAB = 51;
+		static final int PRAYER_TAB = 53;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	static class Chatbox
@@ -492,6 +520,9 @@ public class WidgetID
 	{
 		static final int BARROWS_BROTHERS = 8;
 		static final int BARROWS_POTENTIAL = 9;
+<<<<<<< HEAD
 		static final int BARROWS_REWARD_INVENTORY = 3;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

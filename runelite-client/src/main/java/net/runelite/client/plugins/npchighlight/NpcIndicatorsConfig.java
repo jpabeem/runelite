@@ -64,7 +64,11 @@ public interface NpcIndicatorsConfig extends Config
 		name = "Highlight Color",
 		description = "Color of the NPC highlight"
 	)
+<<<<<<< HEAD
 	default Color getHighlightColor()
+=======
+	default Color getNpcColor()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return Color.CYAN;
 	}
@@ -82,6 +86,20 @@ public interface NpcIndicatorsConfig extends Config
 
 	@ConfigItem(
 		position = 4,
+<<<<<<< HEAD
+=======
+		keyName = "tagColor",
+		name = "Tag Color",
+		description = "Color of the NPC tag highlight"
+	)
+	default Color getTagColor()
+	{
+		return Color.CYAN;
+	}
+
+	@ConfigItem(
+		position = 5,
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyName = "drawNames",
 		name = "Draw names above NPC",
 		description = "Configures whether or not NPC names should be drawn above the NPC"
@@ -92,7 +110,11 @@ public interface NpcIndicatorsConfig extends Config
 	}
 
 	@ConfigItem(
+<<<<<<< HEAD
 		position = 5,
+=======
+		position = 6,
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyName = "drawMinimapNames",
 		name = "Draw names on minimap",
 		description = "Configures whether or not NPC names should be drawn on the minimap"
@@ -101,6 +123,7 @@ public interface NpcIndicatorsConfig extends Config
 	{
 		return false;
 	}
+<<<<<<< HEAD
 
 	@ConfigItem(
 		position = 6,
@@ -111,4 +134,6 @@ public interface NpcIndicatorsConfig extends Config
 	{
 		return false;
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

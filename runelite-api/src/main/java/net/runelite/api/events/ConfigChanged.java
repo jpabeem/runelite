@@ -26,6 +26,7 @@ package net.runelite.api.events;
 
 import lombok.Data;
 
+<<<<<<< HEAD
 /**
  * An event where a configuration entry has been modified.
  */
@@ -50,5 +51,13 @@ public class ConfigChanged
 	/**
 	 * The new value of the entry, null if the entry has been unset.
 	 */
+=======
+@Data
+public class ConfigChanged
+{
+	private String group;
+	private String key;
+	private String oldValue;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private String newValue;
 }

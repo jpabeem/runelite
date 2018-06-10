@@ -27,11 +27,15 @@ package net.runelite.api;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.awt.image.BufferedImage;
+<<<<<<< HEAD
 import net.runelite.api.annotations.VisibleForDevtools;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldArea;
 import net.runelite.api.coords.WorldPoint;
 
+<<<<<<< HEAD
 /**
  * Represents a RuneScape actor/entity.
  */
@@ -225,5 +229,53 @@ public interface Actor extends Renderable
 	 *
 	 * @return the world area
 	 */
+=======
+public interface Actor extends Renderable
+{
+	int getCombatLevel();
+
+	String getName();
+
+	Actor getInteracting();
+
+	int getHealthRatio();
+
+	int getHealth();
+
+	/**
+	 * Retrieve the server location of the actor. Note that this is typically
+	 * a couple steps ahead of where the client renders the actor.
+	 * @return Returns the server location of the actor.
+	 */
+	WorldPoint getWorldLocation();
+
+	LocalPoint getLocalLocation();
+
+	int getOrientation();
+
+	int getAnimation();
+
+	int getGraphic();
+
+	int getModelHeight();
+
+	Polygon getCanvasTilePoly();
+
+	Point getCanvasTextLocation(Graphics2D graphics, String text, int zOffset);
+
+	Point getCanvasImageLocation(Graphics2D graphics, BufferedImage image, int zOffset);
+
+	Point getCanvasSpriteLocation(Graphics2D graphics, SpritePixels sprite, int zOffset);
+
+	Point getMinimapLocation();
+
+	/**
+	 * Returns the logical height of the actor's model. This is roughly where the health bar is drawn.
+	 */
+	int getLogicalHeight();
+
+	Polygon getConvexHull();
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	WorldArea getWorldArea();
 }

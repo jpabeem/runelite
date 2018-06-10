@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 import net.runelite.api.coords.WorldPoint;
 
 /**
@@ -71,5 +72,13 @@ public interface RenderOverview
 	 *
 	 * @return the map data
 	 */
+=======
+public interface RenderOverview
+{
+	WorldMapManager getWorldMapManager();
+
+	void initializeWorldMap(WorldMapData var1);
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	WorldMapData getWorldMapData();
 }

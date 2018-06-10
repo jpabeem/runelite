@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 /**
  * Represents an area in the world.
  */
@@ -36,4 +37,9 @@ public interface Area
 	 * @return the sprite icon to display on the world map
 	 */
 	SpritePixels getMapIcon(boolean unused);
+=======
+public interface Area
+{
+	SpritePixels getMapIcon(boolean var1);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

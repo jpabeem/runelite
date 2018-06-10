@@ -94,7 +94,10 @@ public class StretchedFixedModePlugin extends Plugin
 
 	private void updateConfig()
 	{
+<<<<<<< HEAD
 		client.setStretchedIntegerScaling(config.integerScaling());
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		client.setStretchedKeepAspectRatio(config.keepAspectRatio());
 		client.setStretchedFast(config.increasedPerformance());
 	}

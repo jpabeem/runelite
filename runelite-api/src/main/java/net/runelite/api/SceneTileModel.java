@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 /**
  * Represents the model of a tile in the current scene.
  */
@@ -55,5 +56,15 @@ public interface SceneTileModel
 	 *
 	 * @return the rotation
 	 */
+=======
+public interface SceneTileModel
+{
+	int getModelUnderlay();
+
+	int getModelOverlay();
+
+	int getShape();
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	int getRotation();
 }

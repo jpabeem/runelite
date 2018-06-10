@@ -24,10 +24,16 @@
  */
 package net.runelite.rs.api;
 
+<<<<<<< HEAD
 import net.runelite.api.IndexDataBase;
 import net.runelite.mapping.Import;
 
 public interface RSIndexDataBase extends IndexDataBase
+=======
+import net.runelite.mapping.Import;
+
+public interface RSIndexDataBase
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 {
 	@Import("getConfigData")
 	byte[] getConfigData(int archiveId, int fileId);

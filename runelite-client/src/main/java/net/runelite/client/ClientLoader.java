@@ -28,12 +28,17 @@ import java.applet.Applet;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
+<<<<<<< HEAD
+=======
+import java.util.Optional;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.http.api.updatecheck.UpdateCheckClient;
 
 @Slf4j
 public class ClientLoader
 {
+<<<<<<< HEAD
 	public Applet loadRs(UpdateCheckMode updateMode)
 	{
 		if (updateMode == UpdateCheckMode.AUTO)
@@ -42,10 +47,21 @@ public class ClientLoader
 			updateMode = updateCheck.isOutdated() ?
 				UpdateCheckMode.VANILLA :
 				UpdateCheckMode.RUNELITE;
+=======
+	public Optional<Applet> loadRs(boolean disableUpdateCheck)
+	{
+		boolean isOutdated = false;
+
+		if (!disableUpdateCheck)
+		{
+			final UpdateCheckClient updateCheck = new UpdateCheckClient();
+			isOutdated = updateCheck.isOutdated();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		try
 		{
+<<<<<<< HEAD
 			switch (updateMode)
 			{
 				case RUNELITE:
@@ -56,6 +72,16 @@ public class ClientLoader
 				case NONE:
 					return null;
 			}
+=======
+			if (isOutdated)
+			{
+				log.info("RuneLite is outdated - fetching vanilla client");
+				return Optional.of(loadVanilla());
+			}
+
+			log.debug("RuneLite is up to date");
+			return Optional.of(loadRuneLite());
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 		catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e)
 		{
@@ -67,8 +93,12 @@ public class ClientLoader
 			}
 
 			log.error("Error loading RS!", e);
+<<<<<<< HEAD
 			System.exit(-1);
 			return null;
+=======
+			return Optional.empty();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 
@@ -104,9 +134,15 @@ public class ClientLoader
 		// Must set parent classloader to null, or it will pull from
 		// this class's classloader first
 		URLClassLoader classloader = new URLClassLoader(new URL[]
+<<<<<<< HEAD
 			{
 				url
 			}, null);
+=======
+		{
+			url
+		}, null);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		Class<?> clientClass = classloader.loadClass(initialClass);
 		Applet rs = (Applet) clientClass.newInstance();

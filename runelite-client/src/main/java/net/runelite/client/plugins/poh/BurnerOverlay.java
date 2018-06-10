@@ -27,7 +27,10 @@ package net.runelite.client.plugins.poh;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
+<<<<<<< HEAD
 import java.awt.Polygon;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import javax.inject.Inject;
 import net.runelite.api.Client;
 import net.runelite.api.Perspective;
@@ -98,10 +101,14 @@ public class BurnerOverlay extends Overlay
 		textComponent.render(graphics);
 
 		//render tile
+<<<<<<< HEAD
 		Polygon poly = tileObject.getCanvasTilePoly();
 		if (poly != null)
 		{
 			OverlayUtil.renderPolygon(graphics, poly, color);
 		}
+=======
+		OverlayUtil.renderPolygon(graphics, tileObject.getCanvasTilePoly(), color);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

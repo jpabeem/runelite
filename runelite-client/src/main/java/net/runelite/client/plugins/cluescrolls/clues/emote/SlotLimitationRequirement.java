@@ -44,9 +44,16 @@ public class SlotLimitationRequirement implements ItemRequirement
 	{
 		for (EquipmentInventorySlot slot : slots)
 		{
+<<<<<<< HEAD
 			if (slot.getSlotIdx() >= items.length)
 			{
 				continue; //We can't check the slot, because there is nothing in it, the array hasn't been resized
+=======
+			// The items array resizes as different slots are filled
+			if (slot.getSlotIdx() >= items.length)
+			{
+				return false;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 
 			if (items[slot.getSlotIdx()].getId() != -1)

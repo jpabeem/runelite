@@ -1,7 +1,11 @@
 .id                 73
 .int_stack_count    2
 .string_stack_count 0
+<<<<<<< HEAD
 .int_var_count      5
+=======
+.int_var_count      4
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 .string_var_count   0
    load_int               10616876
    widget_get_hidden_widget
@@ -35,6 +39,7 @@ LABEL23:
    istore                 2
    load_int               0
    istore                 3
+<<<<<<< HEAD
    load_int               0
    istore                 4
    invoke                 1972
@@ -63,10 +68,26 @@ LABEL46:
    if_icmpeq              LABEL50
    jump                   LABEL61
 LABEL50:
+=======
+   get_rights            
+   load_int               0
+   if_icmpgt              LABEL32
+   jump                   LABEL34
+LABEL32:
+   load_int               1
+   istore                 3
+LABEL34:
+   iload                  3
+   load_int               1
+   if_icmpeq              LABEL38
+   jump                   LABEL49
+LABEL38:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_string            "`"
    iload                  1
    string_indexof        
    load_int               -1
+<<<<<<< HEAD
    if_icmpne              LABEL56
    jump                   LABEL61
 LABEL56:
@@ -88,11 +109,35 @@ LABEL65:
    if_icmpgt              LABEL70
    jump                   LABEL181
 LABEL70:
+=======
+   if_icmpne              LABEL44
+   jump                   LABEL49
+LABEL44:
+   iload                  2
+   load_int               0
+   if_icmpeq              LABEL48
+   jump                   LABEL49
+LABEL48:
+   return                
+LABEL49:
+   iload                  0
+   load_int               84
+   if_icmpeq              LABEL53
+   jump                   LABEL159
+LABEL53:
+   invoke                 1984
+   iload                  2
+   load_int               0
+   if_icmpgt              LABEL58
+   jump                   LABEL158
+LABEL58:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc_string        1
    load_string            "/"
    load_int               0
    string_indexof_from   
    load_int               0
+<<<<<<< HEAD
    if_icmpeq              LABEL80
    iload                  4
    load_int               1
@@ -147,11 +192,55 @@ LABEL111:
 LABEL114:
    jump                   LABEL177
 LABEL115:
+=======
+   if_icmpeq              LABEL65
+   jump                   LABEL92
+LABEL65:
+   get_clanchatcount     
+   load_int               0
+   if_icmpgt              LABEL69
+   jump                   LABEL88
+LABEL69:
+   iload                  2
+   load_int               1
+   if_icmple              LABEL73
+   jump                   LABEL74
+LABEL73:
+   return                
+LABEL74:
+   get_varbit             4394
+   load_int               1
+   if_icmpeq              LABEL78
+   jump                   LABEL84
+LABEL78:
+   get_clanchatcount     
+   load_int               0
+   if_icmpgt              LABEL82
+   jump                   LABEL83
+LABEL82:
+   part_clanchat         
+LABEL83:
+   jump                   LABEL87
+LABEL84:
+   get_varc_string        1
+   load_int               2
+   invoke                 96
+LABEL87:
+   jump                   LABEL91
+LABEL88:
+   get_varc_string        1
+   load_int               0
+   invoke                 96
+LABEL91:
+   jump                   LABEL154
+LABEL92:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc_string        1
    load_string            "::"
    load_int               0
    string_indexof_from   
    load_int               0
+<<<<<<< HEAD
    if_icmpeq              LABEL122
    jump                   LABEL174
 LABEL122:
@@ -160,11 +249,22 @@ LABEL122:
    if_icmpgt              LABEL126
    jump                   LABEL170
 LABEL126:
+=======
+   if_icmpeq              LABEL99
+   jump                   LABEL151
+LABEL99:
+   iload                  2
+   load_int               2
+   if_icmpgt              LABEL103
+   jump                   LABEL147
+LABEL103:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc_string        1
    load_string            "::toggleroof"
    load_int               0
    string_indexof_from   
    load_int               0
+<<<<<<< HEAD
    if_icmpeq              LABEL133
    jump                   LABEL147
 LABEL133:
@@ -173,24 +273,46 @@ LABEL133:
    if_icmpeq              LABEL137
    jump                   LABEL142
 LABEL137:
+=======
+   if_icmpeq              LABEL110
+   jump                   LABEL124
+LABEL110:
+   get_hideroofs         
+   load_int               1
+   if_icmpeq              LABEL114
+   jump                   LABEL119
+LABEL114:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               0
    set_hideroofs         
    load_string            "Roofs will only be removed selectively."
    send_game_message     
+<<<<<<< HEAD
    jump                   LABEL146
 LABEL142:
+=======
+   jump                   LABEL123
+LABEL119:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               1
    set_hideroofs         
    load_string            "Roofs are now all hidden."
    send_game_message     
+<<<<<<< HEAD
 LABEL146:
    jump                   LABEL169
 LABEL147:
+=======
+LABEL123:
+   jump                   LABEL146
+LABEL124:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc_string        1
    load_string            "::bank"
    load_int               0
    string_indexof_from   
    load_int               0
+<<<<<<< HEAD
    if_icmpeq              LABEL154
    load_string            "runeliteCommand" ; load callback name
    runelite_callback                        ; invoke callback
@@ -201,6 +323,18 @@ LABEL154:
    invoke                 96
    jump                   LABEL169
 LABEL158:
+=======
+   if_icmpeq              LABEL131
+   load_string            "runeliteCommand" ; load callback name
+   runelite_callback                        ; invoke callback
+   jump                   LABEL135
+LABEL131:
+   load_string            "Hey, everyone, I just tried to do something very silly!"
+   load_int               0
+   invoke                 96
+   jump                   LABEL146
+LABEL135:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc_string        1
    invoke                 224
    put_varc_string        1
@@ -212,6 +346,7 @@ LABEL158:
    iload                  2
    string_substring      
    run_command           
+<<<<<<< HEAD
 LABEL169:
    jump                   LABEL173
 LABEL170:
@@ -225,10 +360,26 @@ LABEL174:
    load_int               0
    invoke                 96
 LABEL177:
+=======
+LABEL146:
+   jump                   LABEL150
+LABEL147:
+   get_varc_string        1
+   load_int               0
+   invoke                 96
+LABEL150:
+   jump                   LABEL154
+LABEL151:
+   get_varc_string        1
+   load_int               0
+   invoke                 96
+LABEL154:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc_string        1
    invoke                 77
    load_string            ""
    put_varc_string        1
+<<<<<<< HEAD
 LABEL181:
    jump                   LABEL250
 LABEL182:
@@ -288,6 +439,67 @@ LABEL219:
 LABEL223:
    return                
 LABEL224:
+=======
+LABEL158:
+   jump                   LABEL227
+LABEL159:
+   iload                  0
+   load_int               104
+   if_icmpeq              LABEL163
+   jump                   LABEL169
+LABEL163:
+   iload                  3
+   load_int               1
+   if_icmpeq              LABEL167
+   jump                   LABEL168
+LABEL167:
+   invoke                 75
+LABEL168:
+   jump                   LABEL227
+LABEL169:
+   iload                  0
+   load_int               105
+   if_icmpeq              LABEL173
+   jump                   LABEL179
+LABEL173:
+   iload                  3
+   load_int               1
+   if_icmpeq              LABEL177
+   jump                   LABEL178
+LABEL177:
+   invoke                 76
+LABEL178:
+   jump                   LABEL227
+LABEL179:
+   iload                  0
+   load_int               80
+   if_icmpeq              LABEL183
+   jump                   LABEL221
+LABEL183:
+   get_varc_string       
+   string_length         
+   load_int               0
+   if_icmpgt              LABEL188
+   jump                   LABEL208
+LABEL188:
+   get_varc_string       
+   is_friend             
+   load_int               1
+   if_icmpeq              LABEL193
+   jump                   LABEL196
+LABEL193:
+   get_varc_string       
+   invoke                 107
+   return                
+LABEL196:
+   get_varc               60
+   get_gamecycle         
+   if_icmpgt              LABEL200
+   jump                   LABEL201
+LABEL200:
+   return                
+LABEL201:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_gamecycle         
    load_int               50
    iadd                  
@@ -295,6 +507,7 @@ LABEL224:
    load_string            "That player was not found on your Friends list."
    send_game_message     
    return                
+<<<<<<< HEAD
 LABEL231:
    get_varc               60
    get_gamecycle         
@@ -303,6 +516,16 @@ LABEL231:
 LABEL235:
    return                
 LABEL236:
+=======
+LABEL208:
+   get_varc               60
+   get_gamecycle         
+   if_icmpgt              LABEL212
+   jump                   LABEL213
+LABEL212:
+   return                
+LABEL213:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_gamecycle         
    load_int               50
    iadd                  
@@ -310,14 +533,23 @@ LABEL236:
    load_string            "You haven't received any messages to which you can reply."
    send_game_message     
    return                
+<<<<<<< HEAD
    jump                   LABEL250
 LABEL244:
+=======
+   jump                   LABEL227
+LABEL221:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc_string        1
    load_int               0
    iload                  0
    iload                  1
    invoke                 74
    put_varc_string        1
+<<<<<<< HEAD
 LABEL250:
+=======
+LABEL227:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    invoke                 223
    return                

@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 /**
  * Represents an offer in a grand exchange slot.
  */
@@ -70,5 +71,19 @@ public interface GrandExchangeOffer
 	 *
 	 * @return the offers state
 	 */
+=======
+public interface GrandExchangeOffer
+{
+	int getQuantitySold();
+
+	int getItemId();
+
+	int getTotalQuantity();
+
+	int getPrice();
+
+	int getSpent();
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	GrandExchangeOfferState getState();
 }

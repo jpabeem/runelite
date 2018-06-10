@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 /**
  * An enumeration of equipment slots in the inventory {@link ItemContainer}.
  * <p>
@@ -34,6 +35,8 @@ package net.runelite.api;
  * @see Client#getItemContainer(InventoryID)
  * @see InventoryID#EQUIPMENT
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public enum EquipmentInventorySlot
 {
 	HEAD(0),
@@ -54,12 +57,15 @@ public enum EquipmentInventorySlot
 		this.slotIdx = slotIdx;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Gets the index into the item array obtained from
 	 * {@link ItemContainer#getItems()}.
 	 *
 	 * @return the raw index
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public int getSlotIdx()
 	{
 		return slotIdx;

@@ -39,12 +39,18 @@ import net.runelite.client.callback.ClientThread;
 @Slf4j
 public class ChatboxInputManager
 {
+<<<<<<< HEAD
 	private static final int NO_LIMIT = Integer.MAX_VALUE;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private final Client client;
 	private final ClientThread clientThread;
 
 	private Consumer<String> done;
+<<<<<<< HEAD
 	private int characterLimit = NO_LIMIT;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	public ChatboxInputManager(Client client, ClientThread clientThread, EventBus eventBus)
@@ -63,6 +69,7 @@ public class ChatboxInputManager
 	 */
 	public void openInputWindow(String text, String defaul, Consumer<String> done)
 	{
+<<<<<<< HEAD
 		openInputWindow(text, defaul, NO_LIMIT, done);
 	}
 
@@ -70,6 +77,9 @@ public class ChatboxInputManager
 	{
 		this.done = done;
 		this.characterLimit = characterLimit;
+=======
+		this.done = done;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		clientThread.invokeLater(() -> client.runScript(
 			ScriptID.RUNELITE_CHATBOX_INPUT_INIT,
 			text,
@@ -105,7 +115,11 @@ public class ChatboxInputManager
 					}
 				default:
 					// If we wanted to do numbers only, we could add a limit here
+<<<<<<< HEAD
 					if (typedKey >= 32 && (str.length() < characterLimit))
+=======
+					if (typedKey >= 32)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 					{
 						str += Character.toString((char) typedKey);
 					}

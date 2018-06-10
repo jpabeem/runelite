@@ -37,7 +37,11 @@ import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.ProgressPieComponent;
+=======
+import net.runelite.client.ui.overlay.components.ProgressPie;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 /**
  * Represents the overlay that shows timers on traps that are placed by the
@@ -148,12 +152,19 @@ public class TrapOverlay extends Overlay
 
 		double timeLeft = 1 - trap.getTrapTimeRelative();
 
+<<<<<<< HEAD
 		ProgressPieComponent pie = new ProgressPieComponent();
 		pie.setFill(timeLeft > TIMER_LOW ? fill : fillTimeLow);
 		pie.setBorderColor(timeLeft > TIMER_LOW ? border : borderTimeLow);
 		pie.setPosition(loc);
 		pie.setProgress(timeLeft);
 		pie.render(graphics);
+=======
+		ProgressPie pie = new ProgressPie();
+		pie.setFill(timeLeft > TIMER_LOW ? fill : fillTimeLow);
+		pie.setBorderColor(timeLeft > TIMER_LOW ? border : borderTimeLow);
+		pie.render(graphics, loc, timeLeft);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	/**
@@ -177,11 +188,18 @@ public class TrapOverlay extends Overlay
 		}
 		net.runelite.api.Point loc = Perspective.worldToCanvas(client, localLoc.getX(), localLoc.getY(), trap.getWorldLocation().getPlane());
 
+<<<<<<< HEAD
 		ProgressPieComponent pie = new ProgressPieComponent();
 		pie.setFill(fill);
 		pie.setBorderColor(border);
 		pie.setPosition(loc);
 		pie.setProgress(1);
 		pie.render(graphics);
+=======
+		ProgressPie pie = new ProgressPie();
+		pie.setFill(fill);
+		pie.setBorderColor(border);
+		pie.render(graphics, loc, 1);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

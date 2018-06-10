@@ -27,9 +27,12 @@ package net.runelite.api;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+<<<<<<< HEAD
 /**
  * An enumeration of local client variables.
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 @AllArgsConstructor
 @Getter
 public enum Varbits
@@ -202,6 +205,7 @@ public enum Varbits
 	IN_GAME_BA(3923),
 
 	/**
+<<<<<<< HEAD
 	 * Blast Furnace Bar Dispenser
 	 *
 	 * These are the expected values:
@@ -213,6 +217,8 @@ public enum Varbits
 	BAR_DISPENSER(936),
 
 	/**
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * Motherlode mine sack
 	 */
 	SACK_NUMBER(5558),
@@ -236,6 +242,7 @@ public enum Varbits
 	TITHE_FARM_SACK_AMOUNT(4900),
 	TITHE_FARM_SACK_ICON(5370),
 	TITHE_FARM_POINTS(4893),
+<<<<<<< HEAD
 	
 	/**
 	 * Blast Mine
@@ -245,6 +252,8 @@ public enum Varbits
 	BLAST_MINE_MITHRIL(4926),
 	BLAST_MINE_ADAMANTITE(4921),
 	BLAST_MINE_RUNITE(4922),
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	/**
 	 * Raids
@@ -362,6 +371,7 @@ public enum Varbits
 	/**
 	 * Automatically weed farming patches
 	 */
+<<<<<<< HEAD
 	AUTOWEED(5557),
 
 	/**
@@ -371,6 +381,12 @@ public enum Varbits
 
 	/**
 	 * The raw varbit ID.
+=======
+	AUTOWEED(5557);
+
+	/**
+	 * varbit id
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	private final int id;
 }

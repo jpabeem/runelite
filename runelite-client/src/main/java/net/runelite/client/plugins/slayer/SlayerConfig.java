@@ -175,6 +175,7 @@ public interface SlayerConfig extends Config
 		description = ""
 	)
 	void points(int points);
+<<<<<<< HEAD
 
 	@ConfigItem(
 		keyName = "expeditious",
@@ -211,4 +212,6 @@ public interface SlayerConfig extends Config
 		description = ""
 	)
 	void slaughter(int slaughter);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

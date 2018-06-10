@@ -24,6 +24,7 @@
  */
 package net.runelite.client.ui;
 
+<<<<<<< HEAD
 import java.awt.Frame;
 import java.awt.Rectangle;
 import javax.swing.JFrame;
@@ -38,11 +39,24 @@ public class ContainableFrame extends JFrame
 	private ExpandResizeType expandResizeType;
 	private boolean containedInScreen;
 	private boolean expandedClientOppositeDirection;
+=======
+import java.awt.Rectangle;
+import javax.swing.JFrame;
+import lombok.Getter;
+
+public class ContainableFrame extends JFrame
+{
+	@Getter
+	private boolean containedInScreen;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	public void setContainedInScreen(boolean value)
 	{
 		this.containedInScreen = value;
+<<<<<<< HEAD
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (value)
 		{
 			// Reposition the frame if it is intersecting with the bounds
@@ -62,7 +76,10 @@ public class ContainableFrame extends JFrame
 			y = Math.max(y, (int)bounds.getY());
 			y = Math.min(y, (int)(bounds.getY() + bounds.getHeight() - this.getHeight()));
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		super.setLocation(x, y);
 	}
 
@@ -79,6 +96,7 @@ public class ContainableFrame extends JFrame
 			width = Math.min(width, (int)(bounds.getX() + bounds.getWidth()) - x);
 			height = Math.min(height, (int)(bounds.getY() + bounds.getHeight()) - y);
 		}
+<<<<<<< HEAD
 
 		super.setBounds(x, y, width, height);
 	}
@@ -197,4 +215,8 @@ public class ContainableFrame extends JFrame
 		Rectangle screenBounds = getGraphicsConfiguration().getBounds();
 		return Math.abs((getX() + getWidth()) - (screenBounds.getX() + screenBounds.getWidth())) <= SCREEN_EDGE_CLOSE_DISTANCE;
 	}
+=======
+		super.setBounds(x, y, width, height);
+	}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

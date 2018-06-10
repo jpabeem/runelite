@@ -3546,10 +3546,17 @@ public final class ItemID
 	public static final int CHEFS_DELIGHTM2 = 5909;
 	public static final int CHEFS_DELIGHTM3 = 5911;
 	public static final int CHEFS_DELIGHTM4 = 5913;
+<<<<<<< HEAD
 	public static final int SLAYERS_RESPITEM1 = 5915;
 	public static final int SLAYERS_RESPITEM2 = 5917;
 	public static final int SLAYERS_RESPITEM3 = 5919;
 	public static final int SLAYERS_RESPITEM4 = 5921;
+=======
+	public static final int SLAYER_RESPITEM1 = 5915;
+	public static final int SLAYER_RESPITEM2 = 5917;
+	public static final int SLAYER_RESPITEM3 = 5919;
+	public static final int SLAYER_RESPITEM4 = 5921;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int CIDERM1 = 5923;
 	public static final int CIDERM2 = 5925;
 	public static final int CIDERM3 = 5927;
@@ -10035,7 +10042,11 @@ public final class ItemID
 	public static final int KHAREDSTS_MEMOIRS = 21760;
 	public static final int LUNCH_BY_THE_LANCALLIUMS = 21762;
 	public static final int THE_FISHERS_FLUTE = 21764;
+<<<<<<< HEAD
 	public static final int HISTORY_AND_HEARSAY = 21766;
+=======
+	public static final int HEARSAY_AND_HISTORY = 21766;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int JEWELLERY_OF_JUBILATION = 21768;
 	public static final int A_DARK_DISPOSITION = 21770;
 	public static final int SECRET_PAGE = 21772;
@@ -10308,6 +10319,7 @@ public final class ItemID
 	public static final int ANCIENT_MEDALLION = 22299;
 	public static final int ANCIENT_EFFIGY = 22302;
 	public static final int ANCIENT_RELIC = 22305;
+<<<<<<< HEAD
 	public static final int PROP_SWORD = 22316;
 	public static final int PET_CORPOREAL_CRITTER = 22318;
 	public static final int TZREKZUK = 22319;
@@ -10338,4 +10350,6 @@ public final class ItemID
 	public static final int BRYOPHYTAS_STAFF = 22370;
 	public static final int BRYOPHYTAS_ESSENCE = 22372;
 	public static final int MOSSY_KEY = 22374;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

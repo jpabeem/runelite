@@ -27,6 +27,10 @@ package net.runelite.client.plugins.raids;
 import com.google.common.eventbus.Subscribe;
 import com.google.inject.Binder;
 import com.google.inject.Provides;
+<<<<<<< HEAD
+=======
+import java.awt.Color;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -45,17 +49,29 @@ import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.InstanceTemplates;
 import net.runelite.api.ObjectID;
+<<<<<<< HEAD
 import static net.runelite.api.Perspective.SCENE_SIZE;
 import net.runelite.api.Point;
 import net.runelite.api.Tile;
 import net.runelite.api.VarPlayer;
 import net.runelite.api.Varbits;
+=======
+import net.runelite.api.Point;
+import net.runelite.api.VarPlayer;
+import net.runelite.api.Tile;
+import net.runelite.api.Varbits;
+import static net.runelite.api.Perspective.SCENE_SIZE;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.ConfigChanged;
 import net.runelite.api.events.VarbitChanged;
 import net.runelite.api.events.WidgetHiddenChanged;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetInfo;
+<<<<<<< HEAD
+=======
+import net.runelite.client.chat.ChatColor;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.chat.ChatColorType;
 import net.runelite.client.chat.ChatMessageBuilder;
 import net.runelite.client.chat.ChatMessageManager;
@@ -154,6 +170,14 @@ public class RaidsPlugin extends Plugin
 			updateInfoBoxState();
 		}
 
+<<<<<<< HEAD
+=======
+		if (config.pointsMessage())
+		{
+			cacheColors();
+		}
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		updateLists();
 	}
 
@@ -169,6 +193,14 @@ public class RaidsPlugin extends Plugin
 	@Subscribe
 	public void onConfigChanged(ConfigChanged event)
 	{
+<<<<<<< HEAD
+=======
+		if (config.pointsMessage())
+		{
+			cacheColors();
+		}
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (event.getKey().equals("raidsTimer"))
 		{
 			updateInfoBoxState();
@@ -367,6 +399,18 @@ public class RaidsPlugin extends Plugin
 		}
 	}
 
+<<<<<<< HEAD
+=======
+	private void cacheColors()
+	{
+		chatMessageManager.cacheColor(new ChatColor(ChatColorType.NORMAL, Color.BLACK, false), ChatMessageType.CLANCHAT_INFO)
+				.cacheColor(new ChatColor(ChatColorType.HIGHLIGHT, Color.RED, false), ChatMessageType.CLANCHAT_INFO)
+				.cacheColor(new ChatColor(ChatColorType.NORMAL, Color.WHITE, true), ChatMessageType.CLANCHAT_INFO)
+				.cacheColor(new ChatColor(ChatColorType.HIGHLIGHT, Color.RED, true), ChatMessageType.CLANCHAT_INFO)
+				.refreshAll();
+	}
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public int getRotationMatches()
 	{
 		String rotation = raid.getRotationString().toLowerCase();

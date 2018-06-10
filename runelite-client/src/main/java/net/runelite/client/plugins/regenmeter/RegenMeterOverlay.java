@@ -88,7 +88,11 @@ public class RegenMeterOverlay extends Overlay
 	private void renderRegen(Graphics2D g, WidgetInfo widgetInfo, double percent, Color color)
 	{
 		Widget widget = client.getWidget(widgetInfo);
+<<<<<<< HEAD
 		if (widget == null || widget.isHidden())
+=======
+		if (widget == null)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			return;
 		}

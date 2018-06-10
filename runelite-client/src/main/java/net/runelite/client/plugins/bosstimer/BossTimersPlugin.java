@@ -28,8 +28,13 @@ package net.runelite.client.plugins.bosstimer;
 import com.google.common.eventbus.Subscribe;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
+<<<<<<< HEAD
 import net.runelite.api.NPC;
 import net.runelite.api.events.NpcDespawned;
+=======
+import net.runelite.api.Actor;
+import net.runelite.api.events.ActorDeath;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -54,6 +59,7 @@ public class BossTimersPlugin extends Plugin
 	}
 
 	@Subscribe
+<<<<<<< HEAD
 	public void onNpcDespawned(NpcDespawned npcDespawned)
 	{
 		NPC npc = npcDespawned.getNpc();
@@ -67,6 +73,13 @@ public class BossTimersPlugin extends Plugin
 
 		Boss boss = Boss.find(npcId);
 
+=======
+	public void onActorDeath(ActorDeath death)
+	{
+		Actor actor = death.getActor();
+
+		Boss boss = Boss.find(actor.getName());
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (boss == null)
 		{
 			return;
@@ -75,10 +88,17 @@ public class BossTimersPlugin extends Plugin
 		// remove existing timer
 		infoBoxManager.removeIf(t -> t instanceof RespawnTimer && ((RespawnTimer) t).getBoss() == boss);
 
+<<<<<<< HEAD
 		log.debug("Creating spawn timer for {} ({} seconds)", npc.getName(), boss.getSpawnTime());
 
 		RespawnTimer timer = new RespawnTimer(boss, itemManager.getImage(boss.getItemSpriteId()), this);
 		timer.setTooltip(npc.getName());
+=======
+		log.debug("Creating spawn timer for {} ({} seconds)", actor.getName(), boss.getSpawnTime());
+
+		RespawnTimer timer = new RespawnTimer(boss, itemManager.getImage(boss.getItemSpriteId()), this);
+		timer.setTooltip(boss.getName());
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		infoBoxManager.addInfoBox(timer);
 	}
 }

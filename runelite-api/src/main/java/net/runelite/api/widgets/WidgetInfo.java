@@ -24,11 +24,14 @@
  */
 package net.runelite.api.widgets;
 
+<<<<<<< HEAD
 /**
  * Represents a group-child {@link Widget} relationship.
  * <p>
  * For getting a specific widget from the client, see {@link net.runelite.api.Client#getWidget(WidgetInfo)}.
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public enum WidgetInfo
 {
 	FAIRY_QUEEN_HIDEOUT_CODE(WidgetID.FAIRY_RING_CODE_GROUP_ID, WidgetID.FairyRingCode.FAIRY_QUEEN_HIDEOUT),
@@ -49,9 +52,13 @@ public enum WidgetInfo
 	CLAN_CHAT(WidgetID.CLAN_CHAT_GROUP_ID, 0),
 	RAIDING_PARTY(WidgetID.RAIDING_PARTY_GROUP_ID, 0),
 
+<<<<<<< HEAD
 	WORLD_MAP_OPTION(WidgetID.WORLD_MAP_MENU_GROUP_ID, WidgetID.WorldMap.OPTION),
 	WORLD_MAP_TOOLTIP(WidgetID.WORLD_MAP_GROUP_ID, WidgetID.WorldMap.TOOLTIP),
 	WORLD_MAP_VIEW(WidgetID.WORLD_MAP_GROUP_ID, WidgetID.WorldMap.MAPVIEW),
+=======
+	WORLD_MAP(WidgetID.WORLD_MAP_MENU_GROUP_ID, WidgetID.WorldMap.OPTION),
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	CLUE_SCROLL_TEXT(WidgetID.CLUE_SCROLL_GROUP_ID, WidgetID.Cluescroll.CLUE_TEXT),
 
@@ -135,6 +142,7 @@ public enum WidgetInfo
 	LOGIN_CLICK_TO_PLAY_SCREEN(WidgetID.LOGIN_CLICK_TO_PLAY_GROUP_ID, 0),
 
 	FIXED_VIEWPORT(WidgetID.FIXED_VIEWPORT_GROUP_ID, WidgetID.Viewport.FIXED_VIEWPORT),
+<<<<<<< HEAD
 	FIXED_VIEWPORT_ROOT_INTERFACE_CONTAINER(WidgetID.FIXED_VIEWPORT_GROUP_ID, WidgetID.FixedViewport.ROOT_INTERFACE_CONTAINER),
 	FIXED_VIEWPORT_BANK_CONTAINER(WidgetID.FIXED_VIEWPORT_GROUP_ID, WidgetID.FixedViewport.BANK_CONTAINER),
 	FIXED_VIEWPORT_INTERFACE_CONTAINER(WidgetID.FIXED_VIEWPORT_GROUP_ID, WidgetID.FixedViewport.INTERFACE_CONTAINER),
@@ -205,6 +213,17 @@ public enum WidgetInfo
 	RESIZABLE_VIEWPORT_BOTTOM_LINE_INVENTORY_ICON(WidgetID.RESIZABLE_VIEWPORT_BOTTOM_LINE_GROUP_ID, WidgetID.ResizableViewportBottomLine.INVENTORY_ICON),
 	RESIZABLE_VIEWPORT_BOTTOM_LINE_PRAYER_TAB(WidgetID.RESIZABLE_VIEWPORT_BOTTOM_LINE_GROUP_ID, WidgetID.ResizableViewportBottomLine.PRAYER_TAB),
 	RESIZABLE_VIEWPORT_BOTTOM_LINE_PRAYER_ICON(WidgetID.RESIZABLE_VIEWPORT_BOTTOM_LINE_GROUP_ID, WidgetID.ResizableViewportBottomLine.PRAYER_ICON),
+=======
+	FIXED_VIEWPORT_INVENTORY_TAB(WidgetID.FIXED_VIEWPORT_GROUP_ID, WidgetID.FixedViewport.INVENTORY_TAB),
+	FIXED_VIEWPORT_PRAYER_TAB(WidgetID.FIXED_VIEWPORT_GROUP_ID, WidgetID.FixedViewport.PRAYER_TAB),
+	MINIMAP_WIDGET(WidgetID.RESIZABLE_VIEWPORT_OLD_SCHOOL_BOX_GROUP_ID, WidgetID.Viewport.MINIMAP_WIDGET),
+	RESIZABLE_VIEWPORT_OLD_SCHOOL_BOX(WidgetID.RESIZABLE_VIEWPORT_OLD_SCHOOL_BOX_GROUP_ID, WidgetID.Viewport.RESIZABLE_VIEWPORT_OLD_SCHOOL_BOX),
+	RESIZABLE_VIEWPORT_INVENTORY_TAB(WidgetID.RESIZABLE_VIEWPORT_OLD_SCHOOL_BOX_GROUP_ID, WidgetID.ResizableViewport.INVENTORY_TAB),
+	RESIZABLE_VIEWPORT_PRAYER_TAB(WidgetID.RESIZABLE_VIEWPORT_OLD_SCHOOL_BOX_GROUP_ID, WidgetID.ResizableViewport.PRAYER_TAB),
+	RESIZABLE_VIEWPORT_BOTTOM_LINE(WidgetID.RESIZABLE_VIEWPORT_BOTTOM_LINE_GROUP_ID, WidgetID.Viewport.RESIZABLE_VIEWPORT_BOTTOM_LINE),
+	RESIZABLE_VIEWPORT_BOTTOM_LINE_INVENTORY_TAB(WidgetID.RESIZABLE_VIEWPORT_BOTTOM_LINE_GROUP_ID, WidgetID.ResizableViewportBottomLine.INVENTORY_TAB),
+	RESIZABLE_VIEWPORT_BOTTOM_LINE_PRAYER_TAB(WidgetID.RESIZABLE_VIEWPORT_BOTTOM_LINE_GROUP_ID, WidgetID.ResizableViewportBottomLine.PRAYER_TAB),
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	PRAYER_THICK_SKIN(WidgetID.PRAYER_GROUP_ID, WidgetID.Prayer.THICK_SKIN),
 	PRAYER_BURST_OF_STRENGTH(WidgetID.PRAYER_GROUP_ID, WidgetID.Prayer.BURST_OF_STRENGTH),
@@ -320,10 +339,14 @@ public enum WidgetInfo
 
 	BARROWS_INFO(WidgetID.BARROWS_GROUP_ID, 0),
 	BARROWS_BROTHERS(WidgetID.BARROWS_GROUP_ID, WidgetID.Barrows.BARROWS_BROTHERS),
+<<<<<<< HEAD
 	BARROWS_POTENTIAL(WidgetID.BARROWS_GROUP_ID, WidgetID.Barrows.BARROWS_POTENTIAL),
 	BARROWS_REWARD_INVENTORY(WidgetID.BARROWS_REWARD_GROUP_ID, WidgetID.Barrows.BARROWS_REWARD_INVENTORY),
 	
 	BLAST_MINE(WidgetID.BLAST_MINE_GROUP_ID, 0);
+=======
+	BARROWS_POTENTIAL(WidgetID.BARROWS_GROUP_ID, WidgetID.Barrows.BARROWS_POTENTIAL);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	private final int groupId;
 	private final int childId;
@@ -334,46 +357,59 @@ public enum WidgetInfo
 		this.childId = childId;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Gets the ID of the group-child pairing.
 	 *
 	 * @return the ID
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public int getId()
 	{
 		return groupId << 16 | childId;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Gets the group ID of the pair.
 	 *
 	 * @return the group ID
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public int getGroupId()
 	{
 		return groupId;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Gets the ID of the child in the group.
 	 *
 	 * @return the child ID
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public int getChildId()
 	{
 		return childId;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Gets the packed widget ID.
 	 *
 	 * @return the packed ID
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public int getPackedId()
 	{
 		return groupId << 16 | childId;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Utility method that converts an ID returned by {@link #getId()} back
 	 * to its group ID.
@@ -381,11 +417,14 @@ public enum WidgetInfo
 	 * @param id passed group-child ID
 	 * @return the group ID
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static int TO_GROUP(int id)
 	{
 		return id >>> 16;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Utility method that converts an ID returned by {@link #getId()} back
 	 * to its child ID.
@@ -393,11 +432,14 @@ public enum WidgetInfo
 	 * @param id passed group-child ID
 	 * @return the child ID
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static int TO_CHILD(int id)
 	{
 		return id & 0xFFFF;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Packs the group and child IDs into a single integer.
 	 *
@@ -405,6 +447,8 @@ public enum WidgetInfo
 	 * @param childId the child ID
 	 * @return the packed ID
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static int PACK(int groupId, int childId)
 	{
 		return groupId << 16 | childId;

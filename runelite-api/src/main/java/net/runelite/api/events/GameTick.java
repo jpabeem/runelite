@@ -26,6 +26,7 @@ package net.runelite.api.events;
 
 import lombok.Data;
 
+<<<<<<< HEAD
 // The NPC update event seem to run every server tick,
 // but having the game tick event after all packets
 // have been processed is typically more useful.
@@ -42,6 +43,12 @@ import lombok.Data;
  * <p>
  * Note that occurrences that take place purely on the client, such as right
  * click menus, are independent of the game tick.
+=======
+/**
+ * Event called once per tick.
+ *
+ * @author Adam
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
  */
 @Data
 public class GameTick

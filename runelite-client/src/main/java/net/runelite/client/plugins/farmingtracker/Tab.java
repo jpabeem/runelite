@@ -36,7 +36,10 @@ public enum Tab
 	HERB("Herbs", ItemID.GRIMY_RANARR_WEED),
 	TREE("Trees", ItemID.MAHOGANY_LOGS),
 	FRUIT_TREE("Fruit Trees", ItemID.PINEAPPLE),
+<<<<<<< HEAD
 	BUSH("Bushes", ItemID.REDBERRIES),
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	SPECIAL("Special", ItemID.MUSHROOM);
 
 	private final String name;

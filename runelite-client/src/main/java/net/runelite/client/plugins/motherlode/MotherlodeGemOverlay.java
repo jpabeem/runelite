@@ -31,9 +31,13 @@ import java.time.Instant;
 import javax.inject.Inject;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import net.runelite.client.ui.overlay.components.TitleComponent;
+=======
+import net.runelite.client.ui.overlay.components.PanelComponent;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 public class MotherlodeGemOverlay extends Overlay
 {
@@ -72,6 +76,7 @@ public class MotherlodeGemOverlay extends Overlay
 		int emeraldsFound = session.getEmeraldsFound();
 		int sapphiresFound = session.getSapphiresFound();
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
 		panelComponent.getChildren().add(TitleComponent.builder().text("Gems found").build());
 
@@ -81,32 +86,66 @@ public class MotherlodeGemOverlay extends Overlay
 				.left("Diamonds:")
 				.right(Integer.toString(diamondsFound))
 				.build());
+=======
+		panelComponent.getLines().clear();
+
+		panelComponent.setTitle("Gems found");
+
+		if (diamondsFound > 0)
+		{
+			panelComponent.getLines().add(new PanelComponent.Line(
+					"Diamonds:",
+					Integer.toString(diamondsFound)
+			));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		if (rubiesFound > 0)
 		{
+<<<<<<< HEAD
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left("Rubies:")
 				.right(Integer.toString(rubiesFound))
 				.build());
+=======
+			panelComponent.getLines().add(new PanelComponent.Line(
+					"Rubies:",
+					Integer.toString(rubiesFound)
+			));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		if (emeraldsFound > 0)
 		{
+<<<<<<< HEAD
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left("Emeralds:")
 				.right(Integer.toString(emeraldsFound))
 				.build());
+=======
+			panelComponent.getLines().add(new PanelComponent.Line(
+					"Emeralds:",
+					Integer.toString(emeraldsFound)
+			));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		if (sapphiresFound > 0)
 		{
+<<<<<<< HEAD
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left("Sapphires:")
 				.right(Integer.toString(sapphiresFound))
 				.build());
 		}
 
+=======
+			panelComponent.getLines().add(new PanelComponent.Line(
+					"Sapphires:",
+					Integer.toString(sapphiresFound)
+			));
+		}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		return panelComponent.render(graphics);
 	}
 }

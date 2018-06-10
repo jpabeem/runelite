@@ -27,6 +27,7 @@ package net.runelite.api;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+<<<<<<< HEAD
 /**
  * An enumeration of hint arrow types.
  */
@@ -53,6 +54,16 @@ public enum HintArrowType
 	/**
 	 * The raw type value.
 	 */
+=======
+@AllArgsConstructor
+public enum HintArrowType
+{
+	NONE(0),
+	PLAYER(10),
+	NPC(1),
+	WORLD_POSITION(2);
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Getter
 	private final int value;
 }

@@ -115,7 +115,11 @@ public interface TimersConfig extends Config
 	@ConfigItem(
 		position = 7,
 		keyName = "showAntiFire",
+<<<<<<< HEAD
 		name = "Antifire timer",
+=======
+		name = "AntiFire timer",
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		description = "Configures whether antifire timer is displayed"
 	)
 	default boolean showAntiFire()
@@ -213,6 +217,7 @@ public interface TimersConfig extends Config
 
 	@ConfigItem(
 		position = 16,
+<<<<<<< HEAD
 		keyName = "showCharge",
 		name = "Charge timer",
 		description = "Configures whether to show a timer for the Charge spell"
@@ -224,6 +229,8 @@ public interface TimersConfig extends Config
 
 	@ConfigItem(
 		position = 17,
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyName = "showImbuedHeart",
 		name = "Imbued heart timer",
 		description = "Configures whether imbued heart timer is displayed"
@@ -234,7 +241,11 @@ public interface TimersConfig extends Config
 	}
 
 	@ConfigItem(
+<<<<<<< HEAD
 		position = 18,
+=======
+		position = 17,
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyName = "showVengeance",
 		name = "Vengeance timer",
 		description = "Configures whether vengeance timer is displayed"
@@ -245,7 +256,11 @@ public interface TimersConfig extends Config
 	}
 
 	@ConfigItem(
+<<<<<<< HEAD
 		position = 19,
+=======
+		position = 18,
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyName = "showVengeanceOther",
 		name = "Vengeance Other timer",
 		description = "Configures whether vengeance other timer is displayed"
@@ -256,7 +271,11 @@ public interface TimersConfig extends Config
 	}
 
 	@ConfigItem(
+<<<<<<< HEAD
 		position = 20,
+=======
+		position = 19,
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyName = "showTeleblock",
 		name = "Teleblock timer",
 		description = "Configures whether teleblock timer is displayed"
@@ -267,7 +286,11 @@ public interface TimersConfig extends Config
 	}
 
 	@ConfigItem(
+<<<<<<< HEAD
 		position = 21,
+=======
+		position = 20,
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyName = "showFreezes",
 		name = "Freeze timer",
 		description = "Configures whether freeze timer is displayed"
@@ -278,7 +301,11 @@ public interface TimersConfig extends Config
 	}
 
 	@ConfigItem(
+<<<<<<< HEAD
 		position = 22,
+=======
+		position = 21,
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyName = "showGodWarsAltar",
 		name = "God wars altar timer",
 		description = "Configures whether god wars altar timer is displayed"

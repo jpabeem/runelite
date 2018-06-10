@@ -27,6 +27,7 @@ package net.runelite.api.events;
 import lombok.Data;
 import net.runelite.api.widgets.WidgetInfo;
 
+<<<<<<< HEAD
 /**
  * An event where an option has been clicked in a {@link net.runelite.api.widgets.Widget}s menu.
  */
@@ -44,5 +45,12 @@ public class WidgetMenuOptionClicked
 	/**
 	 * The type of widget that was clicked.
 	 */
+=======
+@Data
+public class WidgetMenuOptionClicked
+{
+	private String menuOption;
+	private String menuTarget;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private WidgetInfo widget;
 }

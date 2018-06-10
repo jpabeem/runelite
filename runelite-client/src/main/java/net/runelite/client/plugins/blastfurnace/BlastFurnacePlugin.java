@@ -34,7 +34,10 @@ import lombok.Getter;
 import net.runelite.api.GameObject;
 import net.runelite.api.GameState;
 import static net.runelite.api.ObjectID.CONVEYOR_BELT;
+<<<<<<< HEAD
 import static net.runelite.api.ObjectID.NULL_9092;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.events.GameObjectDespawned;
 import net.runelite.api.events.GameObjectSpawned;
 import net.runelite.api.events.GameStateChanged;
@@ -48,6 +51,7 @@ import net.runelite.client.ui.overlay.Overlay;
 )
 public class BlastFurnacePlugin extends Plugin
 {
+<<<<<<< HEAD
 	private static final int BAR_DISPENSER = NULL_9092;
 
 	@Getter(AccessLevel.PACKAGE)
@@ -56,6 +60,11 @@ public class BlastFurnacePlugin extends Plugin
 	@Getter(AccessLevel.PACKAGE)
 	private GameObject barDispenser;
 
+=======
+	@Getter(AccessLevel.PACKAGE)
+	private GameObject conveyorBelt;
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Inject
 	private BlastFurnaceOverlay overlay;
 
@@ -63,13 +72,20 @@ public class BlastFurnacePlugin extends Plugin
 	private BlastFurnaceCofferOverlay cofferOverlay;
 
 	@Inject
+<<<<<<< HEAD
 	private BlastFurnaceClickBoxOverlay clickBoxOverlay;
+=======
+	private ConveyorBeltOverlay conveyorBeltOverlay;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Override
 	protected void shutDown()
 	{
 		conveyorBelt = null;
+<<<<<<< HEAD
 		barDispenser = null;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Provides
@@ -81,13 +97,18 @@ public class BlastFurnacePlugin extends Plugin
 	@Override
 	public Collection<Overlay> getOverlays()
 	{
+<<<<<<< HEAD
 		return Arrays.asList(overlay, cofferOverlay, clickBoxOverlay);
+=======
+		return Arrays.asList(overlay, cofferOverlay, conveyorBeltOverlay);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Subscribe
 	public void onGameObjectSpawn(GameObjectSpawned event)
 	{
 		GameObject gameObject = event.getGameObject();
+<<<<<<< HEAD
 
 		switch (gameObject.getId())
 		{
@@ -98,6 +119,11 @@ public class BlastFurnacePlugin extends Plugin
 			case BAR_DISPENSER:
 				barDispenser = gameObject;
 				break;
+=======
+		if (gameObject.getId() == CONVEYOR_BELT)
+		{
+			conveyorBelt = gameObject;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 
@@ -105,6 +131,7 @@ public class BlastFurnacePlugin extends Plugin
 	public void onGameObjectDespawn(GameObjectDespawned event)
 	{
 		GameObject gameObject = event.getGameObject();
+<<<<<<< HEAD
 
 		switch (gameObject.getId())
 		{
@@ -115,6 +142,11 @@ public class BlastFurnacePlugin extends Plugin
 			case BAR_DISPENSER:
 				barDispenser = null;
 				break;
+=======
+		if (gameObject.getId() == CONVEYOR_BELT)
+		{
+			conveyorBelt = null;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 
@@ -124,7 +156,10 @@ public class BlastFurnacePlugin extends Plugin
 		if (event.getGameState() == GameState.LOADING)
 		{
 			conveyorBelt = null;
+<<<<<<< HEAD
 			barDispenser = null;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 }

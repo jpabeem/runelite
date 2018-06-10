@@ -388,10 +388,13 @@ public class MenuEntrySwapperPlugin extends Plugin
 		{
 			swap("pay-toll(10gp)", option, target, true);
 		}
+<<<<<<< HEAD
 		else if (config.swapTravel() && option.equals("inspect") && target.equals("trapdoor"))
 		{
 			swap("travel", option, target, true);
 		}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		else if (config.swapHarpoon() && option.equals("cage"))
 		{
 			swap("harpoon", option, target, true);
@@ -400,6 +403,7 @@ public class MenuEntrySwapperPlugin extends Plugin
 		{
 			swap("harpoon", option, target, true);
 		}
+<<<<<<< HEAD
 		else if (config.swapHomePortal() != HouseMode.ENTER && option.equals("enter"))
 		{
 			switch (config.swapHomePortal())
@@ -425,6 +429,15 @@ public class MenuEntrySwapperPlugin extends Plugin
 			{
 				swap("configure", option, target, false);
 			}
+=======
+		else if (config.swapHome() && option.equals("enter"))
+		{
+			swap("home", option, target, true);
+		}
+		else if (config.swapLastDestination() && (option.equals("zanaris") || option.equals("tree")))
+		{
+			swap("last-destination (", option, target, false);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 		else if (config.swapBoxTrap() && (option.equals("check") || option.equals("dismantle")))
 		{
@@ -468,10 +481,13 @@ public class MenuEntrySwapperPlugin extends Plugin
 		{
 			swap("use", option, target, true);
 		}
+<<<<<<< HEAD
 		else if (config.swapBirdhouseEmpty() && option.equals("interact") && target.contains("birdhouse"))
 		{
 			swap("empty", option, target, true);
 		}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Subscribe

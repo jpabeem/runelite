@@ -25,13 +25,60 @@
 package net.runelite.http.service.item;
 
 import java.time.Instant;
+<<<<<<< HEAD
 import lombok.Data;
 
 @Data
+=======
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public class PriceEntry
 {
 	private int item;
 	private int price;
 	private Instant time;
 	private Instant fetched_time;
+<<<<<<< HEAD
+=======
+
+	public int getItem()
+	{
+		return item;
+	}
+
+	public void setItem(int item)
+	{
+		this.item = item;
+	}
+
+	public int getPrice()
+	{
+		return price;
+	}
+
+	public void setPrice(int price)
+	{
+		this.price = price;
+	}
+
+	public Instant getTime()
+	{
+		return time;
+	}
+
+	public void setTime(Instant time)
+	{
+		this.time = time;
+	}
+
+	public Instant getFetched_time()
+	{
+		return fetched_time;
+	}
+
+	public void setFetched_time(Instant fetched_time)
+	{
+		this.fetched_time = fetched_time;
+	}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

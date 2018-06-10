@@ -40,7 +40,10 @@ import net.runelite.api.Point;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.game.ItemManager;
+<<<<<<< HEAD
 import static net.runelite.client.plugins.grounditems.config.ItemHighlightMode.MENU;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
@@ -84,11 +87,14 @@ public class GroundItemsOverlay extends Overlay
 	@Override
 	public Dimension render(Graphics2D graphics)
 	{
+<<<<<<< HEAD
 		if (!plugin.isHotKeyPressed() && config.itemHighlightMode() == MENU)
 		{
 			return null;
 		}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		final FontMetrics fm = graphics.getFontMetrics();
 		final Player player = client.getLocalPlayer();
 
@@ -157,9 +163,13 @@ public class GroundItemsOverlay extends Overlay
 				}
 				else
 				{
+<<<<<<< HEAD
 					itemStringBuilder.append(" (")
 							.append(StackFormatter.quantityToStackSize(item.getQuantity()))
 							.append(")");
+=======
+					itemStringBuilder.append(" (").append(item.getQuantity()).append(")");
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				}
 			}
 
@@ -183,8 +193,12 @@ public class GroundItemsOverlay extends Overlay
 			final Point textPoint = Perspective.getCanvasTextLocation(client,
 				graphics,
 				groundPoint,
+<<<<<<< HEAD
 				itemString,
 				item.getHeight() + OFFSET_Z);
+=======
+				itemString, OFFSET_Z);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 			if (textPoint == null)
 			{

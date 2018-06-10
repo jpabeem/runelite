@@ -31,6 +31,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
@@ -45,6 +46,13 @@ import net.runelite.api.InventoryID;
 import net.runelite.api.Item;
 import net.runelite.api.ItemContainer;
 import static net.runelite.api.ItemID.COINS_995;
+=======
+import javax.inject.Inject;
+import lombok.AccessLevel;
+import lombok.Getter;
+import net.runelite.api.GameObject;
+import net.runelite.api.GameState;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.ObjectID;
 import net.runelite.api.WallObject;
 import net.runelite.api.events.GameObjectChanged;
@@ -54,6 +62,7 @@ import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.WallObjectChanged;
 import net.runelite.api.events.WallObjectDespawned;
 import net.runelite.api.events.WallObjectSpawned;
+<<<<<<< HEAD
 import net.runelite.api.events.WidgetLoaded;
 import net.runelite.api.widgets.WidgetID;
 import net.runelite.client.chat.ChatColorType;
@@ -67,11 +76,20 @@ import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.util.StackFormatter;
 import net.runelite.http.api.item.ItemPrice;
+=======
+import net.runelite.client.config.ConfigManager;
+import net.runelite.client.plugins.Plugin;
+import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.ui.overlay.Overlay;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @PluginDescriptor(
 	name = "Barrows Brothers"
 )
+<<<<<<< HEAD
 @Slf4j
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public class BarrowsPlugin extends Plugin
 {
 	@Getter(AccessLevel.PACKAGE)
@@ -108,6 +126,7 @@ public class BarrowsPlugin extends Plugin
 		return Arrays.asList(barrowsOverlay, brotherOverlay);
 	}
 
+<<<<<<< HEAD
 	@Inject
 	private Client client;
 
@@ -122,6 +141,8 @@ public class BarrowsPlugin extends Plugin
 
 	private long chestPrice;
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Override
 	protected void shutDown()
 	{
@@ -130,7 +151,11 @@ public class BarrowsPlugin extends Plugin
 	}
 
 	@Subscribe
+<<<<<<< HEAD
 	public void onWallObjectSpawned(WallObjectSpawned event)
+=======
+	public void onWallObjectSpanwed(WallObjectSpawned event)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		WallObject wallObject = event.getWallObject();
 		if (BARROWS_WALLS.contains(wallObject.getId()))
@@ -199,6 +224,7 @@ public class BarrowsPlugin extends Plugin
 			ladders.clear();
 		}
 	}
+<<<<<<< HEAD
 
 	@Subscribe
 	public void onWidgetLoaded(WidgetLoaded event)
@@ -268,4 +294,6 @@ public class BarrowsPlugin extends Plugin
 			});
 		}
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

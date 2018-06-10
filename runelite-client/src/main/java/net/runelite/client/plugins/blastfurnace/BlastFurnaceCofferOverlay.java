@@ -33,7 +33,10 @@ import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.LineComponent;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import net.runelite.client.util.StackFormatter;
 
@@ -61,18 +64,30 @@ class BlastFurnaceCofferOverlay extends Overlay
 
 		Widget sack = client.getWidget(WidgetInfo.BLAST_FURNACE_COFFER);
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
+=======
+		panelComponent.getLines().clear();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		if (sack != null)
 		{
 			sack.setHidden(true);
 
+<<<<<<< HEAD
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left("Coffer:")
 				.right(StackFormatter.quantityToStackSize(client.getVar(BLAST_FURNACE_COFFER)) + " gp")
 				.build());
 		}
 
+=======
+			panelComponent.getLines().add(new PanelComponent.Line(
+				"Coffer:",
+				StackFormatter.quantityToStackSize(client.getVar(BLAST_FURNACE_COFFER)) + " gp"
+			));
+		}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		return panelComponent.render(graphics);
 	}
 }

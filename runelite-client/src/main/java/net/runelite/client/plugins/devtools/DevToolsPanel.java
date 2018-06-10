@@ -27,12 +27,22 @@ package net.runelite.client.plugins.devtools;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+<<<<<<< HEAD
 import javax.inject.Inject;
+=======
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.inject.Inject;
+import javax.swing.ImageIcon;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
+<<<<<<< HEAD
 import net.runelite.client.ui.ColorScheme;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.PluginPanel;
 
 @Slf4j
@@ -41,27 +51,44 @@ public class DevToolsPanel extends PluginPanel
 	private final Client client;
 	private final DevToolsPlugin plugin;
 
+<<<<<<< HEAD
 	private final WidgetInspector widgetInspector;
 	private final VarInspector varInspector;
 
 	@Inject
 	public DevToolsPanel(Client client, DevToolsPlugin plugin, WidgetInspector widgetInspector, VarInspector varInspector)
+=======
+	private final VarTracker varTracker;
+
+	private WidgetInspector widgetInspector;
+
+	@Inject
+	public DevToolsPanel(Client client, DevToolsPlugin plugin, WidgetInspector widgetInspector)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		super();
 		this.client = client;
 		this.plugin = plugin;
 		this.widgetInspector = widgetInspector;
+<<<<<<< HEAD
 		this.varInspector = varInspector;
 
 		setBackground(ColorScheme.DARK_GRAY_COLOR);
 
+=======
+
+		varTracker = new VarTracker(client);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		add(createOptionsPanel());
 	}
 
 	private JPanel createOptionsPanel()
 	{
 		final JPanel container = new JPanel();
+<<<<<<< HEAD
 		container.setBackground(ColorScheme.DARK_GRAY_COLOR);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		container.setLayout(new GridLayout(0, 2, 3, 3));
 
 		final JButton renderPlayersBtn = new JButton("Players");
@@ -136,6 +163,20 @@ public class DevToolsPanel extends PluginPanel
 		});
 		container.add(renderProjectilesBtn);
 
+<<<<<<< HEAD
+=======
+		final JPanel boundsDebugPanel = createBoundsDebugMultiButton();
+		container.add(boundsDebugPanel);
+
+		final JButton varSnapshotBtn = new JButton("Snapshot Vars");
+		varSnapshotBtn.addActionListener(varTracker::snapshot);
+		container.add(varSnapshotBtn);
+
+		final JButton varClearBtn = new JButton("Clear Vars");
+		varClearBtn.addActionListener(varTracker::clear);
+		container.add(varClearBtn);
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		final JButton renderLocationBtn = new JButton("Location");
 		renderLocationBtn.addActionListener(e ->
 		{
@@ -144,7 +185,11 @@ public class DevToolsPanel extends PluginPanel
 		});
 		container.add(renderLocationBtn);
 
+<<<<<<< HEAD
 		final JButton widgetInspectorBtn = new JButton("Widget Tools");
+=======
+		final JButton widgetInspectorBtn = new JButton("Inspector");
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		widgetInspectorBtn.addActionListener(e ->
 		{
 			widgetInspector.setVisible(true);
@@ -153,6 +198,7 @@ public class DevToolsPanel extends PluginPanel
 		});
 		container.add(widgetInspectorBtn);
 
+<<<<<<< HEAD
 		final JButton varInspectorBtn = new JButton("Var Tools");
 		varInspectorBtn.addActionListener(e ->
 		{
@@ -160,6 +206,8 @@ public class DevToolsPanel extends PluginPanel
 		});
 		container.add(varInspectorBtn);
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		final JButton chunkBordersBtn = new JButton("Chunk borders");
 		chunkBordersBtn.addActionListener(e ->
 		{
@@ -192,6 +240,7 @@ public class DevToolsPanel extends PluginPanel
 		});
 		container.add(lineOfSightBtn);
 
+<<<<<<< HEAD
 		final JButton graphicsObjectsBtn = new JButton("Graphics objects");
 		graphicsObjectsBtn.addActionListener(e ->
 		{
@@ -233,6 +282,76 @@ public class DevToolsPanel extends PluginPanel
 		container.add(oculusOrbBtn);
 
 		return container;
+=======
+		return container;
+	}
+
+	private JPanel createBoundsDebugMultiButton()
+	{
+		ImageIcon bBox2DIcon;
+		ImageIcon bBox3DIcon;
+		ImageIcon clickBoxIcon;
+		ImageIcon bBox3DMousoverIcon;
+
+		try
+		{
+			synchronized (ImageIO.class)
+			{
+				bBox2DIcon = new ImageIcon(ImageIO.read(DevToolsPlugin.class.getResourceAsStream("2D_bounding_box.png")));
+				bBox3DIcon = new ImageIcon(ImageIO.read(DevToolsPlugin.class.getResourceAsStream("3D_bounding_box.png")));
+				clickBoxIcon = new ImageIcon(ImageIO.read(DevToolsPlugin.class.getResourceAsStream("2D_clickbox_geometry.png")));
+				bBox3DMousoverIcon = new ImageIcon(ImageIO.read(DevToolsPlugin.class.getResourceAsStream("mouseover_3D_bounding_box.png")));
+			}
+		}
+		catch (IOException ex)
+		{
+			log.warn("unable to load bounding box images", ex);
+			return new JPanel();
+		}
+
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new GridLayout(1, 4));
+		JButton bBox2DButton = new JButton(bBox2DIcon);
+		bBox2DButton.addActionListener(e ->
+		{
+			client.setDrawBoundingBoxes2D(!client.getDrawBoundingBoxes2D());
+			highlightButton(bBox2DButton);
+		});
+		buttonPanel.add(bBox2DButton);
+
+		JButton bBox3DButton = new JButton(bBox3DIcon);
+		bBox3DButton.addActionListener(e ->
+		{
+			client.setDrawBoundingBoxes3D(!client.getDrawBoundingBoxes3D());
+			highlightButton(bBox3DButton);
+		});
+		buttonPanel.add(bBox3DButton);
+
+		JButton clickBoxButton = new JButton(clickBoxIcon);
+		clickBoxButton.addActionListener(e ->
+		{
+			client.setdrawObjectGeometry2D(!client.getdrawObjectGeometry2D());
+			highlightButton(clickBoxButton);
+		});
+		buttonPanel.add(clickBoxButton);
+
+		JButton mouseoverModeButton = new JButton(client.getBoundingBoxAlwaysOnMode() ? bBox3DIcon : bBox3DMousoverIcon);
+		mouseoverModeButton.addActionListener(e ->
+		{
+			client.setBoundingBoxAlwaysOnMode(!client.getBoundingBoxAlwaysOnMode());
+			if (client.getBoundingBoxAlwaysOnMode())
+			{
+				mouseoverModeButton.setIcon(bBox3DIcon);
+			}
+			else
+			{
+				mouseoverModeButton.setIcon(bBox3DMousoverIcon);
+			}
+		});
+		buttonPanel.add(mouseoverModeButton);
+
+		return buttonPanel;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	private void highlightButton(JButton button)

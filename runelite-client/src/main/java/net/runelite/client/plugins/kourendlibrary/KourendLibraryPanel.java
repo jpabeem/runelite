@@ -1,6 +1,9 @@
 /*
  * Copyright (c) 2018 Abex
+<<<<<<< HEAD
  * Copyright (c) 2018 Psikoi
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,6 +29,7 @@
 package net.runelite.client.plugins.kourendlibrary;
 
 import com.google.inject.Inject;
+<<<<<<< HEAD
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -34,12 +38,17 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+=======
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+<<<<<<< HEAD
 import javax.imageio.ImageIO;
 import javax.inject.Singleton;
 import javax.swing.BorderFactory;
@@ -53,18 +62,30 @@ import javax.swing.border.EmptyBorder;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.PluginPanel;
 import net.runelite.client.util.SwingUtil;
+=======
+import javax.inject.Singleton;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import net.runelite.client.ui.PluginPanel;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @Singleton
 public class KourendLibraryPanel extends PluginPanel
 {
+<<<<<<< HEAD
 	private static final ImageIcon RESET_ICON;
 	private static final ImageIcon RESET_CLICK_ICON;
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Inject
 	private Library library;
 
 	private final HashMap<Book, BookPanel> bookPanels = new HashMap<>();
 
+<<<<<<< HEAD
 	static
 	{
 		try
@@ -82,12 +103,17 @@ public class KourendLibraryPanel extends PluginPanel
 		}
 	}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	void init()
 	{
 		GroupLayout layout = new GroupLayout(this);
 		setLayout(layout);
+<<<<<<< HEAD
 		setBorder(new EmptyBorder(10, 10, 10, 10));
 		setBackground(ColorScheme.DARK_GRAY_COLOR);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		JPanel books = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
@@ -106,6 +132,7 @@ public class KourendLibraryPanel extends PluginPanel
 				c.gridy++;
 			});
 
+<<<<<<< HEAD
 		JLabel reset = new JLabel(RESET_ICON);
 		reset.addMouseListener(new MouseAdapter()
 		{
@@ -144,6 +171,23 @@ public class KourendLibraryPanel extends PluginPanel
 			.addComponent(header)
 			.addGap(10)
 			.addComponent(books)
+=======
+		JButton reset = new JButton("Reset");
+		reset.addActionListener(e ->
+		{
+			library.reset();
+			update();
+		});
+
+		layout.setHorizontalGroup(layout.createParallelGroup()
+			.addComponent(books)
+			.addComponent(reset)
+		);
+		layout.setVerticalGroup(layout.createSequentialGroup()
+			.addComponent(books)
+			.addGap(4)
+			.addComponent(reset)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		);
 
 		update();
@@ -193,4 +237,8 @@ public class KourendLibraryPanel extends PluginPanel
 			}
 		});
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b

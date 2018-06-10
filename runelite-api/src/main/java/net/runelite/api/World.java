@@ -24,17 +24,31 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 import java.util.EnumSet;
 
 /**
  * Holds data of a RuneScape world.
+=======
+
+import java.util.EnumSet;
+
+/**
+ * Holds data of RuneScape world.
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
  */
 public interface World
 {
 	/**
+<<<<<<< HEAD
 	 * Gets all applicable world types for this world.
 	 *
 	 * @return the world types
+=======
+	 * Gets world types.
+	 *
+	 * @return the types
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	EnumSet<WorldType> getTypes();
 
@@ -46,86 +60,146 @@ public interface World
 	void setTypes(EnumSet<WorldType> types);
 
 	/**
+<<<<<<< HEAD
 	 * Gets the current number of players logged in the world.
+=======
+	 * Gets player count.
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 *
 	 * @return the player count
 	 */
 	int getPlayerCount();
 
 	/**
+<<<<<<< HEAD
 	 * Sets the player count of the world.
 	 *
 	 * @param playerCount the new player count
+=======
+	 * Sets player count.
+	 *
+	 * @param playerCount the player count
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	void setPlayerCount(int playerCount);
 
 	/**
+<<<<<<< HEAD
 	 * Gets the world location value.
 	 *
 	 * @return the world location
+=======
+	 * Gets location.
+	 *
+	 * @return the location
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	int getLocation();
 
 	/**
+<<<<<<< HEAD
 	 * Sets the world location value.
+=======
+	 * Sets location.
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 *
 	 * @param location the location
 	 */
 	void setLocation(int location);
 
 	/**
+<<<<<<< HEAD
 	 * Gets the worlds index.
+=======
+	 * Gets index.
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 *
 	 * @return the index
 	 */
 	int getIndex();
 
 	/**
+<<<<<<< HEAD
 	 *  Sets the worlds index.
+=======
+	 * Sets index.
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 *
 	 * @param index the index
 	 */
 	void setIndex(int index);
 
 	/**
+<<<<<<< HEAD
 	 * Gets the world number.
 	 *
 	 * @return the world number
+=======
+	 * Gets id.
+	 *
+	 * @return the id
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	int getId();
 
 	/**
+<<<<<<< HEAD
 	 * Sets the world number.
 	 *
 	 * @param id the world number
+=======
+	 * Sets id.
+	 *
+	 * @param id the id
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	void setId(int id);
 
 	/**
+<<<<<<< HEAD
 	 * Gets the world activity description.
 	 * <p>
 	 * For example, world 2 would return "Trade - Members".
 	 *
 	 * @return the world activity
+=======
+	 * Gets activity.
+	 *
+	 * @return the activity
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	String getActivity();
 
 	/**
+<<<<<<< HEAD
 	 * Sets the world activity description.
+=======
+	 * Sets activity.
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 *
 	 * @param activity the activity
 	 */
 	void setActivity(String activity);
 
 	/**
+<<<<<<< HEAD
 	 * Gets the address of the world.
 	 *
 	 * @return the world address
+=======
+	 * Gets address.
+	 *
+	 * @return the address
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	String getAddress();
 
 	/**
+<<<<<<< HEAD
 	 * Sets the address of the world.
+=======
+	 * Sets address.
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 *
 	 * @param address the address
 	 */

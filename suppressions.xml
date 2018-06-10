@@ -28,5 +28,8 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 <suppressions>
     <suppress files="RuntimeTypeAdapterFactory\.java" checks="[a-zA-Z0-9]*"/>
+<<<<<<< HEAD
     <suppress files="[\\/]runescape-client[\\/]" checks="[a-zA-Z0-9]*"/>
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 </suppressions>

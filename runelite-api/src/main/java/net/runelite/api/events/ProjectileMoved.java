@@ -28,6 +28,7 @@ import lombok.Data;
 import net.runelite.api.Projectile;
 import net.runelite.api.coords.LocalPoint;
 
+<<<<<<< HEAD
 /**
  * An event called whenever a {@link Projectile} has moved towards a point.
  * <p>
@@ -48,5 +49,12 @@ public class ProjectileMoved
 	/**
 	 * The z-axis target location of the projectile.
 	 */
+=======
+@Data
+public class ProjectileMoved
+{
+	private Projectile projectile;
+	private LocalPoint position;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private int z;
 }

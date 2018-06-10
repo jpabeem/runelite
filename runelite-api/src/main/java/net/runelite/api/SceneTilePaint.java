@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 /**
  * Represents the paint of a tile in the current scene.
  */
@@ -34,5 +35,9 @@ public interface SceneTilePaint
 	 *
 	 * @return the paint RGB
 	 */
+=======
+public interface SceneTilePaint
+{
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	int getRBG();
 }

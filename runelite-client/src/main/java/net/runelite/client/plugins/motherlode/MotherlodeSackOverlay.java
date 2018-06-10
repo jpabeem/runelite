@@ -36,8 +36,12 @@ import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.ComponentConstants;
 import net.runelite.client.ui.overlay.components.LineComponent;
+=======
+import net.runelite.client.ui.overlay.components.BackgroundComponent;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.components.PanelComponent;
 
 class MotherlodeSackOverlay extends Overlay
@@ -68,8 +72,13 @@ class MotherlodeSackOverlay extends Overlay
 
 		Widget sack = client.getWidget(WidgetInfo.MOTHERLODE_MINE);
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
 		panelComponent.setBackgroundColor(ComponentConstants.STANDARD_BACKGROUND_COLOR);
+=======
+		panelComponent.getLines().clear();
+		panelComponent.setBackgroundColor(BackgroundComponent.DEFAULT_BACKGROUND_COLOR);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		if (sack != null)
 		{
@@ -82,16 +91,34 @@ class MotherlodeSackOverlay extends Overlay
 					panelComponent.setBackgroundColor(DANGER);
 				}
 
+<<<<<<< HEAD
 				panelComponent.getChildren().add(LineComponent.builder()
 					.left("Pay-dirt in sack:")
 					.right(String.valueOf(client.getVar(Varbits.SACK_NUMBER)))
 					.build());
+=======
+				panelComponent.getLines().add(new PanelComponent.Line(
+					"Pay-dirt in sack:",
+					Color.WHITE,
+					String.valueOf(client.getVar(Varbits.SACK_NUMBER)),
+					Color.WHITE
+				));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 
 			if (config.showDepositsLeft())
 			{
 				final Integer depositsLeft = plugin.getDepositsLeft();
+<<<<<<< HEAD
 				Color color = Color.WHITE;
+=======
+				final PanelComponent.Line line = new PanelComponent.Line(
+					"Deposits left:",
+					Color.WHITE,
+					depositsLeft == null ? "N/A" : String.valueOf(depositsLeft),
+					Color.WHITE
+				);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 				if (depositsLeft != null)
 				{
@@ -101,6 +128,7 @@ class MotherlodeSackOverlay extends Overlay
 					}
 					else if (depositsLeft == 1)
 					{
+<<<<<<< HEAD
 						color = Color.RED;
 					}
 				}
@@ -111,6 +139,14 @@ class MotherlodeSackOverlay extends Overlay
 					.right(depositsLeft == null ? "N/A" : String.valueOf(depositsLeft))
 					.rightColor(color)
 					.build());
+=======
+						line.setLeftColor(Color.RED);
+						line.setRightColor(Color.RED);
+					}
+				}
+
+				panelComponent.getLines().add(line);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 

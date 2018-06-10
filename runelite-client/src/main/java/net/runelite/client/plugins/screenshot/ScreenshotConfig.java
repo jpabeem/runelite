@@ -102,6 +102,7 @@ public interface ScreenshotConfig extends Config
 	}
 
 	@ConfigItem(
+<<<<<<< HEAD
 		keyName = "pets",
 		name = "Screenshot Pet",
 		description = "Configures whether screenshots are taken of receiving pets",
@@ -117,6 +118,12 @@ public interface ScreenshotConfig extends Config
 		name = "Upload To Imgur",
 		description = "Configures whether or not screenshots are uploaded to Imgur and copied into your clipboard",
 		position = 7
+=======
+		keyName = "uploadScreenshot",
+		name = "Upload To Imgur",
+		description = "Configures whether or not screenshots are uploaded to Imgur and copied into your clipboard",
+		position = 6
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default boolean uploadScreenshot()
 	{
@@ -127,12 +134,17 @@ public interface ScreenshotConfig extends Config
 		keyName = "enableShortcut",
 		name = "Screenshot with [Insert]",
 		description = "Configures whether or not screenshots can be taken with the Insert key",
+<<<<<<< HEAD
 		position = 8
+=======
+		position = 7
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default boolean isScreenshotEnabled()
 	{
 		return false;
 	}
+<<<<<<< HEAD
 
 	@ConfigItem(
 		keyName = "kills",
@@ -144,4 +156,6 @@ public interface ScreenshotConfig extends Config
 	{
 		return false;
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

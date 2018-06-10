@@ -1183,8 +1183,13 @@ public final class NpcID
 	public static final int FIGHTSLAVE = 1217;
 	public static final int HENGRAD = 1218;
 	public static final int LADY_SERVIL = 1219;
+<<<<<<< HEAD
 	public static final int SAMMY_SERVIL = 1220;
 	public static final int SAMMY_SERVIL_1221 = 1221;
+=======
+	public static final int JEREMY_SERVIL = 1220;
+	public static final int JEREMY_SERVIL_1221 = 1221;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int JUSTIN_SERVIL = 1222;
 	public static final int LOCAL = 1223;
 	public static final int BOUNCER = 1224;
@@ -1314,6 +1319,10 @@ public final class NpcID
 	public static final int DWARF_GANG_MEMBER_1356 = 1356;
 	public static final int PHANTUWTI_FANSTUWI_FARSIGHT = 1357;
 	public static final int TINDEL_MARCHANT = 1358;
+<<<<<<< HEAD
+=======
+	public static final int GNORMADIUM_AVLAFRIM = 1359;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int PETRA_FIYED = 1360;
 	public static final int JIMMY_THE_CHISEL = 1361;
 	public static final int SLAGILITH = 1362;
@@ -1376,6 +1385,10 @@ public final class NpcID
 	public static final int RACCOON_1420 = 1420;
 	public static final int RACCOON_1421 = 1421;
 	public static final int HAZELMERE = 1422;
+<<<<<<< HEAD
+=======
+	public static final int KING_NARNODE_SHAREEN = 1423;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int GLOUGH = 1425;
 	public static final int CHARLIE = 1428;
 	public static final int FOREMAN = 1429;
@@ -2526,7 +2539,11 @@ public final class NpcID
 	public static final int KRAGEN = 2665;
 	public static final int LYRA = 2666;
 	public static final int FRANCIS = 2667;
+<<<<<<< HEAD
 	public static final int COMBAT_DUMMY = 2668;
+=======
+	public static final int COL00FFFFCOMBAT_DUMMYCOL = 2668;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int GARTH = 2669;
 	public static final int ELLENA = 2670;
 	public static final int SELENA = 2671;
@@ -3979,7 +3996,11 @@ public final class NpcID
 	public static final int CROCODILE = 4184;
 	public static final int JACKAL = 4185;
 	public static final int LOCUST = 4186;
+<<<<<<< HEAD
 	public static final int ODDSKULL = 4187;
+=======
+	public static final int COLFF9040ODDSKULLCOL = 4187;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int PLAGUE_FROG = 4188;
 	public static final int PLAGUE_COW = 4189;
 	public static final int PLAGUE_COW_4190 = 4190;
@@ -5591,6 +5612,10 @@ public final class NpcID
 	public static final int BLUE_DRAGON_5882 = 5882;
 	public static final int ABYSSAL_ORPHAN = 5883;
 	public static final int ABYSSAL_ORPHAN_5884 = 5884;
+<<<<<<< HEAD
+=======
+	public static final int JAMES = 5885;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int ABYSSAL_SIRE = 5886;
 	public static final int ABYSSAL_SIRE_5887 = 5887;
 	public static final int ABYSSAL_SIRE_5888 = 5888;
@@ -5599,8 +5624,13 @@ public final class NpcID
 	public static final int ABYSSAL_SIRE_5891 = 5891;
 	public static final int TZREKJAD = 5892;
 	public static final int TZREKJAD_5893 = 5893;
+<<<<<<< HEAD
 	public static final int PORTAL_5895 = 5895;
 	public static final int PORTAL_5897 = 5897;
+=======
+	public static final int COL00FFFFPORTALCOL = 5895;
+	public static final int COL00EFEFPORTALCOL = 5897;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int PROBITA = 5906;
 	public static final int CHAOS_ELEMENTAL_JR_5907 = 5907;
 	public static final int ABYSSAL_SIRE_5908 = 5908;
@@ -5610,7 +5640,11 @@ public final class NpcID
 	public static final int TENTACLE_5912 = 5912;
 	public static final int TENTACLE_5913 = 5913;
 	public static final int RESPIRATORY_SYSTEM = 5914;
+<<<<<<< HEAD
 	public static final int VENT = 5915;
+=======
+	public static final int COL00FFFFVENTCOL = 5915;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int SPAWN = 5916;
 	public static final int SPAWN_5917 = 5917;
 	public static final int SCION = 5918;
@@ -5675,7 +5709,11 @@ public final class NpcID
 	public static final int ALCHEMY_GUARDIAN = 5980;
 	public static final int ENCHANTMENT_GUARDIAN = 5981;
 	public static final int GRAVEYARD_GUARDIAN = 5982;
+<<<<<<< HEAD
 	public static final int PET_ROCK = 5983;
+=======
+	public static final int COLFF9040PET_ROCKCOL = 5983;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int REWARDS_GUARDIAN = 5984;
 	public static final int CHARMED_WARRIOR = 5985;
 	public static final int CHARMED_WARRIOR_5986 = 5986;
@@ -5855,7 +5893,11 @@ public final class NpcID
 	public static final int NAZASTAROOL_HARD_6338 = 6338;
 	public static final int NAZASTAROOL_HARD_6339 = 6339;
 	public static final int COW_HARD = 6340;
+<<<<<<< HEAD
 	public static final int ZAPPER = 6341;
+=======
+	public static final int COLFF9040ZAPPER = 6341;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int BARRELCHEST_6342 = 6342;
 	public static final int GIANT_SCARAB_6343 = 6343;
 	public static final int DESSOUS_6344 = 6344;
@@ -5990,8 +6032,13 @@ public final class NpcID
 	public static final int TARN_6476 = 6476;
 	public static final int MUTANT_TARN = 6477;
 	public static final int RUFUS_6478 = 6478;
+<<<<<<< HEAD
 	public static final int EYE = 6479;
 	public static final int EYE_6480 = 6480;
+=======
+	public static final int COL00FFFFEYECOL = 6479;
+	public static final int COL00FFFFEYECOL_6480 = 6480;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int MAC = 6481;
 	public static final int BOULDER_6482 = 6482;
 	public static final int MONKEY_6483 = 6483;
@@ -6034,7 +6081,11 @@ public final class NpcID
 	public static final int ROMILY_WEAKLAX = 6533;
 	public static final int GUARD_6561 = 6561;
 	public static final int PROSPECTOR_PERCY = 6562;
+<<<<<<< HEAD
 	public static final int PAYDIRT = 6564;
+=======
+	public static final int COLFF9040PAYDIRTCOL = 6564;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int MINER_6565 = 6565;
 	public static final int RUNITE_MINOR = 6566;
 	public static final int MINER_6567 = 6567;
@@ -6059,13 +6110,21 @@ public final class NpcID
 	public static final int SISTER_SCAROPHIA = 6590;
 	public static final int LAVA_DRAGON = 6593;
 	public static final int ENT = 6594;
+<<<<<<< HEAD
 	public static final int ENT_TRUNK = 6595;
+=======
+	public static final int COL00FFFFENT_TRUNKCOL = 6595;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int ZOMBIE_6596 = 6596;
 	public static final int ZOMBIE_6597 = 6597;
 	public static final int ZOMBIE_6598 = 6598;
 	public static final int MANDRITH = 6599;
 	public static final int RUNITE_GOLEM = 6600;
+<<<<<<< HEAD
 	public static final int ROCKS_6601 = 6601;
+=======
+	public static final int COL00FFFFROCKSCOL = 6601;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int NUMPTY = 6602;
 	public static final int ROGUE_6603 = 6603;
 	public static final int MAMMOTH = 6604;
@@ -6085,7 +6144,11 @@ public final class NpcID
 	public static final int CRAZY_ARCHAEOLOGIST = 6618;
 	public static final int CHAOS_FANATIC = 6619;
 	public static final int MINIATURE_CHAOTIC_CLOUDS = 6620;
+<<<<<<< HEAD
 	public static final int BOULDER_6621 = 6621;
+=======
+	public static final int COL00FFFFBOULDERCOL = 6621;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int ENERGY_SPRITE = 6624;
 	public static final int REACHER_6625 = 6625;
 	public static final int DAGANNOTH_SUPREME_JR = 6626;
@@ -6119,7 +6182,11 @@ public final class NpcID
 	public static final int KALPHITE_PRINCESS_6654 = 6654;
 	public static final int SMOKE_DEVIL_6655 = 6655;
 	public static final int KRAKEN_6656 = 6656;
+<<<<<<< HEAD
 	public static final int PET_ROCK_6657 = 6657;
+=======
+	public static final int PET_ROCK = 6657;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int FISHBOWL = 6658;
 	public static final int FISHBOWL_6659 = 6659;
 	public static final int FISHBOWL_6660 = 6660;
@@ -6221,8 +6288,13 @@ public final class NpcID
 	public static final int DOOMSAYER_6774 = 6774;
 	public static final int GALLOW = 6775;
 	public static final int MAN_6776 = 6776;
+<<<<<<< HEAD
 	public static final int MAZE_GUARDIAN = 6777;
 	public static final int MAZE_GUARDIAN_6779 = 6779;
+=======
+	public static final int COLFF9040MAZE_GUARDIANCOL = 6777;
+	public static final int MAZE_GUARDIAN = 6779;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int PILIAR = 6780;
 	public static final int SHAYDA = 6781;
 	public static final int HELLRAT_BEHEMOTH = 6793;
@@ -6349,8 +6421,13 @@ public final class NpcID
 	public static final int MARISI = 6921;
 	public static final int KONOO = 6922;
 	public static final int CLERK_6923 = 6923;
+<<<<<<< HEAD
 	public static final int PLOUGH = 6924;
 	public static final int PLOUGH_6925 = 6925;
+=======
+	public static final int COL00FFFFPLOUGHCOL = 6924;
+	public static final int COL00FFFFPLOUGHCOL_6925 = 6925;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int EWESEY = 6926;
 	public static final int SERVERY_ASSISTANT = 6927;
 	public static final int SERVERY_ASSISTANT_6928 = 6928;
@@ -6498,7 +6575,11 @@ public final class NpcID
 	public static final int TOOTHY = 7071;
 	public static final int OPERATOR = 7072;
 	public static final int OPERATOR_7073 = 7073;
+<<<<<<< HEAD
 	public static final int BLASTED_ORE = 7074;
+=======
+	public static final int COLFF9040BLASTED_ORECOL = 7074;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int MINE_SUPERVISOR = 7075;
 	public static final int MINE_SUPERVISOR_7076 = 7076;
 	public static final int BANKER_7077 = 7077;
@@ -6800,7 +6881,11 @@ public final class NpcID
 	public static final int GREATER_ABYSSAL_DEMON = 7410;
 	public static final int NECHRYARCH = 7411;
 	public static final int LIEVE_MCCRACKEN = 7412;
+<<<<<<< HEAD
 	public static final int UNDEAD_COMBAT_DUMMY = 7413;
+=======
+	public static final int COL00FFFFUNDEAD_COMBAT_DUMMYCOL = 7413;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int COUNT_CHECK = 7414;
 	public static final int BOLOGA = 7415;
 	public static final int OBOR = 7416;
@@ -6870,10 +6955,17 @@ public final class NpcID
 	public static final int SHIELD_MASTER = 7511;
 	public static final int PIZAZZ_HAT = 7512;
 	public static final int DERWEN = 7513;
+<<<<<<< HEAD
 	public static final int ENERGY_BALL = 7514;
 	public static final int PORAZDIR = 7515;
 	public static final int GNORMADIUM_AVLAFRIM = 7516;
 	public static final int GNORMADIUM_AVLAFRIM_7517 = 7517;
+=======
+	public static final int COLFF9040ENERGY_BALLCOL = 7514;
+	public static final int PORAZDIR = 7515;
+	public static final int FISHING_SPOT_7516 = 7516;
+	public static final int DUNCE_7517 = 7517;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int JELLY_7518 = 7518;
 	public static final int OLMLET = 7519;
 	public static final int OLMLET_7520 = 7520;
@@ -6889,7 +6981,11 @@ public final class NpcID
 	public static final int VESPULA = 7530;
 	public static final int VESPULA_7531 = 7531;
 	public static final int VESPULA_7532 = 7532;
+<<<<<<< HEAD
 	public static final int ABYSSAL_PORTAL = 7533;
+=======
+	public static final int COL00FFFFABYSSAL_PORTALCOL = 7533;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int LUX_GRUB = 7534;
 	public static final int LUX_GRUB_7535 = 7535;
 	public static final int LUX_GRUB_7536 = 7536;
@@ -6912,12 +7008,17 @@ public final class NpcID
 	public static final int GREAT_OLM_RIGHT_CLAW_7553 = 7553;
 	public static final int GREAT_OLM_7554 = 7554;
 	public static final int GREAT_OLM_LEFT_CLAW_7555 = 7555;
+<<<<<<< HEAD
 	public static final int FIRE = 7558;
+=======
+	public static final int COL00FFFFFIRECOL = 7558;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int DEATHLY_RANGER = 7559;
 	public static final int DEATHLY_MAGE = 7560;
 	public static final int MUTTADILE = 7561;
 	public static final int MUTTADILE_7562 = 7562;
 	public static final int MUTTADILE_7563 = 7563;
+<<<<<<< HEAD
 	public static final int MEAT_TREE = 7564;
 	public static final int ROCKS_7565 = 7565;
 	public static final int VASA_NISTIRIO = 7566;
@@ -6927,6 +7028,17 @@ public final class NpcID
 	public static final int GUARDIAN_7570 = 7570;
 	public static final int GUARDIAN_7571 = 7571;
 	public static final int GUARDIAN_7572 = 7572;
+=======
+	public static final int COL00FFFFMEAT_TREECOL = 7564;
+	public static final int COL00FFFFROCKSCOL_7565 = 7565;
+	public static final int VASA_NISTIRIO = 7566;
+	public static final int VASA_NISTIRIO_7567 = 7567;
+	public static final int COL00FFFFGLOWING_CRYSTALCOL = 7568;
+	public static final int COL00FFFFGUARDIANCOL = 7569;
+	public static final int COL00FFFFGUARDIANCOL_7570 = 7570;
+	public static final int COL00FFFFGUARDIANCOL_7571 = 7571;
+	public static final int COL00FFFFGUARDIANCOL_7572 = 7572;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int LIZARDMAN_SHAMAN_7573 = 7573;
 	public static final int LIZARDMAN_SHAMAN_7574 = 7574;
 	public static final int SPAWN_7575 = 7575;
@@ -6950,8 +7062,14 @@ public final class NpcID
 	public static final int PSYKK_BAT = 7593;
 	public static final int CAVE_SNAKE = 7594;
 	public static final int CAPTAIN_RIMOR = 7595;
+<<<<<<< HEAD
 	public static final int LIZARD_7597 = 7597;
 	public static final int STRANGE_DEVICE = 7598;
+=======
+	public static final int GNOSI = 7596;
+	public static final int HISTORIAN_DUFFY = 7597;
+	public static final int NATURAL_HISTORIAN_7598 = 7598;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int MOUNTAIN_GUIDE = 7599;
 	public static final int MOUNTAIN_GUIDE_7600 = 7600;
 	public static final int SWAMP_PRIEST = 7601;
@@ -6988,8 +7106,13 @@ public final class NpcID
 	public static final int KILLER_7636 = 7636;
 	public static final int HEWEY_7637 = 7637;
 	public static final int SHADY_FIGURE = 7638;
+<<<<<<< HEAD
 	public static final int MIRROR = 7640;
 	public static final int MIRROR_7641 = 7641;
+=======
+	public static final int COL00FFFFMIRRORCOL = 7640;
+	public static final int COL00FFFFMIRRORCOL_7641 = 7641;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int ROCK_GOLEM_7642 = 7642;
 	public static final int ROCK_GOLEM_7643 = 7643;
 	public static final int ROCK_GOLEM_7644 = 7644;
@@ -7054,10 +7177,17 @@ public final class NpcID
 	public static final int JALTOKJAD_7704 = 7704;
 	public static final int YTHURKOT_7705 = 7705;
 	public static final int TZKALZUK = 7706;
+<<<<<<< HEAD
 	public static final int ANCESTRAL_GLYPH = 7707;
 	public static final int JALMEJJAK = 7708;
 	public static final int ROCKY_SUPPORT = 7709;
 	public static final int ROCKY_SUPPORT_7710 = 7710;
+=======
+	public static final int COL00FFFFANCESTRAL_GLYPHCOL = 7707;
+	public static final int JALMEJJAK = 7708;
+	public static final int COL00FFFFROCKY_SUPPORTCOL = 7709;
+	public static final int COL00FFFFROCKY_SUPPORTCOL_7710 = 7710;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int ROCK_GOLEM_7711 = 7711;
 	public static final int DWARF_7712 = 7712;
 	public static final int DWARF_7713 = 7713;
@@ -7069,7 +7199,11 @@ public final class NpcID
 	public static final int BELONA = 7719;
 	public static final int UTREC = 7720;
 	public static final int DWARF_7721 = 7721;
+<<<<<<< HEAD
 	public static final int ROCKS_7722 = 7722;
+=======
+	public static final int COL00FFFFROCKSCOL_7722 = 7722;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int GERTRUDE_7723 = 7723;
 	public static final int BARBARIAN_GUARD_7724 = 7724;
 	public static final int DWARVEN_BOATMAN_7725 = 7725;
@@ -7150,6 +7284,7 @@ public final class NpcID
 	public static final int TAR_MONSTER = 7804;
 	public static final int PASSIVE_TAR_MONSTER = 7805;
 	public static final int DERANGED_ARCHAEOLOGIST = 7806;
+<<<<<<< HEAD
 	public static final int GIANT_BOULDER = 7807;
 	public static final int GIANT_BOULDER_7808 = 7808;
 	public static final int GIANT_BOULDER_7809 = 7809;
@@ -7160,6 +7295,18 @@ public final class NpcID
 	public static final int SMALL_BOULDER = 7814;
 	public static final int SMALL_BOULDER_7815 = 7815;
 	public static final int SMALL_BOULDER_7816 = 7816;
+=======
+	public static final int COL00FFFFGIANT_BOULDERCOL = 7807;
+	public static final int COL00FFFFGIANT_BOULDERCOL_7808 = 7808;
+	public static final int COL00FFFFGIANT_BOULDERCOL_7809 = 7809;
+	public static final int COL00FFFFLARGE_BOULDERCOL = 7810;
+	public static final int COL00FFFFLARGE_BOULDERCOL_7811 = 7811;
+	public static final int COL00FFFFMEDIUM_BOULDERCOL = 7812;
+	public static final int COL00FFFFMEDIUM_BOULDERCOL_7813 = 7813;
+	public static final int COL00FFFFSMALL_BOULDERCOL = 7814;
+	public static final int COL00FFFFSMALL_BOULDERCOL_7815 = 7815;
+	public static final int COL00FFFFSMALL_BOULDERCOL_7816 = 7816;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int LAVA_BEAST = 7817;
 	public static final int DAVID_7818 = 7818;
 	public static final int DUSK = 7849;
@@ -7286,29 +7433,43 @@ public final class NpcID
 	public static final int OGRESS_SHAMAN = 7991;
 	public static final int OGRESS_SHAMAN_7992 = 7992;
 	public static final int ELDER_CHAOS_DRUID_7995 = 7995;
+<<<<<<< HEAD
 	public static final int CORRUPT_LIZARDMAN_HARD = 7996;
 	public static final int CORRUPT_LIZARDMAN = 7997;
 	public static final int LORD_SHIRO_SHAYZIEN = 7998;
 	public static final int PHILEAS_RIMOR = 7999;
 	public static final int CORRUPT_LIZARDMAN_8000 = 8000;
+=======
+	public static final int DA_VINCI_7996 = 7996;
+	public static final int GNOME_CHILD_7997 = 7997;
+	public static final int WISE_OLD_MAN_7998 = 7998;
+	public static final int COW31337KILLER_7999 = 7999;
+	public static final int EVIL_DAVE_8000 = 8000;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int CRUNCHY = 8001;
 	public static final int TIM = 8002;
 	public static final int DAVE = 8003;
 	public static final int GENE = 8004;
 	public static final int ART = 8005;
+<<<<<<< HEAD
 	public static final int GNOSI = 8006;
 	public static final int HISTORIAN_DUFFY = 8007;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int CORPOREAL_CRITTER = 8008;
 	public static final int TZREKZUK = 8009;
 	public static final int CORPOREAL_CRITTER_8010 = 8010;
 	public static final int TZREKZUK_8011 = 8011;
 	public static final int BARGE_GUARD_8012 = 8012;
 	public static final int BARGE_GUARD_8013 = 8013;
+<<<<<<< HEAD
 	public static final int KING_NARNODE_SHAREEN = 8019;
 	public static final int KING_NARNODE_SHAREEN_8020 = 8020;
 	public static final int NATURAL_HISTORIAN_8021 = 8021;
 	public static final int MYSTERIOUS_VOICE = 8022;
 	public static final int GNOSI_8023 = 8023;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int RIFT_GUARDIAN_8024 = 8024;
 	public static final int VORKI = 8025;
 	public static final int VORKATH = 8026;
@@ -7383,7 +7544,11 @@ public final class NpcID
 	public static final int GALVEK_8096 = 8096;
 	public static final int GALVEK_8097 = 8097;
 	public static final int GALVEK_8098 = 8098;
+<<<<<<< HEAD
 	public static final int TSUNAMI = 8099;
+=======
+	public static final int COL00FFFFTSUNAMICOL = 8099;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int DALLAS_JONES = 8100;
 	public static final int DALLAS_JONES_8101 = 8101;
 	public static final int DALLAS_JONES_8102 = 8102;
@@ -7423,9 +7588,15 @@ public final class NpcID
 	public static final int SPIDER_8138 = 8138;
 	public static final int SKELETON_8139 = 8139;
 	public static final int SKELETON_8140 = 8140;
+<<<<<<< HEAD
 	public static final int STRANGE_EGG = 8142;
 	public static final int DRAGON_HEAD = 8143;
 	public static final int DRAGON_HEAD_8144 = 8144;
+=======
+	public static final int COL00FFFFSTRANGE_EGGCOL = 8142;
+	public static final int COL00FFFFDRAGON_HEADCOL = 8143;
+	public static final int COL00FFFFDRAGON_HEADCOL_8144 = 8144;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int BRUNDT_THE_CHIEFTAIN_8145 = 8145;
 	public static final int THORVALD_THE_WARRIOR_8146 = 8146;
 	public static final int PEER_THE_SEER_8147 = 8147;
@@ -7444,7 +7615,10 @@ public final class NpcID
 	public static final int SOLDIER_8160 = 8160;
 	public static final int BRUNDT_THE_CHIEFTAIN_8161 = 8161;
 	public static final int WISE_OLD_MAN_8162 = 8162;
+<<<<<<< HEAD
 	public static final int HISTORIAN_DUFFY_8163 = 8163;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int ACHIETTIES_8164 = 8164;
 	public static final int SIR_TIFFY_CASHIEN_8165 = 8165;
 	public static final int ONEIROMANCER_8166 = 8166;
@@ -7463,6 +7637,7 @@ public final class NpcID
 	public static final int GALVEK_8179 = 8179;
 	public static final int AMELIA = 8180;
 	public static final int JONATHAN = 8181;
+<<<<<<< HEAD
 	public static final int NATURAL_HISTORIAN_8182 = 8182;
 	public static final int MARTIN_HOLT = 8183;
 	public static final int PROTESTER = 8184;
@@ -7474,4 +7649,6 @@ public final class NpcID
 	public static final int JAMES = 8193;
 	public static final int GROWTHLING = 8194;
 	public static final int BRYOPHYTA = 8195;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

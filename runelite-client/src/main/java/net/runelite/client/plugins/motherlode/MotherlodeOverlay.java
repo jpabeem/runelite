@@ -32,6 +32,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Set;
 import javax.inject.Inject;
+<<<<<<< HEAD
 import static net.runelite.api.AnimationID.*;
 import net.runelite.api.Client;
 import net.runelite.client.ui.overlay.Overlay;
@@ -39,6 +40,22 @@ import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import net.runelite.client.ui.overlay.components.TitleComponent;
+=======
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_ADAMANT;
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_BLACK;
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_BRONZE;
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_DRAGON;
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_DRAGON_ORN;
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_INFERNAL;
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_IRON;
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_MITHRIL;
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_RUNE;
+import static net.runelite.api.AnimationID.MINING_MOTHERLODE_STEEL;
+import net.runelite.api.Client;
+import net.runelite.client.ui.overlay.Overlay;
+import net.runelite.client.ui.overlay.OverlayPosition;
+import net.runelite.client.ui.overlay.components.PanelComponent;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 class MotherlodeOverlay extends Overlay
 {
@@ -86,12 +103,17 @@ class MotherlodeOverlay extends Overlay
 			return null;
 		}
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
+=======
+		panelComponent.getLines().clear();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		if (config.showMiningState())
 		{
 			if (MINING_ANIMATION_IDS.contains(client.getLocalPlayer().getAnimation()))
 			{
+<<<<<<< HEAD
 				panelComponent.getChildren().add(TitleComponent.builder()
 					.text("Mining")
 					.color(Color.GREEN)
@@ -115,6 +137,33 @@ class MotherlodeOverlay extends Overlay
 			.left("Pay-dirt/hr:")
 			.right(session.getRecentMined() > 2 ? Integer.toString(session.getPerHour()) : "")
 			.build());
+=======
+				panelComponent.setTitle("You are mining");
+				panelComponent.setTitleColor(Color.GREEN);
+			}
+			else
+			{
+				panelComponent.setTitle("You are NOT mining");
+				panelComponent.setTitleColor(Color.RED);
+			}
+		}
+		else
+		{
+			panelComponent.setTitle(null);
+		}
+
+		panelComponent.getLines().add(new PanelComponent.Line(
+			"Pay-dirt mined:",
+			Integer.toString(session.getTotalMined())
+		));
+
+		panelComponent.getLines().add(new PanelComponent.Line(
+			"Pay-dirt/hr:",
+			session.getRecentMined() > 2
+			? Integer.toString(session.getPerHour())
+			: ""
+		));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		return panelComponent.render(graphics);
 	}

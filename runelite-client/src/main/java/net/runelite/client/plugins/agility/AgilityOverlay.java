@@ -26,6 +26,10 @@
 package net.runelite.client.plugins.agility;
 
 import java.awt.Color;
+<<<<<<< HEAD
+=======
+import static java.awt.Color.RED;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
@@ -68,8 +72,12 @@ public class AgilityOverlay extends Overlay
 		final Tile markOfGrace = plugin.getMarkOfGrace();
 		plugin.getObstacles().forEach((object, tile) ->
 		{
+<<<<<<< HEAD
 			if (Obstacles.SHORTCUT_OBSTACLE_IDS.contains(object.getId()) && !config.highlightShortcuts() ||
 					Obstacles.TRAP_OBSTACLE_IDS.contains(object.getId()) && !config.showTrapOverlay())
+=======
+			if (Obstacles.SHORTCUT_OBSTACLE_IDS.contains(object.getId()) && !config.highlightShortcuts())
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			{
 				return;
 			}
@@ -77,6 +85,7 @@ public class AgilityOverlay extends Overlay
 			if (tile.getPlane() == client.getPlane()
 				&& object.getLocalLocation().distanceTo(playerLocation) < MAX_DISTANCE)
 			{
+<<<<<<< HEAD
 				// This assumes that the obstacle is not clickable.
 				if (Obstacles.TRAP_OBSTACLE_IDS.contains(object.getId()))
 				{
@@ -96,6 +105,12 @@ public class AgilityOverlay extends Overlay
 					{
 						configColor = config.getMarkColor();
 					}
+=======
+				Area objectClickbox = object.getClickbox();
+				if (objectClickbox != null)
+				{
+					Color configColor = markOfGrace != null ? RED : config.getOverlayColor();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 					if (objectClickbox.contains(mousePosition.getX(), mousePosition.getY()))
 					{

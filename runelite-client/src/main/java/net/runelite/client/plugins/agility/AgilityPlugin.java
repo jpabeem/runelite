@@ -25,12 +25,19 @@
 package net.runelite.client.plugins.agility;
 
 import com.google.common.eventbus.Subscribe;
+<<<<<<< HEAD
+=======
+import com.google.common.primitives.Ints;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import com.google.inject.Provides;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import java.util.Objects;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import javax.inject.Inject;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -39,12 +46,18 @@ import net.runelite.api.Item;
 import net.runelite.api.ItemID;
 import net.runelite.api.ItemLayer;
 import net.runelite.api.Node;
+<<<<<<< HEAD
 import net.runelite.api.Player;
 import static net.runelite.api.Skill.AGILITY;
 import net.runelite.api.Tile;
 import net.runelite.api.TileObject;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ConfigChanged;
+=======
+import static net.runelite.api.Skill.AGILITY;
+import net.runelite.api.Tile;
+import net.runelite.api.TileObject;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.events.DecorativeObjectChanged;
 import net.runelite.api.events.DecorativeObjectDespawned;
 import net.runelite.api.events.DecorativeObjectSpawned;
@@ -53,7 +66,10 @@ import net.runelite.api.events.GameObjectChanged;
 import net.runelite.api.events.GameObjectDespawned;
 import net.runelite.api.events.GameObjectSpawned;
 import net.runelite.api.events.GameStateChanged;
+<<<<<<< HEAD
 import net.runelite.api.events.GameTick;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.events.GroundObjectChanged;
 import net.runelite.api.events.GroundObjectDespawned;
 import net.runelite.api.events.GroundObjectSpawned;
@@ -61,12 +77,18 @@ import net.runelite.api.events.ItemLayerChanged;
 import net.runelite.api.events.WallObjectChanged;
 import net.runelite.api.events.WallObjectDespawned;
 import net.runelite.api.events.WallObjectSpawned;
+<<<<<<< HEAD
 import net.runelite.client.Notifier;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.overlay.Overlay;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @PluginDescriptor(
 	name = "Agility"
@@ -74,8 +96,11 @@ import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
 @Slf4j
 public class AgilityPlugin extends Plugin
 {
+<<<<<<< HEAD
 	private static final int AGILITY_ARENA_REGION_ID = 11157;
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Getter
 	private final Map<TileObject, Tile> obstacles = new HashMap<>();
 
@@ -90,6 +115,7 @@ public class AgilityPlugin extends Plugin
 	private LapCounterOverlay lapOverlay;
 
 	@Inject
+<<<<<<< HEAD
 	private Notifier notifier;
 
 	@Inject
@@ -99,13 +125,21 @@ public class AgilityPlugin extends Plugin
 	private InfoBoxManager infoBoxManager;
 
 	@Inject
+=======
+	private Client client;
+
+	@Inject
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private AgilityConfig config;
 
 	@Getter
 	private AgilitySession session;
 
 	private int lastAgilityXp;
+<<<<<<< HEAD
 	private WorldPoint lastArenaTicketPosition;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Provides
 	AgilityConfig getConfig(ConfigManager configManager)
@@ -135,13 +169,17 @@ public class AgilityPlugin extends Plugin
 			case HOPPING:
 			case LOGIN_SCREEN:
 				session = null;
+<<<<<<< HEAD
 				lastArenaTicketPosition = null;
 				removeAgilityArenaTimer();
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				break;
 			case LOADING:
 				markOfGrace = null;
 				obstacles.clear();
 				break;
+<<<<<<< HEAD
 			case LOGGED_IN:
 				if (!isInAgilityArena())
 				{
@@ -158,6 +196,8 @@ public class AgilityPlugin extends Plugin
 		if (!config.showAgilityArenaTimer())
 		{
 			removeAgilityArenaTimer();
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 
@@ -175,8 +215,13 @@ public class AgilityPlugin extends Plugin
 		lastAgilityXp = agilityXp;
 
 		// Get course
+<<<<<<< HEAD
 		Courses course = Courses.getCourse(client.getLocalPlayer().getWorldLocation().getRegionID());
 		if (course == null || Math.abs(course.getLastObstacleXp() - skillGained) > 1)
+=======
+		Courses course = Courses.getCourse(skillGained);
+		if (course == null || !Ints.contains(client.getMapRegions(), course.getRegionId()))
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			return;
 		}
@@ -239,6 +284,7 @@ public class AgilityPlugin extends Plugin
 	}
 
 	@Subscribe
+<<<<<<< HEAD
 	public void onGameTick(GameTick tick)
 	{
 		if (isInAgilityArena())
@@ -289,6 +335,8 @@ public class AgilityPlugin extends Plugin
 	}
 
 	@Subscribe
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public void onGameObjectSpawned(GameObjectSpawned event)
 	{
 		onTileObject(event.getTile(), null, event.getGameObject());
@@ -370,9 +418,13 @@ public class AgilityPlugin extends Plugin
 		}
 
 		if (Obstacles.COURSE_OBSTACLE_IDS.contains(newObject.getId()) ||
+<<<<<<< HEAD
 				Obstacles.SHORTCUT_OBSTACLE_IDS.contains(newObject.getId()) ||
 				(Obstacles.TRAP_OBSTACLE_IDS.contains(newObject.getId())
 					&& Obstacles.TRAP_OBSTACLE_REGIONS.contains(newObject.getWorldLocation().getRegionID())))
+=======
+			Obstacles.SHORTCUT_OBSTACLE_IDS.contains(newObject.getId()))
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			obstacles.put(newObject, tile);
 		}

@@ -39,10 +39,17 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 0,
 		keyName = "drawOwnName",
+<<<<<<< HEAD
 		name = "Highlight own player",
 		description = "Configures whether or not your own player should be highlighted"
 	)
 	default boolean highlightOwnPlayer()
+=======
+		name = "Draw own name",
+		description = "Configures whether or not own name should be drawn"
+	)
+	default boolean drawOwnName()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return false;
 	}
@@ -50,10 +57,17 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 1,
 		keyName = "ownNameColor",
+<<<<<<< HEAD
 		name = "Own player color",
 		description = "Color of your own player"
 	)
 	default Color getOwnPlayerColor()
+=======
+		name = "Own name color",
+		description = "Color of your own name"
+	)
+	default Color getOwnNameColor()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return new Color(0, 184, 212);
 	}
@@ -61,10 +75,17 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 2,
 		keyName = "drawFriendNames",
+<<<<<<< HEAD
 		name = "Highlight friends",
 		description = "Configures whether or not friends should be highlighted"
 	)
 	default boolean highlightFriends()
+=======
+		name = "Draw friend names",
+		description = "Configures whether or not names of player friends should be drawn"
+	)
+	default boolean drawFriendNames()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return true;
 	}
@@ -72,10 +93,17 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 3,
 		keyName = "friendNameColor",
+<<<<<<< HEAD
 		name = "Friend color",
 		description = "Color of friend names"
 	)
 	default Color getFriendColor()
+=======
+		name = "Friend name color",
+		description = "Color of friend names"
+	)
+	default Color getFriendNameColor()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return new Color(0, 200, 83);
 	}
@@ -83,8 +111,13 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 4,
 		keyName = "drawClanMemberNames",
+<<<<<<< HEAD
 		name = "Highlight clan members",
 		description = "Configures whether or clan members should be highlighted"
+=======
+		name = "Draw clan member names",
+		description = "Configures whether or not names of player's clan members should be drawn"
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default boolean drawClanMemberNames()
 	{
@@ -95,7 +128,11 @@ public interface PlayerIndicatorsConfig extends Config
 		position = 5,
 		keyName = "clanMemberColor",
 		name = "Clan member color",
+<<<<<<< HEAD
 		description = "Color of clan members"
+=======
+		description = "Color of clan member names"
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default Color getClanMemberColor()
 	{
@@ -105,10 +142,17 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 6,
 		keyName = "drawTeamMemberNames",
+<<<<<<< HEAD
 		name = "Highlight team members",
 		description = "Configures whether or not team members should be highlighted"
 	)
 	default boolean highlightTeamMembers()
+=======
+		name = "Draw team member names",
+		description = "Configures whether or not names of player's team members should be drawn"
+	)
+	default boolean drawTeamMemberNames()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return true;
 	}
@@ -117,7 +161,11 @@ public interface PlayerIndicatorsConfig extends Config
 		position = 7,
 		keyName = "teamMemberColor",
 		name = "Team member color",
+<<<<<<< HEAD
 		description = "Color of team members"
+=======
+		description = "Color of team member names"
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default Color getTeamMemberColor()
 	{
@@ -127,10 +175,17 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 8,
 		keyName = "drawNonClanMemberNames",
+<<<<<<< HEAD
 		name = "Highlight non-clan members",
 		description = "Configures whether or not non-clan members should be highlighted"
 	)
 	default boolean highlightNonClanMembers()
+=======
+		name = "Draw non-clan member names",
+		description = "Configures whether or not names of non-clan members should be drawn"
+	)
+	default boolean drawNonClanMemberNames()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return false;
 	}
@@ -149,8 +204,13 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 10,
 		keyName = "drawPlayerTiles",
+<<<<<<< HEAD
 		name = "Draw tiles under players",
 		description = "Configures whether or not tiles under highlighted players should be drawn"
+=======
+		name = "Draw tiles",
+		description = "Configures whether or not tiles under players with rendered names should be drawn"
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default boolean drawTiles()
 	{
@@ -182,7 +242,11 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 13,
 		keyName = "colorPlayerMenu",
+<<<<<<< HEAD
 		name = "Colorize player menu",
+=======
+		name = "Color player menu",
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		description = "Color right click menu for players"
 	)
 	default boolean colorPlayerMenu()
@@ -193,10 +257,17 @@ public interface PlayerIndicatorsConfig extends Config
 	@ConfigItem(
 		position = 14,
 		keyName = "clanMenuIcons",
+<<<<<<< HEAD
 		name = "Show clan ranks",
 		description = "Add clan rank to right click menu and next to player names"
 	)
 	default boolean showClanRanks()
+=======
+		name = "Show clan rank in menu",
+		description = "Add clan rank to right click menu for players"
+	)
+	default boolean clanMenuIcons()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		return true;
 	}

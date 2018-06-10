@@ -107,11 +107,17 @@ public class IdleNotifierPlugin extends Plugin
 			case WOODCUTTING_RUNE:
 			case WOODCUTTING_DRAGON:
 			case WOODCUTTING_INFERNAL:
+<<<<<<< HEAD
 			case WOODCUTTING_3A_AXE:
 			/* Cooking(Fire, Range) */
 			case COOKING_FIRE:
 			case COOKING_RANGE:
 			case COOKING_WINE:
+=======
+			/* Cooking(Fire, Range) */
+			case COOKING_FIRE:
+			case COOKING_RANGE:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			/* Crafting(Gem Cutting, Glassblowing, Spinning) */
 			case GEM_CUTTING_OPAL:
 			case GEM_CUTTING_JADE:
@@ -164,7 +170,10 @@ public class IdleNotifierPlugin extends Plugin
 			case MINING_DRAGON_PICKAXE:
 			case MINING_DRAGON_PICKAXE_ORN:
 			case MINING_INFERNAL_PICKAXE:
+<<<<<<< HEAD
 			case MINING_3A_PICKAXE:
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			/* Mining(Motherlode) */
 			case MINING_MOTHERLODE_BRONZE:
 			case MINING_MOTHERLODE_IRON:
@@ -176,16 +185,22 @@ public class IdleNotifierPlugin extends Plugin
 			case MINING_MOTHERLODE_DRAGON:
 			case MINING_MOTHERLODE_DRAGON_ORN:
 			case MINING_MOTHERLODE_INFERNAL:
+<<<<<<< HEAD
 			case MINING_MOTHERLODE_3A:
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			/* Herblore */
 			case HERBLORE_POTIONMAKING:
 			case HERBLORE_MAKE_TAR:
 			/* Magic */
 			case MAGIC_CHARGING_ORBS:
+<<<<<<< HEAD
 			case MAGIC_LUNAR_STRING_JEWELRY:
 			case MAGIC_LUNAR_BAKE_PIE:
 			/* Prayer */
 			case USING_GILDED_ALTAR:
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				resetTimers();
 				notifyIdle = true;
 				break;

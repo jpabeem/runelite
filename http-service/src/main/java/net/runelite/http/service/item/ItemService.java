@@ -30,10 +30,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.time.Instant;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+=======
+import java.util.List;
+import java.util.Map;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.util.concurrent.ConcurrentLinkedQueue;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.http.api.RuneLiteAPI;
@@ -125,6 +130,7 @@ public class ItemService
 		}
 	}
 
+<<<<<<< HEAD
 	private PriceEntry getPrice(Connection con, int itemId, Instant time)
 	{
 		if (time != null)
@@ -142,10 +148,13 @@ public class ItemService
 		}
 	}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public PriceEntry getPrice(int itemId, Instant time)
 	{
 		try (Connection con = sql2o.open())
 		{
+<<<<<<< HEAD
 			return getPrice(con, itemId, time);
 		}
 	}
@@ -176,6 +185,21 @@ public class ItemService
 			}
 
 			return priceEntries;
+=======
+			if (time != null)
+			{
+				return con.createQuery("select item, price, time, fetched_time from prices where item = :item and time <= :time order by time desc limit 1")
+					.addParameter("item", itemId)
+					.addParameter("time", time.toString())
+					.executeAndFetchFirst(PriceEntry.class);
+			}
+			else
+			{
+				return con.createQuery("select item, price, time, fetched_time from prices where item = :item order by time desc limit 1")
+					.addParameter("item", itemId)
+					.executeAndFetchFirst(PriceEntry.class);
+			}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 

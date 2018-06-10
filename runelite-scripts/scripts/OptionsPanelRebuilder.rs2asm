@@ -54,7 +54,11 @@
    get_varbit             4606
    load_int               0
    if_icmpne              LABEL52
+<<<<<<< HEAD
    jump                   LABEL202
+=======
+   jump                   LABEL198
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 LABEL52:
    get_varbit             4606
    load_int               2
@@ -93,12 +97,20 @@ LABEL83:
    iload                  2
    load_int               -1
    if_icmpne              LABEL87
+<<<<<<< HEAD
    jump                   LABEL201
+=======
+   jump                   LABEL197
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 LABEL87:
    iload                  3
    load_int               -1
    if_icmpne              LABEL91
+<<<<<<< HEAD
    jump                   LABEL201
+=======
+   jump                   LABEL197
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 LABEL91:
    get_viewport_size     
    istore                 9
@@ -109,17 +121,21 @@ LABEL91:
    load_int               0
    iload                  2
    widget_put_size_widget
+<<<<<<< HEAD
    invoke                 1972
    load_int               0
    if_icmpeq              LABEL104
    jump                   LABEL110
 LABEL104:
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  8
    iload                  9
    load_int               0
    load_int               0
    iload                  3
    widget_put_size_widget
+<<<<<<< HEAD
 LABEL110:
    iload                  4
    load_int               -1
@@ -131,6 +147,18 @@ LABEL114:
    if_icmpne              LABEL118
    jump                   LABEL191
 LABEL118:
+=======
+   iload                  4
+   load_int               -1
+   if_icmpne              LABEL110
+   jump                   LABEL187
+LABEL110:
+   iload                  5
+   load_int               -1
+   if_icmpne              LABEL114
+   jump                   LABEL187
+LABEL114:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  0
    widget_get_width_widget
    istore                 10
@@ -147,6 +175,7 @@ LABEL118:
    istore                 13
    iload                  12
    load_int               0
+<<<<<<< HEAD
    if_icmplt              LABEL136
    jump                   LABEL138
 LABEL136:
@@ -161,6 +190,22 @@ LABEL142:
    load_int               0
    istore                 13
 LABEL144:
+=======
+   if_icmplt              LABEL132
+   jump                   LABEL134
+LABEL132:
+   load_int               0
+   istore                 12
+LABEL134:
+   iload                  13
+   load_int               0
+   if_icmplt              LABEL138
+   jump                   LABEL140
+LABEL138:
+   load_int               0
+   istore                 13
+LABEL140:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  6
    iload                  12
    load_int               2
@@ -175,6 +220,7 @@ LABEL144:
    istore                 6
    iload                  6
    load_int               0
+<<<<<<< HEAD
    if_icmplt              LABEL160
    jump                   LABEL162
 LABEL160:
@@ -189,6 +235,22 @@ LABEL166:
    load_int               0
    istore                 7
 LABEL168:
+=======
+   if_icmplt              LABEL156
+   jump                   LABEL158
+LABEL156:
+   load_int               0
+   istore                 6
+LABEL158:
+   iload                  7
+   load_int               0
+   if_icmplt              LABEL162
+   jump                   LABEL164
+LABEL162:
+   load_int               0
+   istore                 7
+LABEL164:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  6
    iload                  7
    load_int               1
@@ -211,8 +273,13 @@ LABEL168:
    iload                  6
    iload                  7
    invoke                 910
+<<<<<<< HEAD
    jump                   LABEL201
 LABEL191:
+=======
+   jump                   LABEL197
+LABEL187:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  1
    load_int               73
    load_int               73
@@ -223,9 +290,15 @@ LABEL191:
    load_int               0
    load_int               0
    invoke                 910
+<<<<<<< HEAD
 LABEL201:
    jump                   LABEL305
 LABEL202:
+=======
+LABEL197:
+   jump                   LABEL293
+LABEL198:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               0
    load_int               0
    6200                  
@@ -238,27 +311,46 @@ LABEL202:
    load_int               195
    load_string            "fixedOuterZoomLimit"
    runelite_callback
+<<<<<<< HEAD
    if_icmpge              LABEL214
    jump                   LABEL230
 LABEL214:
+=======
+   if_icmpge              LABEL210
+   jump                   LABEL226
+LABEL210:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc               73
    load_int               700
    load_string            "fixedInnerZoomLimit"
    runelite_callback
+<<<<<<< HEAD
    if_icmple              LABEL218
    jump                   LABEL230
 LABEL218:
+=======
+   if_icmple              LABEL214
+   jump                   LABEL226
+LABEL214:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc               74
    load_int               175
    load_string            "resizableOuterZoomLimit"
    runelite_callback
+<<<<<<< HEAD
    if_icmpge              LABEL222
    jump                   LABEL230
 LABEL222:
+=======
+   if_icmpge              LABEL218
+   jump                   LABEL226
+LABEL218:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    get_varc               74
    load_int               715
    load_string            "resizableInnerZoomLimit"
    runelite_callback
+<<<<<<< HEAD
    if_icmple              LABEL226
    jump                   LABEL230
 LABEL226:
@@ -272,10 +364,26 @@ LABEL230:
    invoke                 42
 LABEL233:
    get_viewport_size     
+=======
+   if_icmple              LABEL222
+   jump                   LABEL226
+LABEL222:
+   get_varc               73
+   get_varc               74
+   invoke                 42
+   jump                   LABEL229
+LABEL226:
+   load_int               256
+   load_int               320
+   invoke                 42
+LABEL229:
+   get_viewport_size
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    istore                 9
    istore                 8
    iload                  2
    load_int               -1
+<<<<<<< HEAD
    if_icmpne              LABEL240
    jump                   LABEL305
 LABEL240:
@@ -284,23 +392,37 @@ LABEL240:
    if_icmpne              LABEL244
    jump                   LABEL305
 LABEL244:
+=======
+   if_icmpne              LABEL236
+   jump                   LABEL293
+LABEL236:
+   iload                  3
+   load_int               -1
+   if_icmpne              LABEL240
+   jump                   LABEL293
+LABEL240:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  8
    iload                  9
    load_int               0
    load_int               0
    iload                  2
    widget_put_size_widget
+<<<<<<< HEAD
    invoke                 1972
    load_int               0
    if_icmpeq              LABEL254
    jump                   LABEL260
 LABEL254:
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  8
    iload                  9
    load_int               0
    load_int               0
    iload                  3
    widget_put_size_widget
+<<<<<<< HEAD
 LABEL260:
    iload                  4
    load_int               -1
@@ -312,51 +434,87 @@ LABEL264:
    if_icmpne              LABEL268
    jump                   LABEL295
 LABEL268:
+=======
+   iload                  4
+   load_int               -1
+   if_icmpne              LABEL256
+   jump                   LABEL283
+LABEL256:
+   iload                  5
+   load_int               -1
+   if_icmpne              LABEL260
+   jump                   LABEL283
+LABEL260:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  6
    iload                  7
    load_int               1
    load_int               1
    iload                  4
    widget_put_size_widget
+<<<<<<< HEAD
    invoke                 1972
    load_int               0
    if_icmpeq              LABEL278
    jump                   LABEL284
 LABEL278:
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  6
    iload                  7
    load_int               1
    load_int               1
    iload                  5
    widget_put_size_widget
+<<<<<<< HEAD
 LABEL284:
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  1
    load_int               73
    load_int               73
    iload                  1
    load_int               10551307
+<<<<<<< HEAD
    get_enum_value        
+=======
+   get_enum_value
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  5
    iload                  6
    iload                  7
    invoke                 910
+<<<<<<< HEAD
    jump                   LABEL305
 LABEL295:
+=======
+   jump                   LABEL293
+LABEL283:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  1
    load_int               73
    load_int               73
    iload                  1
    load_int               10551307
+<<<<<<< HEAD
    get_enum_value        
+=======
+   get_enum_value
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  3
    load_int               0
    load_int               0
    invoke                 910
+<<<<<<< HEAD
 LABEL305:
+=======
+LABEL293:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               73
    load_int               73
    iload                  1
    load_int               10551309
+<<<<<<< HEAD
    get_enum_value        
    istore                 14
    iload                  14
@@ -380,12 +538,38 @@ LABEL324:
    if_icmpeq              LABEL328
    jump                   LABEL335
 LABEL328:
+=======
+   get_enum_value
+   istore                 14
+   iload                  14
+   load_int               -1
+   if_icmpne              LABEL303
+   jump                   LABEL347
+LABEL303:
+   invoke                 1972
+   load_int               0
+   if_icmpeq              LABEL307
+   jump                   LABEL341
+LABEL307:
+   iload                  14
+   widget_get_index_widget
+   load_int               1
+   if_icmpeq              LABEL312
+   jump                   LABEL341
+LABEL312:
+   get_varc               173
+   load_int               -2
+   if_icmpeq              LABEL316
+   jump                   LABEL323
+LABEL316:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               512
    load_int               0
    load_int               0
    load_int               1
    iload                  14
    widget_put_size_widget
+<<<<<<< HEAD
    jump                   LABEL352
 LABEL335:
    get_varc               173
@@ -393,34 +577,59 @@ LABEL335:
    if_icmpeq              LABEL339
    jump                   LABEL346
 LABEL339:
+=======
+   jump                   LABEL340
+LABEL323:
+   get_varc               173
+   load_int               -3
+   if_icmpeq              LABEL327
+   jump                   LABEL334
+LABEL327:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               0
    load_int               0
    load_int               1
    load_int               1
    iload                  14
    widget_put_size_widget
+<<<<<<< HEAD
    jump                   LABEL352
 LABEL346:
+=======
+   jump                   LABEL340
+LABEL334:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               512
    load_int               334
    load_int               0
    load_int               0
    iload                  14
    widget_put_size_widget
+<<<<<<< HEAD
 LABEL352:
    jump                   LABEL359
 LABEL353:
+=======
+LABEL340:
+   jump                   LABEL347
+LABEL341:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               512
    load_int               334
    load_int               0
    load_int               0
    iload                  14
    widget_put_size_widget
+<<<<<<< HEAD
 LABEL359:
+=======
+LABEL347:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               73
    load_int               73
    iload                  1
    load_int               10551311
+<<<<<<< HEAD
    get_enum_value        
    istore                 14
    iload                  14
@@ -428,10 +637,20 @@ LABEL359:
    if_icmpne              LABEL369
    jump                   LABEL435
 LABEL369:
+=======
+   get_enum_value
+   istore                 14
+   iload                  14
+   load_int               -1
+   if_icmpne              LABEL357
+   jump                   LABEL412
+LABEL357:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               73
    load_int               73
    iload                  1
    load_int               10551303
+<<<<<<< HEAD
    get_enum_value        
    widget_get_index_widget
    load_int               1
@@ -456,12 +675,26 @@ LABEL386:
    widget_put_position_widget
    jump                   LABEL399
 LABEL393:
+=======
+   get_enum_value
+   widget_get_index_widget
+   load_int               1
+   if_icmpeq              LABEL366
+   jump                   LABEL395
+LABEL366:
+   get_varbit             4692
+   load_int               0
+   if_icmpne              LABEL370
+   jump                   LABEL377
+LABEL370:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               0
    load_int               0
    load_int               2
    load_int               0
    iload                  14
    widget_put_position_widget
+<<<<<<< HEAD
 LABEL399:
    jump                   LABEL417
 LABEL400:
@@ -472,18 +705,35 @@ LABEL400:
 LABEL404:
    load_int               215
    load_int               28
+=======
+   jump                   LABEL394
+LABEL377:
+   invoke                 1972
+   load_int               1
+   if_icmpeq              LABEL381
+   jump                   LABEL388
+LABEL381:
+   load_int               8
+   load_int               36
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               2
    load_int               0
    iload                  14
    widget_put_position_widget
+<<<<<<< HEAD
    jump                   LABEL417
 LABEL411:
+=======
+   jump                   LABEL394
+LABEL388:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               0
    load_int               36
    load_int               2
    load_int               0
    iload                  14
    widget_put_position_widget
+<<<<<<< HEAD
 LABEL417:
    jump                   LABEL435
 LABEL418:
@@ -494,19 +744,40 @@ LABEL418:
 LABEL422:
    load_int               215
    load_int               4
+=======
+LABEL394:
+   jump                   LABEL412
+LABEL395:
+   invoke                 1972
+   load_int               1
+   if_icmpeq              LABEL399
+   jump                   LABEL406
+LABEL399:
+   load_int               8
+   load_int               0
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               2
    load_int               0
    iload                  14
    widget_put_position_widget
+<<<<<<< HEAD
    jump                   LABEL435
 LABEL429:
+=======
+   jump                   LABEL412
+LABEL406:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    load_int               0
    load_int               0
    load_int               2
    load_int               0
    iload                  14
    widget_put_position_widget
+<<<<<<< HEAD
 LABEL435:
+=======
+LABEL412:
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
    iload                  0
    iload                  1
    invoke                 920

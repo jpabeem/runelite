@@ -24,7 +24,11 @@
  */
 package net.runelite.client.ui;
 
+<<<<<<< HEAD
 import java.awt.Image;
+=======
+import java.awt.image.BufferedImage;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -37,10 +41,17 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DrawManager
 {
+<<<<<<< HEAD
 	private final List<Consumer<Image>> everyFrame = new CopyOnWriteArrayList<>();
 	private final Queue<Consumer<Image>> nextFrame = new ConcurrentLinkedQueue<>();
 
 	public void registerEveryFrameListener(Consumer<Image> everyFrameListener)
+=======
+	private final List<Consumer<BufferedImage>> everyFrame = new CopyOnWriteArrayList<>();
+	private final Queue<Consumer<BufferedImage>> nextFrame = new ConcurrentLinkedQueue<>();
+
+	public void registerEveryFrameListener(Consumer<BufferedImage> everyFrameListener)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		if (!everyFrame.contains(everyFrameListener))
 		{
@@ -48,19 +59,33 @@ public class DrawManager
 		}
 	}
 
+<<<<<<< HEAD
 	public void unregisterEveryFrameListener(Consumer<Image> everyFrameListener)
+=======
+	public void unregisterEveryFrameListener(Consumer<BufferedImage> everyFrameListener)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		everyFrame.remove(everyFrameListener);
 	}
 
+<<<<<<< HEAD
 	public void requestNextFrameListener(Consumer<Image> nextFrameListener)
+=======
+	public void requestNextFrameListener(Consumer<BufferedImage> nextFrameListener)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		nextFrame.add(nextFrameListener);
 	}
 
+<<<<<<< HEAD
 	public void processDrawComplete(Image image)
 	{
 		for (Consumer<Image> everyFrameListener : everyFrame)
+=======
+	public void processDrawComplete(BufferedImage image)
+	{
+		for (Consumer<BufferedImage> everyFrameListener : everyFrame)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			try
 			{
@@ -72,7 +97,11 @@ public class DrawManager
 			}
 		}
 
+<<<<<<< HEAD
 		Consumer<Image> nextFrameListener = nextFrame.poll();
+=======
+		Consumer<BufferedImage> nextFrameListener = nextFrame.poll();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		while (nextFrameListener != null)
 		{
 			try

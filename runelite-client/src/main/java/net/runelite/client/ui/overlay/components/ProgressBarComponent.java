@@ -24,12 +24,17 @@
  */
 package net.runelite.client.ui.overlay.components;
 
+<<<<<<< HEAD
+=======
+import com.google.common.base.Strings;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.text.DecimalFormat;
+<<<<<<< HEAD
 import lombok.Setter;
 
 @Setter
@@ -79,6 +84,61 @@ public class ProgressBarComponent implements LayoutableRenderableEntity
 		final int progressTextX = barX + (width - metrics.stringWidth(textToWrite)) / 2;
 		final int progressTextY = barY + ((height - metrics.getHeight()) / 2) + metrics.getHeight();
 		final int progressFill = (int) (width * pc);
+=======
+import lombok.Getter;
+import lombok.Setter;
+
+public class ProgressBarComponent
+{
+	@Setter
+	private String text;
+
+	@Setter
+	private double progress;
+
+	@Setter
+	private Point position = new Point();
+
+	@Setter
+	private Color foregroundColor = new Color(82, 161, 82);
+
+	@Setter
+	private Color backgroundColor = new Color(255, 255, 255, 127);
+
+	@Setter
+	private Color fontColor = Color.WHITE;
+
+	@Getter
+	@Setter
+	private int width = 140;
+
+	@Getter
+	@Setter
+	private int height = 16;
+
+	public Dimension render(Graphics2D graphics)
+	{
+		FontMetrics metrics = graphics.getFontMetrics();
+
+		int barX = position.x;
+		int barY = position.y;
+		String textToWrite;
+
+		if (Strings.isNullOrEmpty(text))
+		{
+			DecimalFormat df = new DecimalFormat("#0");
+			textToWrite = df.format(Math.floor(progress)) + "%";
+		}
+		else
+		{
+			textToWrite = text;
+		}
+
+		int progressTextX = barX + (width - metrics.stringWidth(textToWrite)) / 2;
+		int progressTextY = barY + ((height - metrics.getHeight()) / 2) + metrics.getAscent();
+
+		int progressFill = (int) ((width / 100F) * progress);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		//Draw bar
 		graphics.setColor(backgroundColor);
@@ -86,7 +146,11 @@ public class ProgressBarComponent implements LayoutableRenderableEntity
 		graphics.setColor(foregroundColor);
 		graphics.fillRect(barX, barY, progressFill, height);
 
+<<<<<<< HEAD
 		final TextComponent textComponent = new TextComponent();
+=======
+		TextComponent textComponent = new TextComponent();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		textComponent.setPosition(new Point(progressTextX, progressTextY));
 		textComponent.setColor(fontColor);
 		textComponent.setText(textToWrite);

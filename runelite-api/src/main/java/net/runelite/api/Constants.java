@@ -27,6 +27,7 @@ package net.runelite.api;
 
 import java.awt.Dimension;
 
+<<<<<<< HEAD
 /**
  * A utility class containing constant values.
  */
@@ -67,4 +68,15 @@ public class Constants
 	 * the plane value to 0-3.
 	 */
 	public static final int MAX_Z = 4;
+=======
+public class Constants
+{
+	public static final int GAME_FIXED_WIDTH = 765;
+	public static final int GAME_FIXED_HEIGHT = 503;
+	public static final Dimension GAME_FIXED_SIZE = new Dimension(GAME_FIXED_WIDTH, GAME_FIXED_HEIGHT);
+	public static final double GAME_FIXED_ASPECT_RATIO = (double) GAME_FIXED_WIDTH / (double) GAME_FIXED_HEIGHT;
+	public static final int CLIENT_DEFAULT_ZOOM = 512;
+	public static final int CHUNK_SIZE = 8;
+	public static final int REGION_SIZE = 104;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

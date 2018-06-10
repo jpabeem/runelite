@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 /**
  * Represents an indexed sprite.
  */
@@ -139,5 +140,39 @@ public interface IndexedSprite
 	 *
 	 * @param originalHeight the height
 	 */
+=======
+public interface IndexedSprite
+{
+	byte[] getPixels();
+
+	void setPixels(byte[] pixels);
+
+	int[] getPalette();
+
+	void setPalette(int[] palette);
+
+	int getOffsetX();
+
+	void setOffsetX(int offsetX);
+
+	int getOffsetY();
+
+	void setOffsetY(int offsetY);
+
+	int getWidth();
+
+	void setWidth(int width);
+
+	int getOriginalWidth();
+
+	void setOriginalWidth(int originalWidth);
+
+	int getHeight();
+
+	void setHeight(int height);
+
+	int getOriginalHeight();
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	void setOriginalHeight(int originalHeight);
 }

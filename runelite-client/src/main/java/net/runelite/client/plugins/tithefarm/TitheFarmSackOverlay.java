@@ -33,7 +33,10 @@ import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.LineComponent;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.components.PanelComponent;
 
 class TitheFarmSackOverlay extends Overlay
@@ -59,6 +62,7 @@ class TitheFarmSackOverlay extends Overlay
 			return null;
 		}
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
 		sack.setHidden(true);
 
@@ -73,6 +77,21 @@ class TitheFarmSackOverlay extends Overlay
 				.left("Points:")
 				.right(String.valueOf(client.getVar(Varbits.TITHE_FARM_POINTS)))
 				.build());
+=======
+		panelComponent.getLines().clear();
+
+		sack.setHidden(true);
+		if (config.showSack())
+		{
+			panelComponent.getLines().add(new PanelComponent.Line(
+				"Fruits in sack:",
+				String.valueOf(client.getVar(Varbits.TITHE_FARM_SACK_AMOUNT))
+			));
+			panelComponent.getLines().add(new PanelComponent.Line(
+				"Points:",
+				String.valueOf(client.getVar(Varbits.TITHE_FARM_POINTS))
+			));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		return panelComponent.render(graphics);

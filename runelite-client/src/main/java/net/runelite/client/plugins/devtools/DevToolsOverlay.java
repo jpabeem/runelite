@@ -39,7 +39,10 @@ import net.runelite.api.Actor;
 import net.runelite.api.Client;
 import net.runelite.api.DecorativeObject;
 import net.runelite.api.GameObject;
+<<<<<<< HEAD
 import net.runelite.api.GraphicsObject;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.GroundObject;
 import net.runelite.api.Item;
 import net.runelite.api.ItemLayer;
@@ -48,7 +51,10 @@ import net.runelite.api.NPCComposition;
 import net.runelite.api.Node;
 import net.runelite.api.Perspective;
 import net.runelite.api.Player;
+<<<<<<< HEAD
 import net.runelite.api.Point;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.Projectile;
 import net.runelite.api.Region;
 import net.runelite.api.Tile;
@@ -61,8 +67,11 @@ import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayUtil;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.tooltip.Tooltip;
 import net.runelite.client.ui.overlay.tooltip.TooltipManager;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 public class DevToolsOverlay extends Overlay
 {
@@ -84,16 +93,25 @@ public class DevToolsOverlay extends Overlay
 
 	private final Client client;
 	private final DevToolsPlugin plugin;
+<<<<<<< HEAD
 	private final TooltipManager toolTipManager;
 
 	@Inject
 	public DevToolsOverlay(Client client, DevToolsPlugin plugin, TooltipManager toolTipManager)
+=======
+
+	@Inject
+	public DevToolsOverlay(Client client, DevToolsPlugin plugin)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		setPosition(OverlayPosition.DYNAMIC);
 		setLayer(OverlayLayer.ALWAYS_ON_TOP);
 		this.client = client;
 		this.plugin = plugin;
+<<<<<<< HEAD
 		this.toolTipManager = toolTipManager;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Override
@@ -115,7 +133,11 @@ public class DevToolsOverlay extends Overlay
 			renderNpcs(graphics);
 		}
 
+<<<<<<< HEAD
 		if (plugin.isToggleGroundItems() || plugin.isToggleGroundObjects() || plugin.isToggleGameObjects() || plugin.isToggleWalls() || plugin.isToggleDecor() || plugin.isToggleTileLocation())
+=======
+		if (plugin.isToggleGroundItems() || plugin.isToggleGroundObjects() || plugin.isToggleGameObjects() || plugin.isToggleWalls() || plugin.isToggleDecor())
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			renderTileObjects(graphics);
 		}
@@ -130,11 +152,14 @@ public class DevToolsOverlay extends Overlay
 			renderProjectiles(graphics);
 		}
 
+<<<<<<< HEAD
 		if (plugin.isToggleGraphicsObjects())
 		{
 			renderGraphicsObjects(graphics);
 		}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		renderWidgets(graphics);
 
 		return null;
@@ -237,15 +262,19 @@ public class DevToolsOverlay extends Overlay
 				{
 					renderDecorObject(graphics, tile, player);
 				}
+<<<<<<< HEAD
 
 				if (plugin.isToggleTileLocation())
 				{
 					renderTileTooltip(graphics, tile);
 				}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 	}
 
+<<<<<<< HEAD
 	private void renderTileTooltip(Graphics2D graphics, Tile tile)
 	{
 		Polygon poly = Perspective.getCanvasTilePoly(client, tile.getLocalLocation());
@@ -256,6 +285,8 @@ public class DevToolsOverlay extends Overlay
 		}
 	}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private void renderGroundItems(Graphics2D graphics, Tile tile, Player player)
 	{
 		ItemLayer itemLayer = tile.getItemLayer();
@@ -411,6 +442,7 @@ public class DevToolsOverlay extends Overlay
 		}
 	}
 
+<<<<<<< HEAD
 	private void renderGraphicsObjects(Graphics2D graphics)
 	{
 		List<GraphicsObject> graphicsObjects = client.getGraphicsObjects();
@@ -435,6 +467,8 @@ public class DevToolsOverlay extends Overlay
 		}
 	}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public void renderWidgets(Graphics2D graphics)
 	{
 		Widget widget = plugin.currentWidget;

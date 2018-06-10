@@ -51,18 +51,24 @@ public interface RSActor extends RSRenderable, Actor
 	@Override
 	int getAnimation();
 
+<<<<<<< HEAD
 	@Import("animation")
 	@Override
 	void setAnimation(int animation);
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Import("graphic")
 	@Override
 	int getGraphic();
 
+<<<<<<< HEAD
 	@Import("graphic")
 	@Override
 	void setGraphic(int graphic);
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Import("combatInfoList")
 	RSCombatInfoList getCombatInfoList();
 
@@ -78,7 +84,10 @@ public interface RSActor extends RSRenderable, Actor
 	int getActionFrame();
 
 	@Import("actionFrame")
+<<<<<<< HEAD
 	@Override
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	void setActionFrame(int frame);
 
 	@Import("actionFrameCycle")
@@ -97,7 +106,10 @@ public interface RSActor extends RSRenderable, Actor
 	int getSpotAnimFrame();
 
 	@Import("spotAnimFrame")
+<<<<<<< HEAD
 	@Override
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	void setSpotAnimFrame(int frame);
 
 	@Import("spotAnimFrameCycle")

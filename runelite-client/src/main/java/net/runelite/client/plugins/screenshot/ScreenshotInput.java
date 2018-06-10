@@ -60,7 +60,11 @@ public class ScreenshotInput implements KeyListener
 
 		if (event.getKeyCode() == KeyEvent.VK_INSERT)
 		{
+<<<<<<< HEAD
 			plugin.takeScreenshot(TIME_FORMAT.format(new Date()));
+=======
+			plugin.takeScreenshot(TIME_FORMAT.format(new Date()), config.displayDate());
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 

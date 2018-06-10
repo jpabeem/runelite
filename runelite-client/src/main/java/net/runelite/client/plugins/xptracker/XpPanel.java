@@ -1,6 +1,9 @@
 /*
  * Copyright (c) 2017, Cameron <moberg@tuta.io>
+<<<<<<< HEAD
  * Copyright (c) 2018, Psikoi <https://github.com/psikoi>
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,6 +33,7 @@ import java.awt.GridLayout;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -38,22 +42,38 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
+=======
+import java.util.concurrent.atomic.AtomicInteger;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Actor;
 import net.runelite.api.Client;
 import net.runelite.api.Skill;
 import net.runelite.client.game.SkillIconManager;
+<<<<<<< HEAD
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.PluginPanel;
 import net.runelite.client.ui.components.PluginErrorPanel;
 import net.runelite.client.util.LinkBrowser;
+=======
+import net.runelite.client.ui.PluginPanel;
+import net.runelite.client.util.LinkBrowser;
+import net.runelite.client.util.StackFormatter;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import okhttp3.HttpUrl;
 
 @Slf4j
 class XpPanel extends PluginPanel
 {
 	private final Map<Skill, XpInfoBox> infoBoxes = new HashMap<>();
+<<<<<<< HEAD
 
 	private final JLabel overallExpGained = new JLabel(XpInfoBox.htmlLabel("Gained: ", 0));
 	private final JLabel overallExpHour = new JLabel(XpInfoBox.htmlLabel("Per hour: ", 0));
@@ -62,11 +82,16 @@ class XpPanel extends PluginPanel
 
 	/* This displays the "No exp gained" text */
 	private final PluginErrorPanel errorPanel = new PluginErrorPanel();
+=======
+	private final JLabel totalXpGained = new JLabel();
+	private final JLabel totalXpHr = new JLabel();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	XpPanel(XpTrackerPlugin xpTrackerPlugin, Client client, SkillIconManager iconManager)
 	{
 		super();
 
+<<<<<<< HEAD
 		setBorder(new EmptyBorder(10, 6, 10, 6));
 		setBackground(ColorScheme.DARK_GRAY_COLOR);
 		setLayout(new BorderLayout());
@@ -117,6 +142,39 @@ class XpPanel extends PluginPanel
 		infoBoxPanel.setLayout(new BoxLayout(infoBoxPanel, BoxLayout.Y_AXIS));
 		layoutPanel.add(overallPanel);
 		layoutPanel.add(infoBoxPanel);
+=======
+		final JPanel layoutPanel = new JPanel();
+		layoutPanel.setLayout(new BorderLayout(0, 3));
+		add(layoutPanel);
+
+		final JPanel totalPanel = new JPanel();
+		totalPanel.setLayout(new BorderLayout());
+		totalPanel.setBorder(BorderFactory.createLineBorder(getBackground().brighter(), 1, true));
+
+		final JPanel infoPanel = new JPanel();
+		infoPanel.setLayout(new GridLayout(4, 1));
+		infoPanel.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
+
+		final JButton resetButton = new JButton("Reset All");
+		resetButton.addActionListener(e -> resetAllInfoBoxes());
+
+		final JButton openTrackerButton = new JButton("Open XP tracker");
+		openTrackerButton.addActionListener(e -> LinkBrowser.browse(buildXpTrackerUrl(client.getLocalPlayer(), Skill.OVERALL)));
+
+		totalXpGained.setText(formatLine(0, "total xp gained"));
+		totalXpHr.setText(formatLine(0, "total xp/hr"));
+
+		infoPanel.add(totalXpGained);
+		infoPanel.add(totalXpHr);
+		infoPanel.add(resetButton);
+		infoPanel.add(openTrackerButton);
+		totalPanel.add(infoPanel, BorderLayout.CENTER);
+		layoutPanel.add(totalPanel, BorderLayout.NORTH);
+
+		final JPanel infoBoxPanel = new JPanel();
+		infoBoxPanel.setLayout(new BoxLayout(infoBoxPanel, BoxLayout.Y_AXIS));
+		layoutPanel.add(infoBoxPanel, BorderLayout.CENTER);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		try
 		{
@@ -126,16 +184,24 @@ class XpPanel extends PluginPanel
 				{
 					break;
 				}
+<<<<<<< HEAD
 				infoBoxes.put(skill, new XpInfoBox(xpTrackerPlugin, client, infoBoxPanel, skill, iconManager));
+=======
+
+				infoBoxes.put(skill, new XpInfoBox(client, infoBoxPanel, xpTrackerPlugin.getSkillXpInfo(skill), iconManager));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 		catch (IOException e)
 		{
 			log.warn(null, e);
 		}
+<<<<<<< HEAD
 
 		errorPanel.setContent("Exp trackers", "You have not gained experience yet.");
 		add(errorPanel);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	static String buildXpTrackerUrl(final Actor player, final Skill skill)
@@ -161,6 +227,7 @@ class XpPanel extends PluginPanel
 	void resetAllInfoBoxes()
 	{
 		infoBoxes.forEach((skill, xpInfoBox) -> xpInfoBox.reset());
+<<<<<<< HEAD
 	}
 
 	void resetSkill(Skill skill)
@@ -201,4 +268,56 @@ class XpPanel extends PluginPanel
 		overallExpHour.setText(XpInfoBox.htmlLabel("Per hour: ", xpSnapshotTotal.getXpPerHour()));
 	}
 
+=======
+		updateTotal();
+	}
+
+	void updateAllInfoBoxes()
+	{
+		infoBoxes.forEach((skill, xpInfoBox) -> xpInfoBox.update());
+		updateTotal();
+	}
+
+	void updateSkillExperience(Skill skill)
+	{
+		final XpInfoBox xpInfoBox = infoBoxes.get(skill);
+		xpInfoBox.update();
+		xpInfoBox.init();
+		updateTotal();
+	}
+
+	private void updateTotal()
+	{
+		final AtomicInteger totalXpGainedVal = new AtomicInteger();
+		final AtomicInteger totalXpHrVal = new AtomicInteger();
+
+		for (XpInfoBox xpInfoBox : infoBoxes.values())
+		{
+			totalXpGainedVal.addAndGet(xpInfoBox.getXpInfo().getXpGained());
+			totalXpHrVal.addAndGet(xpInfoBox.getXpInfo().getXpHr());
+		}
+
+		SwingUtilities.invokeLater(() ->
+		{
+			totalXpGained.setText(formatLine(totalXpGainedVal.get(), "total xp gained"));
+			totalXpHr.setText(formatLine(totalXpHrVal.get(), "total xp/hr"));
+		});
+	}
+
+	static String formatLine(double number, String description)
+	{
+		String numberStr;
+		if (number < 100000)
+		{
+			numberStr = StackFormatter.formatNumber(number);
+		}
+		else
+		{
+			int num = (int) (Math.log(number) / Math.log(1000));
+			numberStr = String.format("%.1f%c", number / Math.pow(1000, num), "KMB".charAt(num - 1));
+		}
+
+		return numberStr + " " + description;
+	}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

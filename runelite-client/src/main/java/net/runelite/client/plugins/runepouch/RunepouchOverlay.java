@@ -37,8 +37,11 @@ import net.runelite.api.Varbits;
 import net.runelite.api.queries.InventoryWidgetItemQuery;
 import net.runelite.api.widgets.WidgetItem;
 import net.runelite.client.game.ItemManager;
+<<<<<<< HEAD
 import static net.runelite.client.plugins.runepouch.config.RunePouchOverlayMode.BOTH;
 import static net.runelite.client.plugins.runepouch.config.RunePouchOverlayMode.MOUSE_HOVER;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
@@ -127,7 +130,11 @@ public class RunepouchOverlay extends Overlay
 				.append(rune.getName())
 				.append("</col></br>");
 
+<<<<<<< HEAD
 			if (config.runePouchOverlayMode() == MOUSE_HOVER)
+=======
+			if (config.showOnlyOnHover())
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			{
 				continue;
 			}
@@ -156,9 +163,13 @@ public class RunepouchOverlay extends Overlay
 
 		String tooltip = tooltipBuilder.toString();
 
+<<<<<<< HEAD
 		if (!tooltip.isEmpty()
 			&& runePouch.getCanvasBounds().contains(client.getMouseCanvasPosition().getX(), client.getMouseCanvasPosition().getY())
 			&& (config.runePouchOverlayMode() == MOUSE_HOVER || config.runePouchOverlayMode() == BOTH))
+=======
+		if (!tooltip.isEmpty() && runePouch.getCanvasBounds().contains(client.getMouseCanvasPosition().getX(), client.getMouseCanvasPosition().getY()))
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			tooltipManager.add(new Tooltip(tooltip));
 		}

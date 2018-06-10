@@ -33,13 +33,19 @@ import javax.inject.Inject;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ItemComposition;
+<<<<<<< HEAD
 import net.runelite.api.ItemID;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import static net.runelite.api.ItemID.COINS_995;
 import static net.runelite.api.ItemID.PLATINUM_TOKEN;
 import net.runelite.api.queries.BankItemQuery;
 import net.runelite.api.widgets.WidgetItem;
 import net.runelite.client.game.ItemManager;
+<<<<<<< HEAD
 import net.runelite.client.game.ItemMapping;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.util.QueryRunner;
 import net.runelite.http.api.item.ItemPrice;
 
@@ -89,38 +95,63 @@ class BankCalculation
 		gePrice = haPrice = 0;
 		finished = false;
 
+<<<<<<< HEAD
+=======
+		List<ItemComposition> itemCompositions = new ArrayList<>();
+		Map<Integer, WidgetItem> itemMap = new HashMap<>();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		List<Integer> itemIds = new ArrayList<>();
 
 		// Generate our lists (and do some quick price additions)
 		for (WidgetItem widgetItem : widgetItems)
 		{
+<<<<<<< HEAD
 			int quantity = widgetItem.getQuantity();
 
 			if (widgetItem.getId() <= 0 || quantity == 0)
+=======
+			if (widgetItem.getId() <= 0 || widgetItem.getQuantity() == 0)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			{
 				continue;
 			}
 
 			if (widgetItem.getId() == COINS_995)
 			{
+<<<<<<< HEAD
 				gePrice += quantity;
 				haPrice += quantity;
+=======
+				gePrice += widgetItem.getQuantity();
+				haPrice += widgetItem.getQuantity();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				continue;
 			}
 
 			if (widgetItem.getId() == PLATINUM_TOKEN)
 			{
+<<<<<<< HEAD
 				gePrice += quantity * 1000L;
 				haPrice += quantity * 1000L;
+=======
+				gePrice += widgetItem.getQuantity() * 1000L;
+				haPrice += widgetItem.getQuantity() * 1000L;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				continue;
 			}
 
 			final ItemComposition itemComposition = itemManager.getItemComposition(widgetItem.getId());
+<<<<<<< HEAD
+=======
+			itemCompositions.add(itemComposition);
+			itemMap.put(widgetItem.getId(), widgetItem);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 			if (config.showGE())
 			{
 				itemIds.add(widgetItem.getId());
 			}
+<<<<<<< HEAD
 
 			if (config.showHA())
 			{
@@ -132,6 +163,8 @@ class BankCalculation
 						(long) quantity;
 				}
 			}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		// Now do the calculations
@@ -156,6 +189,7 @@ class BankCalculation
 
 				try
 				{
+<<<<<<< HEAD
 					for (WidgetItem widgetItem : widgetItems)
 					{
 						int itemId = widgetItem.getId();
@@ -181,6 +215,16 @@ class BankCalculation
 						}
 
 						gePrice += price * quantity;
+=======
+					for (ItemPrice itemPrice : itemPrices)
+					{
+						if (itemPrice.getItem() == null)
+						{
+							continue; // cached no price
+						}
+
+						gePrice += (long) itemPrice.getPrice() * (long) itemMap.get(itemPrice.getItem().getId()).getQuantity();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 					}
 				}
 				catch (Exception ex2)
@@ -197,6 +241,23 @@ class BankCalculation
 		{
 			finished = true;
 		}
+<<<<<<< HEAD
+=======
+
+		if (config.showHA())
+		{
+			for (ItemComposition itemComposition : itemCompositions)
+			{
+				int price = itemComposition.getPrice();
+
+				if (price > 0)
+				{
+					haPrice += (long) Math.round(price * HIGH_ALCHEMY_CONSTANT) *
+						(long) itemMap.get(itemComposition.getId()).getQuantity();
+				}
+			}
+		}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	private boolean isBankDifferent(WidgetItem[] widgetItems)

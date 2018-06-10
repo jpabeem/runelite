@@ -24,12 +24,15 @@
  */
 package net.runelite.api.events;
 
+<<<<<<< HEAD
 /**
  * An event where the username the client will log in with has changed.
  * <p>
  * This event triggers for every character change to the username
  * in the login screen.
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public class UsernameChanged
 {
 }

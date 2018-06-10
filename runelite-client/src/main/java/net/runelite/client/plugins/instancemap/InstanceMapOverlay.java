@@ -37,6 +37,10 @@ import net.runelite.api.SpritePixels;
 import net.runelite.api.Tile;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.events.GameStateChanged;
+<<<<<<< HEAD
+=======
+import net.runelite.api.events.MapRegionChanged;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
@@ -214,6 +218,19 @@ class InstanceMapOverlay extends Overlay
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Handles region changes and re-draws the map
+	 *
+	 * @param event The region change event
+	 */
+	public void onRegionChange(MapRegionChanged event)
+	{
+		mapImage = null;
+	}
+
+	/**
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * Handles game state changes and re-draws the map
 	 *
 	 * @param event The game state change event

@@ -87,6 +87,7 @@ public class PlayerIndicatorsOverlay extends Overlay
 
 		if (textLocation != null)
 		{
+<<<<<<< HEAD
 			if (config.showClanRanks() && actor.isClanMember())
 			{
 				ClanMemberRank rank = clanManager.getRank(name);
@@ -95,6 +96,14 @@ public class PlayerIndicatorsOverlay extends Overlay
 				{
 					BufferedImage clanchatImage = clanManager.getClanImage(rank);
 
+=======
+			if (actor.isClanMember())
+			{
+				ClanMemberRank rank = clanManager.getRank(name);
+				if (rank != ClanMemberRank.UNRANKED)
+				{
+					BufferedImage clanchatImage = clanManager.getClanImage(rank);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 					if (clanchatImage != null)
 					{
 						int width = clanchatImage.getWidth();
@@ -107,7 +116,10 @@ public class PlayerIndicatorsOverlay extends Overlay
 					}
 				}
 			}
+<<<<<<< HEAD
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			OverlayUtil.renderTextLocation(graphics, textLocation, name, color);
 		}
 	}

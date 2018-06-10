@@ -30,6 +30,10 @@ import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
+<<<<<<< HEAD
+=======
+import java.text.DecimalFormat;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Map;
@@ -39,6 +43,7 @@ import net.runelite.api.Client;
 import net.runelite.api.NPC;
 import net.runelite.api.Player;
 import net.runelite.api.Varbits;
+<<<<<<< HEAD
 import net.runelite.client.game.HiscoreManager;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
@@ -52,11 +57,31 @@ import net.runelite.http.api.hiscore.HiscoreResult;
 
 class OpponentInfoOverlay extends Overlay
 {
+=======
+import net.runelite.client.ui.overlay.Overlay;
+import net.runelite.client.ui.overlay.OverlayPosition;
+import net.runelite.client.ui.overlay.OverlayPriority;
+import net.runelite.client.ui.overlay.components.BackgroundComponent;
+import net.runelite.client.ui.overlay.components.TextComponent;
+import net.runelite.client.util.Text;
+
+class OpponentInfoOverlay extends Overlay
+{
+	private static final int WIDTH = 129;
+
+	private static final int TOP_BORDER = 4;
+	private static final int BOTTOM_BORDER = 4;
+
+	private static final int BAR_WIDTH = WIDTH - 10;
+	private static final int BAR_HEIGHT = 16;
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private static final Color HP_GREEN = new Color(0, 146, 54, 230);
 	private static final Color HP_RED = new Color(102, 15, 16, 230);
 	private static final Duration WAIT = Duration.ofSeconds(3);
 
 	private final Client client;
+<<<<<<< HEAD
 	private final OpponentInfoPlugin opponentInfoPlugin;
 	private final HiscoreManager hiscoreManager;
 
@@ -65,10 +90,17 @@ class OpponentInfoOverlay extends Overlay
 	private final Map<String, Integer> oppInfoHealth = OpponentInfoPlugin.loadNpcHealth();
 
 	private Integer lastMaxHealth;
+=======
+	private final NPC[] clientNpcs;
+
+	private Integer lastMaxHealth;
+	private DecimalFormat df = new DecimalFormat("0.0");
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private float lastRatio = 0;
 	private Instant lastTime = Instant.now();
 	private String opponentName;
 	private String opponentsOpponentName;
+<<<<<<< HEAD
 	private NPC lastOpponent;
 
 	@Inject
@@ -84,6 +116,18 @@ class OpponentInfoOverlay extends Overlay
 
 		panelComponent.setBorder(new Rectangle(2, 2, 2, 2));
 		panelComponent.setGap(new Point(0, 2));
+=======
+	private Map<String, Integer> oppInfoHealth = OpponentInfoPlugin.loadNpcHealth();
+	private NPC lastOpponent;
+
+	@Inject
+	OpponentInfoOverlay(Client client)
+	{
+		setPosition(OverlayPosition.TOP_LEFT);
+		setPriority(OverlayPriority.HIGH);
+		this.client = client;
+		this.clientNpcs = client.getCachedNPCs();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	private Actor getOpponent()
@@ -126,6 +170,7 @@ class OpponentInfoOverlay extends Overlay
 			lastTime = Instant.now();
 			lastRatio = (float) opponent.getHealthRatio() / (float) opponent.getHealth();
 			opponentName = Text.removeTags(opponent.getName());
+<<<<<<< HEAD
 
 			lastMaxHealth = null;
 			if (opponent instanceof NPC)
@@ -144,6 +189,9 @@ class OpponentInfoOverlay extends Overlay
 					}
 				}
 			}
+=======
+			lastMaxHealth = oppInfoHealth.get(opponentName + "_" + opponent.getCombatLevel());
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 			Actor opponentsOpponent = opponent.getInteracting();
 			if (opponentsOpponent != null
@@ -162,6 +210,7 @@ class OpponentInfoOverlay extends Overlay
 			return null; //don't draw anything.
 		}
 
+<<<<<<< HEAD
 		final FontMetrics fontMetrics = graphics.getFontMetrics();
 
 		panelComponent.getChildren().clear();
@@ -205,5 +254,82 @@ class OpponentInfoOverlay extends Overlay
 		}
 
 		return panelComponent.render(graphics);
+=======
+		FontMetrics fm = graphics.getFontMetrics();
+
+		int height = TOP_BORDER + fm.getHeight(); // opponent name
+		if (lastRatio >= 0)
+		{
+			height += BAR_HEIGHT + 6;
+		}
+		if (opponentsOpponentName != null)
+		{
+			height += fm.getHeight() + 3;
+		}
+		height += 3;
+		height += BOTTOM_BORDER;
+
+		final BackgroundComponent backgroundComponent = new BackgroundComponent();
+		backgroundComponent.setRectangle(new Rectangle(0, 0, WIDTH, height));
+		backgroundComponent.render(graphics);
+
+		int y = TOP_BORDER + fm.getHeight();
+
+		{
+			int x = (WIDTH - fm.stringWidth(opponentName)) / 2;
+			final TextComponent textComponent = new TextComponent();
+			textComponent.setPosition(new Point(x, y));
+			textComponent.setText(opponentName);
+			textComponent.render(graphics);
+
+			y += 3;
+		}
+
+		if (lastRatio >= 0)
+		{
+			int barWidth = (int) (lastRatio * (float) BAR_WIDTH);
+			y += 3;
+
+			graphics.setColor(HP_GREEN);
+			graphics.fillRect((WIDTH - BAR_WIDTH) / 2, y, barWidth, BAR_HEIGHT);
+
+			graphics.setColor(HP_RED);
+			graphics.fillRect(((WIDTH - BAR_WIDTH) / 2) + barWidth, y, BAR_WIDTH - barWidth, BAR_HEIGHT);
+
+			String str;
+
+			if (lastMaxHealth != null)
+			{
+				int currHealth = (int) (lastRatio * lastMaxHealth);
+				str = currHealth + "/" + lastMaxHealth;
+			}
+			else
+			{
+				str = df.format(lastRatio * 100) + "%";
+			}
+
+			y += BAR_HEIGHT;
+
+			final TextComponent textComponent1 = new TextComponent();
+			textComponent1.setText(str);
+			textComponent1.setPosition(new Point((WIDTH - fm.stringWidth(str)) / 2, y));
+			textComponent1.render(graphics);
+
+			y += 3;
+		}
+
+		if (opponentsOpponentName != null)
+		{
+			y += fm.getHeight();
+
+			int x = (WIDTH - fm.stringWidth(opponentsOpponentName)) / 2;
+			final TextComponent textComponent = new TextComponent();
+			textComponent.setPosition(new Point(x, y));
+			textComponent.setText(opponentsOpponentName);
+			textComponent.render(graphics);
+		}
+
+		return new Dimension(WIDTH, height);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

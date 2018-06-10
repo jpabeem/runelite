@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 /**
  * Represents tile collision data for a world region.
  */
@@ -42,5 +43,9 @@ public interface CollisionData
 	 * @return all collision flags for the tiles in the region
 	 * @see Constants#REGION_SIZE
 	 */
+=======
+public interface CollisionData
+{
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	int[][] getFlags();
 }

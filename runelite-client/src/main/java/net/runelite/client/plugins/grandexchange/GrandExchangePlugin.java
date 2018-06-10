@@ -37,22 +37,33 @@ import javax.swing.SwingUtilities;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+<<<<<<< HEAD
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.GrandExchangeOffer;
 import net.runelite.api.ItemComposition;
 import net.runelite.api.MenuEntry;
+<<<<<<< HEAD
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.ConfigChanged;
 import net.runelite.api.events.FocusChanged;
 import net.runelite.api.events.GameStateChanged;
+=======
+import net.runelite.api.events.ConfigChanged;
+import net.runelite.api.events.FocusChanged;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.events.GrandExchangeOfferChanged;
 import net.runelite.api.events.MenuEntryAdded;
 import net.runelite.api.widgets.WidgetID;
 import net.runelite.api.widgets.WidgetInfo;
+<<<<<<< HEAD
 import net.runelite.client.Notifier;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.input.KeyManager;
@@ -61,12 +72,18 @@ import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.ui.PluginToolbar;
+<<<<<<< HEAD
 import net.runelite.client.util.Text;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @PluginDescriptor(
 	name = "Grand Exchange"
 )
+<<<<<<< HEAD
 @Slf4j
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public class GrandExchangePlugin extends Plugin
 {
 	@Getter(AccessLevel.PACKAGE)
@@ -100,9 +117,12 @@ public class GrandExchangePlugin extends Plugin
 	@Inject
 	private GrandExchangeConfig config;
 
+<<<<<<< HEAD
 	@Inject
 	private Notifier notifier;
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Provides
 	GrandExchangeConfig provideConfig(ConfigManager configManager)
 	{
@@ -121,9 +141,14 @@ public class GrandExchangePlugin extends Plugin
 		}
 
 		button = NavigationButton.builder()
+<<<<<<< HEAD
 			.tooltip("Grand Exchange")
 			.icon(icon)
 			.priority(3)
+=======
+			.name("GE Offers")
+			.icon(icon)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			.panel(panel)
 			.build();
 
@@ -172,6 +197,7 @@ public class GrandExchangePlugin extends Plugin
 		ItemComposition offerItem = itemManager.getItemComposition(offer.getItemId());
 		boolean shouldStack = offerItem.isStackable() || offer.getTotalQuantity() > 1;
 		BufferedImage itemImage = itemManager.getImage(offer.getItemId(), offer.getTotalQuantity(), shouldStack);
+<<<<<<< HEAD
 		SwingUtilities.invokeLater(() -> panel.getOffersPanel().updateOffer(offerItem, itemImage, offerEvent.getOffer(), offerEvent.getSlot()));
 	}
 
@@ -198,6 +224,9 @@ public class GrandExchangePlugin extends Plugin
 		{
 			panel.getOffersPanel().resetOffers();
 		}
+=======
+		SwingUtilities.invokeLater(() -> panel.updateOffer(offerItem, itemImage, offerEvent.getOffer(), offerEvent.getSlot()));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Subscribe

@@ -30,9 +30,12 @@ import net.runelite.api.DecorativeObject;
 import net.runelite.api.GameObject;
 import net.runelite.api.GameState;
 import net.runelite.api.GroundObject;
+<<<<<<< HEAD
 import net.runelite.api.Item;
 import net.runelite.api.ItemLayer;
 import net.runelite.api.Node;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.Point;
 import net.runelite.api.Tile;
 import net.runelite.api.WallObject;
@@ -60,8 +63,11 @@ import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSCollisionData;
 import net.runelite.rs.api.RSGameObject;
 import net.runelite.rs.api.RSTile;
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @Mixin(RSTile.class)
 public abstract class RSTileMixin implements RSTile
@@ -391,6 +397,7 @@ public abstract class RSTileMixin implements RSTile
 		// No collision
 		return true;
 	}
+<<<<<<< HEAD
 
 	@Inject
 	@Override
@@ -411,4 +418,6 @@ public abstract class RSTileMixin implements RSTile
 		}
 		return result;
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

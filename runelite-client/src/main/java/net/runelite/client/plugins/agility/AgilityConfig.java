@@ -82,13 +82,21 @@ public interface AgilityConfig extends Config
 
 	@ConfigItem(
 		keyName = "markHighlight",
+<<<<<<< HEAD
 		name = "Mark Highlight Color",
+=======
+		name = "Mark highlight Color",
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		description = "Color of highlighted Marks of Grace",
 		position = 5
 	)
 	default Color getMarkColor()
 	{
+<<<<<<< HEAD
 		return Color.RED;
+=======
+		return Color.ORANGE;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@ConfigItem(
@@ -101,6 +109,7 @@ public interface AgilityConfig extends Config
 	{
 		return true;
 	}
+<<<<<<< HEAD
 
 	@ConfigItem(
 		keyName = "trapOverlay",
@@ -145,4 +154,6 @@ public interface AgilityConfig extends Config
 	{
 		return true;
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

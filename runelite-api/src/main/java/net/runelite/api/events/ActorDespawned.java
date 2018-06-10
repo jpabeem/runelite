@@ -26,6 +26,7 @@ package net.runelite.api.events;
 
 import net.runelite.api.Actor;
 
+<<<<<<< HEAD
 /**
  * Represents the base event where an {@link Actor} has despawned.
  * <p>
@@ -52,5 +53,9 @@ public interface ActorDespawned
 	 *
 	 * @return despawned entity
 	 */
+=======
+public interface ActorDespawned
+{
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	Actor getActor();
 }

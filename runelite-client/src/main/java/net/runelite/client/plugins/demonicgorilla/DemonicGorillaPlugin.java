@@ -55,13 +55,20 @@ import net.runelite.api.events.NpcSpawned;
 import net.runelite.api.events.PlayerDespawned;
 import net.runelite.api.events.PlayerSpawned;
 import net.runelite.api.events.ProjectileMoved;
+<<<<<<< HEAD
 import net.runelite.client.callback.ClientThread;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.overlay.Overlay;
 
 @PluginDescriptor(
+<<<<<<< HEAD
 	name = "Demonic Gorillas"
+=======
+	name = "Demonic gorillas"
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 )
 @Slf4j
 public class DemonicGorillaPlugin extends Plugin
@@ -72,12 +79,20 @@ public class DemonicGorillaPlugin extends Plugin
 	@Inject
 	private DemonicGorillaOverlay overlay;
 
+<<<<<<< HEAD
 	@Inject
 	private ClientThread clientThread;
 
 	@Getter
 	private Map<NPC, DemonicGorilla> gorillas;
 
+=======
+	@Getter
+	private Map<NPC, DemonicGorilla> gorillas;
+
+	private int tickCounter;
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private List<WorldPoint> recentBoulders;
 
 	private List<PendingGorillaAttack> pendingAttacks;
@@ -87,11 +102,18 @@ public class DemonicGorillaPlugin extends Plugin
 	@Override
 	protected void startUp() throws Exception
 	{
+<<<<<<< HEAD
+=======
+		tickCounter = 0;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		gorillas = new HashMap<>();
 		recentBoulders = new ArrayList<>();
 		pendingAttacks = new ArrayList<>();
 		memorizedPlayers = new HashMap<>();
+<<<<<<< HEAD
 		clientThread.invokeLater(this::reset); // Updates the list of gorillas and players
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Override
@@ -113,6 +135,7 @@ public class DemonicGorillaPlugin extends Plugin
 	{
 		recentBoulders.clear();
 		pendingAttacks.clear();
+<<<<<<< HEAD
 		memorizedPlayers.clear();
 		gorillas.clear();
 	}
@@ -135,6 +158,10 @@ public class DemonicGorillaPlugin extends Plugin
 				gorillas.put(npc, new DemonicGorilla(npc));
 			}
 		}
+=======
+		gorillas.clear();
+		memorizedPlayers.clear();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	private void resetPlayers()
@@ -164,7 +191,11 @@ public class DemonicGorillaPlugin extends Plugin
 		{
 			gorilla.setNextPosibleAttackStyles(Arrays
 				.stream(DemonicGorilla.ALL_REGULAR_ATTACK_STYLES)
+<<<<<<< HEAD
 				.filter(x -> Arrays.stream(protectedStyles).noneMatch(y -> x == y))
+=======
+				.filter(x -> !Arrays.stream(protectedStyles).anyMatch(y -> x == y))
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				.collect(Collectors.toList()));
 			gorilla.setAttacksUntilSwitch(DemonicGorilla.ATTACKS_PER_SWITCH);
 			gorilla.setChangedAttackStyleThisTick(true);
@@ -228,7 +259,11 @@ public class DemonicGorillaPlugin extends Plugin
 				// so we keep track of the attack here until the damage splat
 				// has appeared on the player.
 
+<<<<<<< HEAD
 				int damagesOnTick = client.getTickCount();
+=======
+				int damagesOnTick = tickCounter;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				if (attackStyle == DemonicGorilla.AttackStyle.MAGIC)
 				{
 					MemorizedPlayer mp = memorizedPlayers.get(target);
@@ -277,13 +312,19 @@ public class DemonicGorillaPlugin extends Plugin
 
 		checkGorillaAttackStyleSwitch(gorilla, protectedStyle);
 
+<<<<<<< HEAD
 		int tickCounter = client.getTickCount();
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		gorilla.setNextAttackTick(tickCounter + DemonicGorilla.ATTACK_RATE);
 	}
 
 	private void checkGorillaAttacks()
 	{
+<<<<<<< HEAD
 		int tickCounter = client.getTickCount();
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		for (DemonicGorilla gorilla : gorillas.values())
 		{
 			Player interacting = (Player)gorilla.getNpc().getInteracting();
@@ -427,7 +468,11 @@ public class DemonicGorillaPlugin extends Plugin
 							// or other players
 							final WorldArea area1 = new WorldArea(x, 1, 1);
 							return area1 != null &&
+<<<<<<< HEAD
 								gorillas.values().stream().noneMatch(y ->
+=======
+								!gorillas.values().stream().anyMatch(y ->
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 								{
 									if (y == gorilla)
 									{
@@ -438,7 +483,11 @@ public class DemonicGorillaPlugin extends Plugin
 											y.getNpc().getWorldArea() : y.getLastWorldArea();
 									return area2 != null && area1.intersectsWith(area2);
 								}) &&
+<<<<<<< HEAD
 								memorizedPlayers.values().stream().noneMatch(y ->
+=======
+								!memorizedPlayers.values().stream().anyMatch(y ->
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 								{
 									final WorldArea area2 = y.getLastWorldArea();
 									return area2 != null && area1.intersectsWith(area2);
@@ -479,7 +528,11 @@ public class DemonicGorillaPlugin extends Plugin
 							}
 							else if (tickCounter >= gorilla.getNextAttackTick() &&
 								gorilla.getRecentProjectileId() == -1 &&
+<<<<<<< HEAD
 								recentBoulders.stream().noneMatch(x -> x.distanceTo(mp.getLastWorldArea()) == 0))
+=======
+								!recentBoulders.stream().anyMatch(x -> x.distanceTo(mp.getLastWorldArea()) == 0))
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 							{
 								gorilla.setNextPosibleAttackStyles(gorilla
 									.getNextPosibleAttackStyles()
@@ -568,7 +621,10 @@ public class DemonicGorillaPlugin extends Plugin
 	private void checkPendingAttacks()
 	{
 		Iterator<PendingGorillaAttack> it = pendingAttacks.iterator();
+<<<<<<< HEAD
 		int tickCounter = client.getTickCount();
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		while (it.hasNext())
 		{
 			PendingGorillaAttack attack = it.next();
@@ -653,7 +709,11 @@ public class DemonicGorillaPlugin extends Plugin
 			gs == GameState.CONNECTION_LOST ||
 			gs == GameState.HOPPING)
 		{
+<<<<<<< HEAD
 			reset();
+=======
+			clear();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 	}
 
@@ -713,5 +773,10 @@ public class DemonicGorillaPlugin extends Plugin
 		checkPendingAttacks();
 		updatePlayers();
 		recentBoulders.clear();
+<<<<<<< HEAD
+=======
+
+		tickCounter++;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

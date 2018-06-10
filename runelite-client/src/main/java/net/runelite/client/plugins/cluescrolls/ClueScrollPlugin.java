@@ -28,15 +28,22 @@ package net.runelite.client.plugins.cluescrolls;
 
 import com.google.common.eventbus.Subscribe;
 import com.google.inject.Provides;
+<<<<<<< HEAD
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.Collection;
+<<<<<<< HEAD
 import java.util.List;
 import java.util.stream.Stream;
 import javax.imageio.ImageIO;
+=======
+import java.util.stream.Stream;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import javax.inject.Inject;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -75,17 +82,26 @@ import net.runelite.client.plugins.cluescrolls.clues.CoordinateClue;
 import net.runelite.client.plugins.cluescrolls.clues.CrypticClue;
 import net.runelite.client.plugins.cluescrolls.clues.EmoteClue;
 import net.runelite.client.plugins.cluescrolls.clues.FairyRingClue;
+<<<<<<< HEAD
 import net.runelite.client.plugins.cluescrolls.clues.HotColdClue;
 import net.runelite.client.plugins.cluescrolls.clues.LocationClueScroll;
 import net.runelite.client.plugins.cluescrolls.clues.LocationsClueScroll;
+=======
+import net.runelite.client.plugins.cluescrolls.clues.LocationClueScroll;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.plugins.cluescrolls.clues.MapClue;
 import net.runelite.client.plugins.cluescrolls.clues.NpcClueScroll;
 import net.runelite.client.plugins.cluescrolls.clues.ObjectClueScroll;
 import net.runelite.client.plugins.cluescrolls.clues.TextClueScroll;
 import net.runelite.client.ui.overlay.Overlay;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.worldmap.WorldMapPointManager;
 import net.runelite.client.util.QueryRunner;
 import net.runelite.client.util.Text;
+=======
+import net.runelite.client.util.Text;
+import net.runelite.client.util.QueryRunner;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @PluginDescriptor(
 	name = "Clue Scroll"
@@ -95,11 +111,14 @@ public class ClueScrollPlugin extends Plugin
 {
 	private static final Duration WAIT_DURATION = Duration.ofMinutes(4);
 
+<<<<<<< HEAD
 	public static final BufferedImage CLUE_SCROLL_IMAGE;
 	public static final BufferedImage MAP_ARROW;
 	public static final BufferedImage EMOTE_IMAGE;
 	public static final BufferedImage SPADE_IMAGE;
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Getter
 	private ClueScroll clue;
 
@@ -113,9 +132,12 @@ public class ClueScrollPlugin extends Plugin
 	private Item[] equippedItems;
 
 	@Getter
+<<<<<<< HEAD
 	private Item[] inventoryItems;
 
 	@Getter
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private Instant clueTimeout;
 
 	@Inject
@@ -140,6 +162,7 @@ public class ClueScrollPlugin extends Plugin
 	@Inject
 	private ClueScrollConfig config;
 
+<<<<<<< HEAD
 	@Inject
 	private WorldMapPointManager worldMapPointManager;
 
@@ -164,6 +187,10 @@ public class ClueScrollPlugin extends Plugin
 			throw new RuntimeException(e);
 		}
 	}
+=======
+	private Integer clueItemId;
+	private boolean clueItemChanged = false;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Provides
 	ClueScrollConfig getConfig(ConfigManager configManager)
@@ -172,12 +199,15 @@ public class ClueScrollPlugin extends Plugin
 	}
 
 	@Override
+<<<<<<< HEAD
 	protected void shutDown() throws Exception
 	{
 		resetClue();
 	}
 
 	@Override
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public Collection<Overlay> getOverlays()
 	{
 		return Arrays.asList(clueScrollOverlay, clueScrollEmoteOverlay, clueScrollWorldOverlay);
@@ -186,11 +216,16 @@ public class ClueScrollPlugin extends Plugin
 	@Subscribe
 	public void onChatMessage(ChatMessage event)
 	{
+<<<<<<< HEAD
 		if (event.getType() != ChatMessageType.SERVER && event.getType() != ChatMessageType.FILTERED)
+=======
+		if (event.getType() != ChatMessageType.SERVER)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			return;
 		}
 
+<<<<<<< HEAD
 		if (clue instanceof LocationsClueScroll)
 		{
 			if (((LocationsClueScroll)clue).update(event.getMessage(), this))
@@ -201,6 +236,9 @@ public class ClueScrollPlugin extends Plugin
 
 		if (!event.getMessage().equals("The strange device cools as you find your treasure.")
 			&& !event.getMessage().equals("Well done, you've completed the Treasure Trail!"))
+=======
+		if (!event.getMessage().equals("Well done, you've completed the Treasure Trail!"))
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			return;
 		}
@@ -263,6 +301,7 @@ public class ClueScrollPlugin extends Plugin
 		npcsToMark = null;
 		objectsToMark = null;
 		equippedItems = null;
+<<<<<<< HEAD
 		inventoryItems = null;
 
 		if (clue instanceof LocationsClueScroll)
@@ -274,6 +313,8 @@ public class ClueScrollPlugin extends Plugin
 				addMapPoints(locations.toArray(new WorldPoint[locations.size()]));
 			}
 		}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		// If we have location clue, set world location before all other types of clues
 		// to allow NPCs and objects to override it when needed
@@ -281,6 +322,7 @@ public class ClueScrollPlugin extends Plugin
 		{
 			final WorldPoint location = ((LocationClueScroll) clue).getLocation();
 
+<<<<<<< HEAD
 			if (location != null)
 			{
 				if (config.displayHintArrows())
@@ -289,6 +331,11 @@ public class ClueScrollPlugin extends Plugin
 				}
 
 				addMapPoints(location);
+=======
+			if (config.displayHintArrows() && location != null)
+			{
+				client.setHintArrow(location);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 
@@ -302,6 +349,7 @@ public class ClueScrollPlugin extends Plugin
 				npcsToMark = queryRunner.runQuery(query);
 
 				// Set hint arrow to first NPC found as there can only be 1 hint arrow
+<<<<<<< HEAD
 				if (npcsToMark.length >= 1)
 				{
 					if (config.displayHintArrows())
@@ -310,6 +358,11 @@ public class ClueScrollPlugin extends Plugin
 					}
 
 					addMapPoints(npcsToMark[0].getWorldLocation());
+=======
+				if (config.displayHintArrows() && npcsToMark.length >= 1)
+				{
+					client.setHintArrow(npcsToMark[0]);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				}
 			}
 		}
@@ -350,6 +403,7 @@ public class ClueScrollPlugin extends Plugin
 
 		if (clue instanceof EmoteClue)
 		{
+<<<<<<< HEAD
 			ItemContainer equipment = client.getItemContainer(InventoryID.EQUIPMENT);
 			
 			if (equipment != null)
@@ -369,6 +423,10 @@ public class ClueScrollPlugin extends Plugin
 		{
 			ItemContainer container = client.getItemContainer(InventoryID.INVENTORY);
 
+=======
+			ItemContainer container = client.getItemContainer(InventoryID.EQUIPMENT);
+			
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			if (container != null)
 			{
 				equippedItems = container.getItems();
@@ -409,6 +467,7 @@ public class ClueScrollPlugin extends Plugin
 			clueItemId = null;
 		}
 
+<<<<<<< HEAD
 		if (clue instanceof LocationsClueScroll)
 		{
 			((LocationsClueScroll) clue).reset();
@@ -418,6 +477,10 @@ public class ClueScrollPlugin extends Plugin
 		clue = null;
 		worldMapPointManager.removeIf(ClueScrollWorldMapPoint.class::isInstance);
 		worldMapPointsSet = false;
+=======
+		clueItemChanged = false;
+		clue = null;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		if (config.displayHintArrows())
 		{
@@ -481,6 +544,7 @@ public class ClueScrollPlugin extends Plugin
 					return fairyRingClue;
 				}
 
+<<<<<<< HEAD
 				final HotColdClue hotColdClue = HotColdClue.forText(text);
 
 				if (hotColdClue != null)
@@ -488,6 +552,8 @@ public class ClueScrollPlugin extends Plugin
 					return hotColdClue;
 				}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				// We have unknown clue, reset
 				resetClue();
 				return null;
@@ -518,7 +584,10 @@ public class ClueScrollPlugin extends Plugin
 
 	/**
 	 * Example input: "00 degrees 00 minutes north 07 degrees 13 minutes west"
+<<<<<<< HEAD
 	 * Note: some clues use "1 degree" instead of "01 degrees"
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	private CoordinateClue coordinatesToWorldPoint(String text)
 	{
@@ -530,7 +599,11 @@ public class ClueScrollPlugin extends Plugin
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (!splitText[1].startsWith("degree") || !splitText[3].startsWith("minute"))
+=======
+		if (!splitText[1].equals("degrees") || !splitText[3].equals("minutes"))
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			log.warn("\"" + text + "\" is not a well formed coordinate string");
 			return null;
@@ -572,6 +645,7 @@ public class ClueScrollPlugin extends Plugin
 
 		return new WorldPoint(x2, y2, 0);
 	}
+<<<<<<< HEAD
 
 	private void addMapPoints(WorldPoint... points)
 	{
@@ -588,4 +662,6 @@ public class ClueScrollPlugin extends Plugin
 			worldMapPointManager.add(new ClueScrollWorldMapPoint(point));
 		}
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

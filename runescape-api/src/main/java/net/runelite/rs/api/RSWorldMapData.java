@@ -25,10 +25,16 @@
 package net.runelite.rs.api;
 
 import net.runelite.api.WorldMapData;
+<<<<<<< HEAD
 import net.runelite.mapping.Import;
 
 public interface RSWorldMapData extends WorldMapData
 {
 	@Import("surfaceContainsPosition")
 	boolean surfaceContainsPosition(int x, int y);
+=======
+
+public interface RSWorldMapData extends WorldMapData
+{
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

@@ -27,6 +27,7 @@ package net.runelite.api.events;
 import lombok.Value;
 import net.runelite.api.Tile;
 
+<<<<<<< HEAD
 /**
  * An event called when an item pile on a {@link Tile} is modified.
  * <p>
@@ -44,5 +45,10 @@ public class ItemLayerChanged
 	/**
 	 * The affected tile.
 	 */
+=======
+@Value
+public class ItemLayerChanged
+{
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private Tile tile;
 }

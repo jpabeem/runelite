@@ -83,6 +83,7 @@ public class GroundMarkerOverlay extends Overlay
 			return;
 		}
 
+<<<<<<< HEAD
 		LocalPoint lp = LocalPoint.fromWorld(client, point);
 		if (lp == null)
 		{
@@ -90,6 +91,10 @@ public class GroundMarkerOverlay extends Overlay
 		}
 
 		Polygon poly = Perspective.getCanvasTilePoly(client, lp);
+=======
+		Polygon poly = Perspective.getCanvasTilePoly(client, LocalPoint.fromWorld(client, point));
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (poly == null)
 		{
 			return;

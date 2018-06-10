@@ -28,6 +28,7 @@ import lombok.Data;
 import net.runelite.api.DecorativeObject;
 import net.runelite.api.Tile;
 
+<<<<<<< HEAD
 /**
  * An event where the {@link DecorativeObject} attached to a {@link Tile}
  * is removed.
@@ -42,5 +43,11 @@ public class DecorativeObjectDespawned
 	/**
 	 * The removed decorative object.
 	 */
+=======
+@Data
+public class DecorativeObjectDespawned
+{
+	private Tile tile;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private DecorativeObject decorativeObject;
 }

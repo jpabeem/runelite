@@ -72,9 +72,14 @@ public class NotesPlugin extends Plugin
 		}
 
 		navButton = NavigationButton.builder()
+<<<<<<< HEAD
 			.tooltip("Notes")
 			.icon(icon)
 			.priority(7)
+=======
+			.name("Notes")
+			.icon(icon)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			.panel(panel)
 			.build();
 

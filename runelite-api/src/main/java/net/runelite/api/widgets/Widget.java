@@ -28,6 +28,7 @@ import java.awt.Rectangle;
 import java.util.Collection;
 import net.runelite.api.Point;
 
+<<<<<<< HEAD
 /**
  * Represents an on-screen UI element that is drawn on the canvas.
  * <p>
@@ -249,18 +250,83 @@ public interface Widget
 	 * Checks whether this widget or any of its parents are hidden.
 	 *
 	 * @return true if this widget or any parent is hidden, false otherwise
+=======
+public interface Widget
+{
+	int getId();
+
+	int getType();
+
+	void setType(int type);
+
+	int getContentType();
+
+	void setContentType(int contentType);
+
+	int getClickMask();
+
+	void setClickMask(int mask);
+
+	Widget getParent();
+
+	int getParentId();
+
+	Widget getChild(int index);
+
+	Widget[] getChildren();
+
+	Widget[] getDynamicChildren();
+
+	Widget[] getStaticChildren();
+
+	Widget[] getNestedChildren();
+
+	int getRelativeX();
+
+	void setRelativeX(int x);
+
+	int getRelativeY();
+
+	void setRelativeY(int y);
+
+	String getText();
+
+	void setText(String text);
+
+	int getTextColor();
+
+	void setTextColor(int textColor);
+
+	String getName();
+
+	void setName(String name);
+
+	int getModelId();
+
+	int getSpriteId();
+
+	void setSpriteId(int spriteId);
+
+	/**
+	 * @return True if this widget or any of it's parents are hidden
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	boolean isHidden();
 
 	/**
+<<<<<<< HEAD
 	 * Checks whether this widget is hidden, not taking into account
 	 * any parent hidden states.
 	 *
 	 * @return true if this widget is hidden, false otherwise
+=======
+	 * @return True if this widget, regardless of it's parent's state
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	boolean isSelfHidden();
 
 	/**
+<<<<<<< HEAD
 	 * Sets the hidden state of this widget.
 	 *
 	 * @param hidden new hidden state
@@ -352,6 +418,32 @@ public interface Widget
 	 * @param point the canvas point
 	 * @return true if this widget contains the point, false otherwise
 	 */
+=======
+	 * Sets if this element is hidden as returned by isSelfHidden()
+	 */
+	void setHidden(boolean hidden);
+
+	Point getCanvasLocation();
+
+	int getWidth();
+
+	void setWidth(int width);
+
+	int getHeight();
+
+	void setHeight(int height);
+
+	Rectangle getBounds();
+
+	Collection<WidgetItem> getWidgetItems();
+
+	WidgetItem getWidgetItem(int index);
+
+	int getItemId();
+
+	int getItemQuantity();
+	
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	boolean contains(Point point);
 
 	int getScrollX();
@@ -362,6 +454,7 @@ public interface Widget
 
 	void setScrollY(int scrollY);
 
+<<<<<<< HEAD
 	/**
 	 * Gets the original x-axis coordinate.
 	 *
@@ -451,5 +544,23 @@ public interface Widget
 	 *
 	 * @return the actions
 	 */
+=======
+	int getOriginalX();
+
+	void setOriginalX(int originalX);
+
+	int getOriginalY();
+
+	void setOriginalY(int originalY);
+
+	int getPaddingX();
+
+	void setPaddingX(int paddingX);
+
+	int getPaddingY();
+
+	void setPaddingY(int paddingY);
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	String[] getActions();
 }

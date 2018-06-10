@@ -28,6 +28,7 @@ import lombok.Data;
 import net.runelite.api.GroundObject;
 import net.runelite.api.Tile;
 
+<<<<<<< HEAD
 /**
  * An event where a {@link GroundObject} on a {@link Tile} has been removed.
  */
@@ -41,5 +42,11 @@ public class GroundObjectDespawned
 	/**
 	 * The removed ground object.
 	 */
+=======
+@Data
+public class GroundObjectDespawned
+{
+	private Tile tile;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private GroundObject groundObject;
 }

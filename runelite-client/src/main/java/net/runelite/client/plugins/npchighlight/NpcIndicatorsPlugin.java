@@ -25,10 +25,15 @@
  */
 package net.runelite.client.plugins.npchighlight;
 
+<<<<<<< HEAD
 import com.google.common.base.Splitter;
 import com.google.common.eventbus.Subscribe;
 import com.google.inject.Provides;
 import java.time.Instant;
+=======
+import com.google.common.eventbus.Subscribe;
+import com.google.inject.Provides;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -38,11 +43,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+<<<<<<< HEAD
 import java.util.regex.Pattern;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import javax.inject.Inject;
 import lombok.AccessLevel;
 import lombok.Getter;
 import net.runelite.api.Client;
+<<<<<<< HEAD
 import net.runelite.api.GameState;
 import net.runelite.api.GraphicID;
 import net.runelite.api.GraphicsObject;
@@ -57,6 +66,12 @@ import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.NpcDespawned;
 import net.runelite.api.events.NpcSpawned;
 import net.runelite.client.callback.ClientThread;
+=======
+import net.runelite.api.NPC;
+import net.runelite.api.events.FocusChanged;
+import net.runelite.api.events.GameTick;
+import net.runelite.api.events.MenuOptionClicked;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.menus.MenuManager;
@@ -68,13 +83,20 @@ import net.runelite.client.util.WildcardMatcher;
 @PluginDescriptor(name = "NPC Indicators")
 public class NpcIndicatorsPlugin extends Plugin
 {
+<<<<<<< HEAD
 	private static final int MAX_ACTOR_VIEW_RANGE = 15;
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	// Option added to NPC menu
 	private static final String TAG = "Tag";
 
 	// Regex for splitting the hidden items in the config.
+<<<<<<< HEAD
 	private static final Splitter COMMA_SPLITTER = Splitter.on(Pattern.compile("\\s*,\\s*")).trimResults();
+=======
+	private static final String DELIMITER_REGEX = "\\s*,\\s*";
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	private Client client;
@@ -86,7 +108,11 @@ public class NpcIndicatorsPlugin extends Plugin
 	private NpcIndicatorsConfig config;
 
 	@Inject
+<<<<<<< HEAD
 	private NpcSceneOverlay npcSceneOverlay;
+=======
+	private NpcClickboxOverlay npcClickboxOverlay;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	private NpcMinimapOverlay npcMinimapOverlay;
@@ -97,6 +123,7 @@ public class NpcIndicatorsPlugin extends Plugin
 	@Inject
 	private KeyManager keyManager;
 
+<<<<<<< HEAD
 	@Inject
 	private ClientThread clientThread;
 
@@ -165,6 +192,26 @@ public class NpcIndicatorsPlugin extends Plugin
 
 	private boolean hotKeyPressed = false;
 
+=======
+	@Getter(AccessLevel.PACKAGE)
+	private final Set<Integer> npcTags = new HashSet<>();
+
+	@Getter(AccessLevel.PACKAGE)
+	private final List<NPC> taggedNpcs = new ArrayList<>();
+
+	@Getter(AccessLevel.PACKAGE)
+	private Map<NPC, String> highlightedNpcs = new HashMap<>();
+
+	private boolean hotKeyPressed = false;
+
+	private void toggleTag(int npcId)
+	{
+		boolean removed = npcTags.remove(npcId);
+		if (!removed)
+			npcTags.add(npcId);
+	}
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Provides
 	NpcIndicatorsConfig provideConfig(ConfigManager configManager)
 	{
@@ -175,17 +222,21 @@ public class NpcIndicatorsPlugin extends Plugin
 	protected void startUp() throws Exception
 	{
 		keyManager.registerKeyListener(inputListener);
+<<<<<<< HEAD
 		highlights = getHighlights();
 		clientThread.invokeLater(() ->
 		{
 			skipNextSpawnCheck = true;
 			rebuildAllNpcs();
 		});
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
+<<<<<<< HEAD
 		deadNpcsToDisplay.clear();
 		memorizedNpcs.clear();
 		spawnedNpcsThisTick.clear();
@@ -193,10 +244,15 @@ public class NpcIndicatorsPlugin extends Plugin
 		teleportGraphicsObjectSpawnedThisTick.clear();
 		npcTags.clear();
 		highlightedNpcs.clear();
+=======
+		npcTags.clear();
+		taggedNpcs.clear();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyManager.unregisterKeyListener(inputListener);
 	}
 
 	@Subscribe
+<<<<<<< HEAD
 	public void onGameStateChange(GameStateChanged event)
 	{
 		if (event.getGameState() == GameState.LOGIN_SCREEN ||
@@ -223,6 +279,8 @@ public class NpcIndicatorsPlugin extends Plugin
 	}
 
 	@Subscribe
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public void onFocusChanged(FocusChanged focusChanged)
 	{
 		// If you somehow manage to right click while holding shift, then click off screen
@@ -236,6 +294,7 @@ public class NpcIndicatorsPlugin extends Plugin
 	public void onMenuObjectClicked(MenuOptionClicked click)
 	{
 		if (click.getMenuOption().equals(TAG))
+<<<<<<< HEAD
 		{
 			final int id = click.getId();
 			final boolean removed = npcTags.remove(id);
@@ -432,12 +491,54 @@ public class NpcIndicatorsPlugin extends Plugin
 		for (NPC npc : client.getNpcs())
 		{
 			final String npcName = npc.getName();
+=======
+			toggleTag(click.getId());
+	}
+
+	@Subscribe
+	public void onGameTick(GameTick tick)
+	{
+		highlightedNpcs = buildNpcsToHighlight();
+		taggedNpcs.clear();
+		if (npcTags.isEmpty() || !config.isTagEnabled())
+		{
+			return;
+		}
+		for (NPC npc : client.getNpcs())
+		{
+			if (npcTags.contains(npc.getIndex()) && npc.getName() != null)
+			{
+				taggedNpcs.add(npc);
+			}
+		}
+	}
+
+	@Override
+	public Collection<Overlay> getOverlays()
+	{
+		return Arrays.asList(npcClickboxOverlay, npcMinimapOverlay);
+	}
+
+	private Map<NPC, String> buildNpcsToHighlight()
+	{
+		String configNpcs = config.getNpcToHighlight().toLowerCase();
+		if (configNpcs.isEmpty())
+			return Collections.EMPTY_MAP;
+
+		Map<NPC, String> npcMap = new HashMap<>();
+		List<String> highlightedNpcs = Arrays.asList(configNpcs.split(DELIMITER_REGEX));
+
+		for (NPC npc : client.getNpcs())
+		{
+			String npcName = npc.getName();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 			if (npcName == null)
 			{
 				continue;
 			}
 
+<<<<<<< HEAD
 			if (npcTags.contains(npc.getIndex()))
 			{
 				highlightedNpcs.add(npc);
@@ -537,5 +638,36 @@ public class NpcIndicatorsPlugin extends Plugin
 		spawnedNpcsThisTick.clear();
 		despawnedNpcsThisTick.clear();
 		teleportGraphicsObjectSpawnedThisTick.clear();
+=======
+			for (String highlight : highlightedNpcs)
+			{
+				if (WildcardMatcher.matches(highlight, npcName))
+				{
+					npcMap.put(npc, npcName);
+				}
+			}
+		}
+
+		return npcMap;
+	}
+
+	void updateNpcMenuOptions(boolean pressed)
+	{
+		if (!config.isTagEnabled())
+		{
+			return;
+		}
+
+		if (pressed)
+		{
+			menuManager.addNpcMenuOption(TAG);
+		}
+		else
+		{
+			menuManager.removeNpcMenuOption(TAG);
+		}
+
+		hotKeyPressed = pressed;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

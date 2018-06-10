@@ -64,7 +64,10 @@ import net.runelite.client.plugins.PluginManager;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.overlay.infobox.InfoBoxOverlay;
 import net.runelite.client.ui.overlay.tooltip.TooltipOverlay;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.worldmap.WorldMapOverlay;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @Singleton
 @Slf4j
@@ -85,7 +88,10 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 	private static final Color MOVING_OVERLAY_ACTIVE_COLOR = new Color(255, 255, 0, 200);
 	private static final String OVERLAY_CONFIG_PREFERRED_LOCATION = "_preferredLocation";
 	private static final String OVERLAY_CONFIG_PREFERRED_POSITION = "_preferredPosition";
+<<<<<<< HEAD
 	private static final String OVERLAY_CONFIG_PREFERRED_SIZE = "_preferredSize";
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	private final PluginManager pluginManager;
 	private final Provider<Client> clientProvider;
@@ -93,7 +99,10 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 	private final ConfigManager configManager;
 	private final RuneLiteConfig runeLiteConfig;
 	private final TooltipOverlay tooltipOverlay;
+<<<<<<< HEAD
 	private final WorldMapOverlay worldMapOverlay;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private final List<Overlay> allOverlays = new CopyOnWriteArrayList<>();
 	private final String runeliteGroupName = RuneLiteConfig.class.getAnnotation(ConfigGroup.class).keyName();
 
@@ -120,7 +129,10 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 		final KeyManager keyManager,
 		final TooltipOverlay tooltipOverlay,
 		final InfoBoxOverlay infoBoxOverlay,
+<<<<<<< HEAD
 		final WorldMapOverlay worldMapOverlay,
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		final ConfigManager configManager,
 		final RuneLiteConfig runeLiteConfig)
 	{
@@ -128,7 +140,10 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 		this.pluginManager = pluginManager;
 		this.tooltipOverlay = tooltipOverlay;
 		this.infoBoxOverlay = infoBoxOverlay;
+<<<<<<< HEAD
 		this.worldMapOverlay = worldMapOverlay;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		this.configManager = configManager;
 		this.runeLiteConfig = runeLiteConfig;
 		keyManager.registerKeyListener(this);
@@ -166,6 +181,7 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 		}
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Force save overlay data
 	 * @param overlay overlay to save
@@ -195,6 +211,9 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 	 * Rebuild overlay cache for rendering
 	 */
 	public void rebuildOverlays()
+=======
+	private void rebuildOverlays()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		final List<Overlay> overlays = Stream
 			.concat(
@@ -202,7 +221,11 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 					.stream()
 					.filter(pluginManager::isPluginEnabled)
 					.flatMap(plugin -> plugin.getOverlays().stream()),
+<<<<<<< HEAD
 				Stream.of(infoBoxOverlay, tooltipOverlay, worldMapOverlay))
+=======
+				Stream.of(infoBoxOverlay, tooltipOverlay))
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			.filter(Objects::nonNull)
 			.collect(Collectors.toList());
 
@@ -228,11 +251,16 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 				overlay.setPreferredLocation(null);
 				saveOverlayLocation(overlay);
 			}
+<<<<<<< HEAD
 			else if (location != null)
+=======
+			else
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			{
 				overlay.setPreferredLocation(location);
 			}
 
+<<<<<<< HEAD
 			final Dimension size = loadOverlaySize(overlay);
 
 			if (size != null)
@@ -240,6 +268,8 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 				overlay.setPreferredSize(size);
 			}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			final OverlayPosition position = loadOverlayPosition(overlay);
 			overlay.setPreferredPosition(position);
 		}
@@ -325,7 +355,11 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 		OverlayUtil.setGraphicProperties(graphics);
 
 		// Draw snap corners
+<<<<<<< HEAD
 		if (layer == OverlayLayer.UNDER_WIDGETS && movedOverlay != null && movedOverlay.getPosition() != OverlayPosition.DETACHED)
+=======
+		if (layer == OverlayLayer.UNDER_WIDGETS && movedOverlay != null)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			final OverlayBounds translatedSnapCorners = snapCorners.translated(
 				-SNAP_CORNER_SIZE.width,
@@ -369,7 +403,11 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 				final Dimension dimension = overlay.getBounds().getSize();
 
 				// If the final position is not modified, layout it
+<<<<<<< HEAD
 				if (overlayPosition != OverlayPosition.DETACHED && (overlay.getPreferredLocation() == null || overlay.getPreferredPosition() != null))
+=======
+				if (overlay.getPreferredLocation() == null || overlay.getPreferredPosition() != null)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				{
 					final Rectangle snapCorner = snapCorners.forPosition(overlayPosition);
 					final Point translation = OverlayUtil.transformPosition(overlayPosition, dimension);
@@ -379,6 +417,7 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 				}
 				else
 				{
+<<<<<<< HEAD
 					if (overlay.getPreferredLocation() != null)
 					{
 						location.setLocation(overlay.getPreferredLocation());
@@ -388,6 +427,9 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 				if (overlay.getPreferredSize() != null)
 				{
 					overlay.getBounds().setSize(overlay.getPreferredSize());
+=======
+					location.setLocation(overlay.getPreferredLocation());
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				}
 
 				safeRender(client, overlay, layer, graphics, location);
@@ -426,6 +468,7 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 			{
 				if (SwingUtilities.isRightMouseButton(mouseEvent))
 				{
+<<<<<<< HEAD
 					// detached overlays have no place to reset back to
 					if (overlay.getPosition() != OverlayPosition.DETACHED)
 					{
@@ -435,6 +478,13 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 						saveOverlay(overlay);
 						rebuildOverlayLayers();
 					}
+=======
+					overlay.setPreferredLocation(null);
+					overlay.setPreferredPosition(null);
+					saveOverlayPosition(overlay);
+					saveOverlayLocation(overlay);
+					rebuildOverlayLayers();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				}
 				else
 				{
@@ -493,6 +543,7 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 		if (movedOverlay != null)
 		{
 			mousePosition.setLocation(-1, -1);
+<<<<<<< HEAD
 
 			// do not snapcorner detached overlays
 			if (movedOverlay.getPosition() != OverlayPosition.DETACHED)
@@ -513,6 +564,23 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 						movedOverlay.setPreferredLocation(null); // from dragging
 						break;
 					}
+=======
+			final OverlayBounds snapCorners = this.snapCorners.translated(-SNAP_CORNER_SIZE.width, -SNAP_CORNER_SIZE.height);
+
+			for (Rectangle snapCorner : snapCorners.getBounds())
+			{
+				if (snapCorner.contains(mouseEvent.getPoint()))
+				{
+					OverlayPosition position = snapCorners.fromBounds(snapCorner);
+					if (position == movedOverlay.getPosition())
+					{
+						// overlay moves back to default position
+						position = null;
+					}
+					movedOverlay.setPreferredPosition(position);
+					movedOverlay.setPreferredLocation(null); // from dragging
+					break;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				}
 			}
 
@@ -570,7 +638,11 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 		}
 		else if (position == OverlayPosition.TOOLTIP)
 		{
+<<<<<<< HEAD
 			subGraphics.setFont(runeLiteConfig.tooltipFontType().getFont());
+=======
+			subGraphics.setFont(FontManager.getRunescapeSmallFont());
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 		else
 		{
@@ -663,7 +735,11 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 
 	private void saveOverlayLocation(final Overlay overlay)
 	{
+<<<<<<< HEAD
 		final String key = overlay.getName() + OVERLAY_CONFIG_PREFERRED_LOCATION;
+=======
+		final String key = overlay.getClass().getSimpleName() + OVERLAY_CONFIG_PREFERRED_LOCATION;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (overlay.getPreferredLocation() != null)
 		{
 			configManager.setConfiguration(
@@ -679,6 +755,7 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 		}
 	}
 
+<<<<<<< HEAD
 	private void saveOverlaySize(final Overlay overlay)
 	{
 		final String key = overlay.getName() + OVERLAY_CONFIG_PREFERRED_SIZE;
@@ -700,6 +777,11 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 	private void saveOverlayPosition(final Overlay overlay)
 	{
 		final String key = overlay.getName() + OVERLAY_CONFIG_PREFERRED_POSITION;
+=======
+	private void saveOverlayPosition(final Overlay overlay)
+	{
+		final String key = overlay.getClass().getSimpleName() + OVERLAY_CONFIG_PREFERRED_POSITION;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		if (overlay.getPreferredPosition() != null)
 		{
 			configManager.setConfiguration(
@@ -717,6 +799,7 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 
 	private Point loadOverlayLocation(final Overlay overlay)
 	{
+<<<<<<< HEAD
 		final String key = overlay.getName() + OVERLAY_CONFIG_PREFERRED_LOCATION;
 		return configManager.getConfiguration(runeliteGroupName, key, Point.class);
 	}
@@ -730,6 +813,15 @@ public class OverlayRenderer extends MouseListener implements KeyListener
 	private OverlayPosition loadOverlayPosition(final Overlay overlay)
 	{
 		final String locationKey = overlay.getName() + OVERLAY_CONFIG_PREFERRED_POSITION;
+=======
+		final String key = overlay.getClass().getSimpleName() + OVERLAY_CONFIG_PREFERRED_LOCATION;
+		return configManager.getConfiguration(runeliteGroupName, key, Point.class);
+	}
+
+	private OverlayPosition loadOverlayPosition(final Overlay overlay)
+	{
+		final String locationKey = overlay.getClass().getSimpleName() + OVERLAY_CONFIG_PREFERRED_POSITION;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		return configManager.getConfiguration(runeliteGroupName, locationKey, OverlayPosition.class);
 	}
 }

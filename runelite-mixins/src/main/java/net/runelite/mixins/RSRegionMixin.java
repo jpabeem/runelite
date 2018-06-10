@@ -25,13 +25,19 @@
 package net.runelite.mixins;
 
 import net.runelite.api.Renderable;
+<<<<<<< HEAD
 import net.runelite.api.SceneTilePaint;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.Tile;
 import net.runelite.api.mixins.Copy;
 import net.runelite.api.mixins.Inject;
 import net.runelite.api.mixins.Mixin;
 import net.runelite.api.mixins.Replace;
+<<<<<<< HEAD
 import static net.runelite.client.callback.Hooks.log;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.rs.api.RSDecorativeObject;
 import net.runelite.rs.api.RSGroundObject;
 import net.runelite.rs.api.RSItemLayer;
@@ -62,12 +68,21 @@ public abstract class RSRegionMixin implements RSRegion
 	}
 
 	@Copy("addBoundaryDecoration")
+<<<<<<< HEAD
 	abstract public void rs$addBoundaryDecoration(int plane, int x, int y, int floor, Renderable var5, Renderable var6, int var7, int var8, int var9, int var10, long hash, int var12);
 
 	@Replace("addBoundaryDecoration")
 	public void rl$addBoundaryDecoration(int plane, int x, int y, int floor, Renderable var5, Renderable var6, int var7, int var8, int var9, int var10, long hash, int var12)
 	{
 		rs$addBoundaryDecoration(plane, x, y, floor, var5, var6, var7, var8, var9, var10, hash, var12);
+=======
+	abstract public void rs$addBoundaryDecoration(int plane, int x, int y, int hash, Renderable var5, Renderable var6, int var7, int var8, int var9, int var10, int var11, int var12);
+
+	@Replace("addBoundaryDecoration")
+	public void rl$addBoundaryDecoration(int plane, int x, int y, int hash, Renderable var5, Renderable var6, int var7, int var8, int var9, int var10, int var11, int var12)
+	{
+		rs$addBoundaryDecoration(plane, x, y, hash, var5, var6, var7, var8, var9, var10, var11, var12);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		Tile tile = getTiles()[plane][x][y];
 		if (tile != null)
 		{
@@ -80,10 +95,17 @@ public abstract class RSRegionMixin implements RSRegion
 	}
 
 	@Copy("addItemPile")
+<<<<<<< HEAD
 	abstract public void rs$addItemPile(int plane, int x, int y, int hash, Renderable var5, long var6, Renderable var7, Renderable var8);
 
 	@Replace("addItemPile")
 	public void rl$addItemPile(int plane, int x, int y, int hash, Renderable var5, long var6, Renderable var7, Renderable var8)
+=======
+	abstract public void rs$addItemPile(int plane, int x, int y, int hash, Renderable var5, int var6, Renderable var7, Renderable var8);
+
+	@Replace("addItemPile")
+	public void rl$addItemPile(int plane, int x, int y, int hash, Renderable var5, int var6, Renderable var7, Renderable var8)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	{
 		rs$addItemPile(plane, x, y, hash, var5, var6, var7, var8);
 		Tile tile = getTiles()[plane][x][y];
@@ -98,12 +120,21 @@ public abstract class RSRegionMixin implements RSRegion
 	}
 
 	@Copy("groundObjectSpawned")
+<<<<<<< HEAD
 	abstract public void rs$groundObjectSpawned(int plane, int x, int y, int floor, Renderable var5, long hash, int var7);
 
 	@Replace("groundObjectSpawned")
 	public void rl$groundObjectSpawned(int plane, int x, int y, int floor, Renderable var5, long hash, int var7)
 	{
 		rs$groundObjectSpawned(plane, x, y, floor, var5, hash, var7);
+=======
+	abstract public void rs$groundObjectSpawned(int plane, int x, int y, int hash, Renderable var5, int var6, int var7);
+
+	@Replace("groundObjectSpawned")
+	public void rl$groundObjectSpawned(int plane, int x, int y, int hash, Renderable var5, int var6, int var7)
+	{
+		rs$groundObjectSpawned(plane, x, y, hash, var5, var6, var7);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		Tile tile = getTiles()[plane][x][y];
 		if (tile != null)
 		{
@@ -116,12 +147,21 @@ public abstract class RSRegionMixin implements RSRegion
 	}
 
 	@Copy("addBoundary")
+<<<<<<< HEAD
 	abstract public void rs$addBoundary(int plane, int x, int y, int floor, Renderable var5, Renderable var6, int var7, int var8, long hash, int var10);
 
 	@Replace("addBoundary")
 	public void rl$addBoundary(int plane, int x, int y, int floor, Renderable var5, Renderable var6, int var7, int var8, long hash, int var10)
 	{
 		rs$addBoundary(plane, x, y, floor, var5, var6, var7, var8, hash, var10);
+=======
+	abstract public void rs$addBoundary(int plane, int x, int y, int hash, Renderable var5, Renderable var6, int var7, int var8, int var9, int var10);
+
+	@Replace("addBoundary")
+	public void rl$addBoundary(int plane, int x, int y, int hash, Renderable var5, Renderable var6, int var7, int var8, int var9, int var10)
+	{
+		rs$addBoundary(plane, x, y, hash, var5, var6, var7, var8, var9, var10);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		Tile tile = getTiles()[plane][x][y];
 		if (tile != null)
 		{
@@ -132,6 +172,7 @@ public abstract class RSRegionMixin implements RSRegion
 			}
 		}
 	}
+<<<<<<< HEAD
 
 	@Copy("drawTileUnderlay")
 	abstract public void rs$drawTileUnderlay(SceneTilePaint tile, int z, int pitchSin, int pitchCos, int yawSin, int yawCos, int x, int y);
@@ -148,4 +189,6 @@ public abstract class RSRegionMixin implements RSRegion
 			log.warn("error during tile underlay rendering", ex);
 		}
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

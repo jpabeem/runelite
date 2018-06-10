@@ -24,8 +24,13 @@
  */
 package net.runelite.client.plugins.kingdomofmiscellania;
 
+<<<<<<< HEAD
 import com.google.common.collect.ImmutableSet;
 import com.google.common.eventbus.Subscribe;
+=======
+import com.google.common.eventbus.Subscribe;
+import com.google.common.primitives.Ints;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import javax.inject.Inject;
@@ -34,7 +39,11 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.Varbits;
+<<<<<<< HEAD
 import net.runelite.api.events.GameStateChanged;
+=======
+import net.runelite.api.events.MapRegionChanged;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.events.VarbitChanged;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -47,7 +56,11 @@ import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
 @Slf4j
 public class KingdomPlugin extends Plugin
 {
+<<<<<<< HEAD
 	private static final ImmutableSet<Integer> KINGDOM_REGION = ImmutableSet.of(10044, 10300);
+=======
+	private static final int[] KINGDOM_REGION = {9787, 9788, 9789, 10043, 10044, 10045, 10299, 10300, 10301};
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	private Client client;
@@ -85,12 +98,18 @@ public class KingdomPlugin extends Plugin
 	}
 
 	@Subscribe
+<<<<<<< HEAD
 	public void onGameStateChanged(GameStateChanged event)
 	{
 		if (event.getGameState() == GameState.LOGGED_IN)
 		{
 			processInfobox();
 		}
+=======
+	public void onRegionChanged(MapRegionChanged event)
+	{
+		processInfobox();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	private void processInfobox()
@@ -128,7 +147,11 @@ public class KingdomPlugin extends Plugin
 
 	private boolean isInKingdom()
 	{
+<<<<<<< HEAD
 		return KINGDOM_REGION.contains(client.getLocalPlayer().getWorldLocation().getRegionID());
+=======
+		return Ints.indexOf(client.getMapRegions(), KINGDOM_REGION) >= 0;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	private boolean hasCompletedQuest()

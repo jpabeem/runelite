@@ -24,12 +24,16 @@
  */
 package net.runelite.client.plugins.opponentinfo;
 
+<<<<<<< HEAD
 import com.google.common.eventbus.Subscribe;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
+<<<<<<< HEAD
 import java.util.EnumSet;
 import java.util.Map;
 import javax.inject.Inject;
@@ -43,6 +47,13 @@ import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.http.api.hiscore.HiscoreEndpoint;
+=======
+import java.util.Map;
+import javax.inject.Inject;
+import net.runelite.client.plugins.Plugin;
+import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.ui.overlay.Overlay;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @PluginDescriptor(
 	name = "Opponent Information"
@@ -50,6 +61,7 @@ import net.runelite.http.api.hiscore.HiscoreEndpoint;
 public class OpponentInfoPlugin extends Plugin
 {
 	@Inject
+<<<<<<< HEAD
 	private Client client;
 
 	@Inject
@@ -58,12 +70,17 @@ public class OpponentInfoPlugin extends Plugin
 	@Getter(AccessLevel.PACKAGE)
 	private HiscoreEndpoint hiscoreEndpoint = HiscoreEndpoint.NORMAL;
 
+=======
+	private OpponentInfoOverlay overlay;
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Override
 	public Overlay getOverlay()
 	{
 		return overlay;
 	}
 
+<<<<<<< HEAD
 	@Subscribe
 	public void onGameStateChanged(GameStateChanged gameStateChanged)
 	{
@@ -87,6 +104,8 @@ public class OpponentInfoPlugin extends Plugin
 		}
 	}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static Map<String, Integer> loadNpcHealth()
 	{
 		Gson gson = new Gson();

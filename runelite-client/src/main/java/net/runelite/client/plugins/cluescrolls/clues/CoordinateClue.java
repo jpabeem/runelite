@@ -28,6 +28,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+<<<<<<< HEAD
 import net.runelite.api.ItemID;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
@@ -39,6 +40,14 @@ import net.runelite.client.ui.overlay.OverlayUtil;
 import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import net.runelite.client.ui.overlay.components.TitleComponent;
+=======
+import net.runelite.api.coords.LocalPoint;
+import net.runelite.api.coords.WorldPoint;
+import net.runelite.client.plugins.cluescrolls.ClueScrollPlugin;
+import net.runelite.client.ui.overlay.OverlayUtil;
+import net.runelite.client.ui.overlay.components.PanelComponent;
+import static net.runelite.client.plugins.cluescrolls.ClueScrollWorldOverlay.SPADE_IMAGE;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @Getter
 @AllArgsConstructor
@@ -46,11 +55,15 @@ public class CoordinateClue extends ClueScroll implements TextClueScroll, Locati
 {
 	private String text;
 	private WorldPoint location;
+<<<<<<< HEAD
 	private static final ItemRequirement HAS_SPADE = new SingleItemRequirement(ItemID.SPADE);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Override
 	public void makeOverlayHint(PanelComponent panelComponent, ClueScrollPlugin plugin)
 	{
+<<<<<<< HEAD
 		panelComponent.getChildren().add(TitleComponent.builder().text("Coordinate Clue").build());
 
 		panelComponent.getChildren().add(LineComponent.builder()
@@ -65,6 +78,15 @@ public class CoordinateClue extends ClueScroll implements TextClueScroll, Locati
 				panelComponent.getChildren().add(LineComponent.builder().left("Requires Spade!").leftColor(Color.RED).build());
 			}
 		}
+=======
+		panelComponent.setTitle("Coordinate Clue");
+		panelComponent.setWidth(135);
+
+		panelComponent.getLines().add(new PanelComponent.Line("Travel to the marked"));
+		panelComponent.getLines().add(new PanelComponent.Line("out destination to see"));
+		panelComponent.getLines().add(new PanelComponent.Line("a marker for where"));
+		panelComponent.getLines().add(new PanelComponent.Line("you should dig."));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Override

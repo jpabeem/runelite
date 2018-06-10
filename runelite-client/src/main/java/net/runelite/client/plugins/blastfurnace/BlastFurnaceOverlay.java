@@ -32,14 +32,22 @@ import net.runelite.api.Client;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.ImageComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
+=======
+import net.runelite.client.ui.overlay.components.ImagePanelComponent;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 class BlastFurnaceOverlay extends Overlay
 {
 	private final Client client;
 	private final BlastFurnacePlugin plugin;
+<<<<<<< HEAD
 	private final PanelComponent imagePanelComponent = new PanelComponent();
+=======
+	private final ImagePanelComponent imagePanelComponent = new ImagePanelComponent();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	private ItemManager itemManager;
@@ -47,10 +55,16 @@ class BlastFurnaceOverlay extends Overlay
 	@Inject
 	BlastFurnaceOverlay(Client client, BlastFurnacePlugin plugin)
 	{
+<<<<<<< HEAD
 		this.plugin = plugin;
 		this.client = client;
 		setPosition(OverlayPosition.TOP_LEFT);
 		imagePanelComponent.setOrientation(PanelComponent.Orientation.HORIZONTAL);
+=======
+		setPosition(OverlayPosition.TOP_LEFT);
+		this.plugin = plugin;
+		this.client = client;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Override
@@ -61,7 +75,11 @@ class BlastFurnaceOverlay extends Overlay
 			return null;
 		}
 
+<<<<<<< HEAD
 		imagePanelComponent.getChildren().clear();
+=======
+		imagePanelComponent.getImages().clear();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		for (BarsOres varbit : BarsOres.values())
 		{
@@ -72,7 +90,11 @@ class BlastFurnaceOverlay extends Overlay
 				continue;
 			}
 
+<<<<<<< HEAD
 			imagePanelComponent.getChildren().add(new ImageComponent(getImage(varbit.getItemID(), amount)));
+=======
+			imagePanelComponent.getImages().add(getImage(varbit.getItemID(), amount));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		return imagePanelComponent.render(graphics);

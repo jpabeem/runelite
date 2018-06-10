@@ -33,15 +33,28 @@ import java.util.regex.Pattern;
 import lombok.Setter;
 import net.runelite.client.ui.overlay.RenderableEntity;
 
+<<<<<<< HEAD
 @Setter
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public class TextComponent implements RenderableEntity
 {
 	private static final String COL_TAG_REGEX = "(<col=([0-9a-fA-F]){2,6}>)";
 	private static final Pattern COL_TAG_PATTERN_W_LOOKAHEAD = Pattern.compile("(?=" + COL_TAG_REGEX + ")");
 	private static final Pattern COL_TAG_PATTERN = Pattern.compile(COL_TAG_REGEX);
 
+<<<<<<< HEAD
 	private String text;
 	private Point position = new Point();
+=======
+	@Setter
+	private String text;
+
+	@Setter
+	private Point position = new Point();
+
+	@Setter
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private Color color = Color.WHITE;
 
 	public static String textWithoutColTags(String text)
@@ -56,6 +69,7 @@ public class TextComponent implements RenderableEntity
 
 		if (COL_TAG_PATTERN.matcher(text).find())
 		{
+<<<<<<< HEAD
 			final String[] parts = COL_TAG_PATTERN_W_LOOKAHEAD.split(text);
 			int x = position.x;
 
@@ -63,6 +77,15 @@ public class TextComponent implements RenderableEntity
 			{
 				final String textWithoutCol = textWithoutColTags(textSplitOnCol);
 				final String colColor = textSplitOnCol.substring(textSplitOnCol.indexOf("=") + 1, textSplitOnCol.indexOf(">"));
+=======
+			String[] parts = COL_TAG_PATTERN_W_LOOKAHEAD.split(text);
+			int x = position.x;
+			for (int i = 0; i < parts.length; i++)
+			{
+				String textSplitOnCol = parts[i];
+				String textWithoutCol = textWithoutColTags(textSplitOnCol);
+				String colColor = textSplitOnCol.substring(textSplitOnCol.indexOf("=") + 1, textSplitOnCol.indexOf(">"));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 				// shadow
 				graphics.setColor(Color.BLACK);
@@ -85,7 +108,10 @@ public class TextComponent implements RenderableEntity
 			graphics.setColor(color);
 			graphics.drawString(text, position.x, position.y);
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		return new Dimension(fontMetrics.stringWidth(text), fontMetrics.getHeight());
 	}
 }

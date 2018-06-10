@@ -28,6 +28,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import net.runelite.api.ChatMessageType;
 
+<<<<<<< HEAD
 /**
  * An event where a new chat message is received.
  * <p>
@@ -36,10 +37,13 @@ import net.runelite.api.ChatMessageType;
  * <p>
  * Note: This event will not trigger for NPC dialogues.
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 @Data
 @AllArgsConstructor
 public class ChatMessage
 {
+<<<<<<< HEAD
 	/**
 	 * The type of message received.
 	 */
@@ -58,5 +62,10 @@ public class ChatMessage
 	 * This field is only used for clan messages and refers to the
 	 * current name of the clan chat the client is in.
 	 */
+=======
+	private ChatMessageType type;
+	private String name;
+	private String message;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private String sender;
 }

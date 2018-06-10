@@ -55,6 +55,7 @@ public interface StretchedFixedModeConfig extends Config
 	{
 		return false;
 	}
+<<<<<<< HEAD
 
 	@ConfigItem(
 		keyName = "integerScaling",
@@ -65,4 +66,6 @@ public interface StretchedFixedModeConfig extends Config
 	{
 		return false;
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

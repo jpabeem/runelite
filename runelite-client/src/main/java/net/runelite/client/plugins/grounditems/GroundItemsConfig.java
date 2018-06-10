@@ -30,8 +30,11 @@ import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
 import java.awt.Color;
+<<<<<<< HEAD
 import net.runelite.client.plugins.grounditems.config.ItemHighlightMode;
 import net.runelite.client.plugins.grounditems.config.MenuHighlightMode;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @ConfigGroup(
 	keyName = "grounditems",
@@ -41,6 +44,7 @@ import net.runelite.client.plugins.grounditems.config.MenuHighlightMode;
 public interface GroundItemsConfig extends Config
 {
 	@ConfigItem(
+<<<<<<< HEAD
 		keyName = "highlightedItems",
 		name = "Highlighted Items",
 		description = "Configures specifically highlighted ground items. Format: (item), (item)",
@@ -81,6 +85,12 @@ public interface GroundItemsConfig extends Config
 		name = "Show Highlighted items only",
 		description = "Configures whether or not to draw items only on your highlighted list",
 		position = 3
+=======
+		keyName = "showHighlightedOnly",
+		name = "Show Highlighted items only",
+		description = "Configures whether or not to draw items only on your highlighted list",
+		position = 1
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default boolean showHighlightedOnly()
 	{
@@ -91,7 +101,11 @@ public interface GroundItemsConfig extends Config
 		keyName = "showGEPrice",
 		name = "Show Grand Exchange Prices",
 		description = "Configures whether or not to draw GE prices alongside ground items",
+<<<<<<< HEAD
 		position = 4
+=======
+		position = 2
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default boolean showGEPrice()
 	{
@@ -102,7 +116,11 @@ public interface GroundItemsConfig extends Config
 		keyName = "showHAValue",
 		name = "Show High Alchemy Values",
 		description = "Configures whether or not to draw High Alchemy values alongside ground items",
+<<<<<<< HEAD
 		position = 5
+=======
+		position = 3
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default boolean showHAValue()
 	{
@@ -113,7 +131,11 @@ public interface GroundItemsConfig extends Config
 		keyName = "showMenuItemQuantities",
 		name = "Show Menu Item Quantities",
 		description = "Configures whether or not to show the item quantities in the menu",
+<<<<<<< HEAD
 		position = 6
+=======
+		position = 4
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default boolean showMenuItemQuantities()
 	{
@@ -121,6 +143,7 @@ public interface GroundItemsConfig extends Config
 	}
 
 	@ConfigItem(
+<<<<<<< HEAD
 		keyName = "itemHighlightMode",
 		name = "Item Highlight Mode",
 		description = "Configures how ground items will be highlighted",
@@ -140,13 +163,38 @@ public interface GroundItemsConfig extends Config
 	default MenuHighlightMode menuHighlightMode()
 	{
 		return MenuHighlightMode.NAME;
+=======
+		keyName = "highlightMenuOption",
+		name = "Highlight Menu Option",
+		description = "Configures whether or not to highlight the menu option",
+		position = 5
+	)
+	default boolean highlightMenuOption()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "highlightMenuItemName",
+		name = "Highlight Menu Item Name",
+		description = "Configures whether or not to highlight the menu item name",
+		position = 6
+	)
+	default boolean highlightMenuItemName()
+	{
+		return false;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@ConfigItem(
 		keyName = "hideUnderGeValue",
 		name = "Hide < GE Value",
 		description = "Configures hidden ground items under GE value",
+<<<<<<< HEAD
 		position = 9
+=======
+		position = 7
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default int getHideUnderGeValue()
 	{
@@ -157,7 +205,11 @@ public interface GroundItemsConfig extends Config
 		keyName = "hideUnderHaValue",
 		name = "Hide < HA Value",
 		description = "Configures hidden ground items under High Alch value",
+<<<<<<< HEAD
 		position = 10
+=======
+		position = 8
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	)
 	default int getHideUnderHAValue()
 	{
@@ -165,6 +217,45 @@ public interface GroundItemsConfig extends Config
 	}
 
 	@ConfigItem(
+<<<<<<< HEAD
+=======
+		keyName = "highlightedItems",
+		name = "Highlighted Items",
+		description = "Configures specifically highlighted ground items. Format: (item), (item)",
+		position = 9
+	)
+	default String getHighlightItems()
+	{
+		return "";
+	}
+
+	@ConfigItem(
+		keyName = "highlightedItems",
+		name = "",
+		description = ""
+	)
+	void setHighlightedItem(String key);
+
+	@ConfigItem(
+		keyName = "hiddenItems",
+		name = "Hidden Items",
+		description = "Configures hidden ground items. Format: (item), (item)",
+		position = 10
+	)
+	default String getHiddenItems()
+	{
+		return "";
+	}
+
+	@ConfigItem(
+		keyName = "hiddenItems",
+		name = "",
+		description = ""
+	)
+	void setHiddenItems(String key);
+
+	@ConfigItem(
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		keyName = "defaultColor",
 		name = "Default items color",
 		description = "Configures the color for default, non-highlighted items",

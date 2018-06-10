@@ -29,13 +29,17 @@ import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+<<<<<<< HEAD
 /**
  * An enumeration of ranks of clan members.
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 @AllArgsConstructor
 @Getter
 public enum ClanMemberRank
 {
+<<<<<<< HEAD
 	/**
 	 * Not in a clan.
 	 */
@@ -71,6 +75,16 @@ public enum ClanMemberRank
 	/**
 	 * Channel owner rank.
 	 */
+=======
+	UNRANKED(-1),
+	FRIEND(0),
+	RECRUIT(1),
+	CORPORAL(2),
+	SERGEANT(3),
+	LIEUTENANT(4),
+	CAPTAIN(5),
+	GENERAL(6),
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	OWNER(7);
 
 	private static final Map<Integer, ClanMemberRank> RANKS = new HashMap<>();
@@ -83,6 +97,7 @@ public enum ClanMemberRank
 		}
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Utility method that maps the rank value to its respective
 	 * {@link ClanMemberRank} value.
@@ -90,13 +105,18 @@ public enum ClanMemberRank
 	 * @param rank the rank value
 	 * @return rank type
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static ClanMemberRank valueOf(int rank)
 	{
 		return RANKS.get(rank);
 	}
 
+<<<<<<< HEAD
 	/**
 	 * The value of the clan rank.
 	 */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private final int value;
 }

@@ -32,19 +32,43 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
+<<<<<<< HEAD
 import lombok.Setter;
 import net.runelite.client.ui.overlay.RenderableEntity;
 
 @Setter
+=======
+import javax.annotation.Nullable;
+import lombok.Setter;
+import net.runelite.client.ui.overlay.RenderableEntity;
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public class InfoBoxComponent implements RenderableEntity
 {
 	private static final int BOX_SIZE = 35;
 	private static final int SEPARATOR = 2;
 
+<<<<<<< HEAD
 	private String text;
 	private Color color = Color.WHITE;
 	private Color backgroundColor = ComponentConstants.STANDARD_BACKGROUND_COLOR;
 	private Point position = new Point();
+=======
+	@Setter
+	private String text;
+
+	@Setter
+	private Color color = Color.WHITE;
+
+	@Setter
+	private Color backgroundColor = BackgroundComponent.DEFAULT_BACKGROUND_COLOR;
+
+	@Setter
+	private Point position = new Point();
+
+	@Setter
+	@Nullable
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private BufferedImage image;
 
 	@Override

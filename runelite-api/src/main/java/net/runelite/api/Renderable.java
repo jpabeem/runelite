@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 /**
  * Represents an object that can be rendered.
  */
@@ -34,5 +35,9 @@ public interface Renderable extends Node
 	 *
 	 * @return the model
 	 */
+=======
+public interface Renderable extends Node
+{
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	Model getModel();
 }

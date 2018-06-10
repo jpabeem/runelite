@@ -28,6 +28,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
+<<<<<<< HEAD
 import java.util.List;
 import javax.inject.Inject;
 import net.runelite.api.Actor;
@@ -37,16 +38,27 @@ import net.runelite.api.Point;
 import net.runelite.api.Perspective;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
+=======
+import javax.inject.Inject;
+import net.runelite.api.Actor;
+import net.runelite.api.NPC;
+import net.runelite.api.Point;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayUtil;
 
 /**
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
  * @author robin
  */
 public class ImplingsOverlay extends Overlay
 {
+<<<<<<< HEAD
 	private final Client client;
 	private final ImplingsConfig config;
 	private final ImplingsPlugin plugin;
@@ -58,27 +70,48 @@ public class ImplingsOverlay extends Overlay
 		setLayer(OverlayLayer.ABOVE_SCENE);
 		this.config = config;
 		this.client = client;
+=======
+	private final ImplingsPlugin plugin;
+
+	@Inject
+	private ImplingsOverlay(ImplingsPlugin plugin)
+	{
+		setPosition(OverlayPosition.DYNAMIC);
+		setLayer(OverlayLayer.ABOVE_SCENE);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		this.plugin = plugin;
 	}
 
 	@Override
 	public Dimension render(Graphics2D graphics)
 	{
+<<<<<<< HEAD
 		List<NPC> implings = plugin.getImplings();
 
 		if (implings.isEmpty())
+=======
+		NPC[] imps = plugin.getImplings();
+		if (imps == null)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		{
 			return null;
 		}
 
+<<<<<<< HEAD
 		for (NPC imp : implings)
 		{
 			Color color = plugin.npcToColor(imp);
 			if (!plugin.showNpc(imp) || color == null)
+=======
+		for (NPC imp : imps)
+		{
+			if (imp == null || imp.getName() == null)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			{
 				continue;
 			}
 
+<<<<<<< HEAD
 			drawImp(graphics, imp, imp.getName(), color);
 		}
 
@@ -95,11 +128,17 @@ public class ImplingsOverlay extends Overlay
 				String impName = spawn.getType().getName();
 				drawSpawn(graphics, spawn.getSpawnLocation(), impName, config.getSpawnColor());
 			}
+=======
+			//Spawns have the name "null", so they get changed to "Spawn"
+			String text = imp.getName().equals("null") ? "Spawn" : imp.getName();
+			drawImp(graphics, imp, text, plugin.getIds().get(imp.getId()));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		return null;
 	}
 
+<<<<<<< HEAD
 	private void drawSpawn(Graphics2D graphics, WorldPoint point, String text, Color color)
 	{
 		//Don't draw spawns if Player is not in range
@@ -127,6 +166,8 @@ public class ImplingsOverlay extends Overlay
 		}
 	}
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private void drawImp(Graphics2D graphics, Actor actor, String text, Color color)
 	{
 		Polygon poly = actor.getCanvasTilePoly();

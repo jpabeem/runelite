@@ -24,6 +24,7 @@
  */
 package net.runelite.api.widgets;
 
+<<<<<<< HEAD
 /**
  * Utility class used for defining options to be used on the click mask
  * of a {@link Widget}.
@@ -43,5 +44,11 @@ public class WidgetConfig
 	/**
 	 * Controls whether or not a widget can be dragged around.
 	 */
+=======
+public class WidgetConfig
+{
+	public static final int SHOW_MENU_OPTION_NINE = 1 << 9;
+	public static final int DRAG_ON = 1 << 17;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static final int DRAG = 1 << 20;
 }

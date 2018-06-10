@@ -26,6 +26,7 @@ package net.runelite.api.events;
 
 import lombok.Value;
 
+<<<<<<< HEAD
 /**
  * An event where a command has been used in the chat.
  * <p>
@@ -51,5 +52,11 @@ public class CommandExecuted
 	/**
 	 * The command arguments that have been entered.
 	 */
+=======
+@Value
+public class CommandExecuted
+{
+	private String command;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	private String[] arguments;
 }

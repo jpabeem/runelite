@@ -24,6 +24,7 @@
  */
 package net.runelite.rs.api;
 
+<<<<<<< HEAD
 import net.runelite.api.Nameable;
 import net.runelite.mapping.Import;
 
@@ -34,4 +35,12 @@ public interface RSNameable extends Nameable, Comparable
 
 	@Import("prevName")
 	RSName getRsPrevName();
+=======
+import net.runelite.mapping.Import;
+
+public interface RSNameable
+{
+	@Import("name")
+	RSName getName();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

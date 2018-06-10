@@ -26,13 +26,17 @@ package net.runelite.api;
 
 import java.awt.image.BufferedImage;
 
+<<<<<<< HEAD
 /**
  * Represents data about the pixels of a sprite image.
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public interface SpritePixels
 {
 	int DEFAULT_SHADOW_COLOR = 3153952;
 
+<<<<<<< HEAD
 	/**
 	 * Draws the pixels at the given coordinates on the canvas.
 	 *
@@ -76,4 +80,27 @@ public interface SpritePixels
 	 * @throws IllegalArgumentException if the width or height do not match
  	 */
 	void toBufferedImage(BufferedImage img) throws IllegalArgumentException;
+=======
+	void drawAt(int x, int y);
+
+	int getWidth();
+
+	int getHeight();
+
+	int[] getPixels();
+
+	/**
+	 * Covert the SpritePixels to a BufferedImage
+	 *
+	 * @return
+	 */
+	BufferedImage toBufferedImage();
+
+
+	/**
+	 * Writes the contents of the SpritePixels to the BufferedImage.
+	 * Width and Height must match
+ 	 */
+	void toBufferedImage(BufferedImage img);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

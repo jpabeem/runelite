@@ -24,13 +24,59 @@
  */
 package net.runelite.http.api.item;
 
+<<<<<<< HEAD
 import lombok.Data;
 
 @Data
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 public class Item
 {
 	private int id;
 	private String name;
 	private String description;
 	private ItemType type;
+<<<<<<< HEAD
+=======
+
+	public int getId()
+	{
+		return id;
+	}
+
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+
+	public String getName()
+	{
+		return name;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
+
+	public ItemType getType()
+	{
+		return type;
+	}
+
+	public void setType(ItemType type)
+	{
+		this.type = type;
+	}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

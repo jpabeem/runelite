@@ -1,6 +1,9 @@
 /*
  * Copyright (c) 2017, Adam <Adam@sigterm.info>
+<<<<<<< HEAD
  * Copyright (c) 2018, Joshua Filby <joshua@filby.me>
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +57,12 @@ public class Namer
 
 	private static String sanitize(String in)
 	{
+<<<<<<< HEAD
 		String s = removeTags(in)
 			.toUpperCase()
+=======
+		String s = in.toUpperCase()
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			.replace(' ', '_')
 			.replaceAll("[^a-zA-Z0-9_]", "");
 		if (s.isEmpty())
@@ -71,6 +78,7 @@ public class Namer
 			return s;
 		}
 	}
+<<<<<<< HEAD
 
 	public static String removeTags(String str)
 	{
@@ -97,4 +105,6 @@ public class Namer
 
 		return builder.toString();
 	}
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

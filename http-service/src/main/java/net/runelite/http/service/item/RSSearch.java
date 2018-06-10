@@ -25,10 +25,27 @@
 package net.runelite.http.service.item;
 
 import java.util.List;
+<<<<<<< HEAD
 import lombok.Data;
 
 @Data
 public class RSSearch
 {
 	private List<RSItem> items;
+=======
+
+public class RSSearch
+{
+	private List<RSItem> items;
+
+	public List<RSItem> getItems()
+	{
+		return items;
+	}
+
+	public void setItems(List<RSItem> items)
+	{
+		this.items = items;
+	}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

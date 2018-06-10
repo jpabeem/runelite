@@ -30,6 +30,7 @@ import java.awt.geom.Area;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 
+<<<<<<< HEAD
 /**
  * Represents an object that a tile holds.
  */
@@ -129,6 +130,38 @@ public interface TileObject
 	 * Get the on-screen clickable area of the object.
 	 *
 	 * @return the clickable area
+=======
+public interface TileObject
+{
+	int getHash();
+
+	int getX();
+
+	int getY();
+
+	int getPlane();
+
+	int getId();
+
+	WorldPoint getWorldLocation();
+
+	LocalPoint getLocalLocation();
+
+	Point getCanvasLocation();
+
+	Point getCanvasLocation(int zOffset);
+
+	Polygon getCanvasTilePoly();
+
+	Point getCanvasTextLocation(Graphics2D graphics, String text, int zOffset);
+
+	Point getMinimapLocation();
+
+	/**
+	 * Get the on-screen clickable area of {@code object}
+	 *
+	 * @return the clickable area of {@code object}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	Area getClickbox();
 }

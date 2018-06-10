@@ -54,6 +54,7 @@ public class AgilitySession
 
 		int currentExp = client.getSkillExperience(Skill.AGILITY);
 		int nextLevel = client.getRealSkillLevel(Skill.AGILITY) + 1;
+<<<<<<< HEAD
 
 		int remainingXp;
 		do
@@ -61,6 +62,9 @@ public class AgilitySession
 			remainingXp = nextLevel <= Experience.MAX_VIRT_LEVEL ? Experience.getXpForLevel(nextLevel) - currentExp : 0;
 			nextLevel++;
 		} while (remainingXp < 0);
+=======
+		int remainingXp = nextLevel <= Experience.MAX_VIRT_LEVEL ? Experience.getXpForLevel(nextLevel) - currentExp : 0;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 		lapsTillLevel = remainingXp > 0 ? (int) Math.ceil(remainingXp / course.getTotalXp()) : 0;
 	}

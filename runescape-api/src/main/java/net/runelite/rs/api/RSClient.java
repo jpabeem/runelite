@@ -26,7 +26,10 @@ package net.runelite.rs.api;
 
 import java.util.Map;
 import net.runelite.api.Client;
+<<<<<<< HEAD
 import net.runelite.api.IndexDataBase;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.SpritePixels;
 import net.runelite.api.World;
 import net.runelite.api.widgets.Widget;
@@ -196,9 +199,12 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("projectiles")
 	RSDeque getProjectilesDeque();
 
+<<<<<<< HEAD
 	@Import("graphicsObjectDeque")
 	RSDeque getGraphicsObjectDeque();
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Import("username")
 	@Override
 	String getUsername();
@@ -306,6 +312,7 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("createSprite")
 	RSSpritePixels createItemSprite(int itemId, int quantity, int thickness, int borderColor, int stackable, boolean noted);
 
+<<<<<<< HEAD
 	@Import("getSpriteAsSpritePixels")
 	@Override
 	RSSpritePixels getSprite(IndexDataBase source, int archiveId, int fileId);
@@ -314,6 +321,8 @@ public interface RSClient extends RSGameEngine, Client
 	@Override
 	RSIndexDataBase getIndexSprites();
 
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Import("widgetFlags")
 	@Override
 	RSHashTable getWidgetFlags();
@@ -436,6 +445,45 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("queuedSoundEffectCount")
 	void setQueuedSoundEffectCount(int queuedSoundEffectCount);
 
+<<<<<<< HEAD
+=======
+	@Import("drawBoundingBoxes2D")
+	@Override
+	boolean getDrawBoundingBoxes2D();
+
+	@Import("drawBoundingBoxes2D")
+	@Override
+	void setDrawBoundingBoxes2D(boolean shouldDraw);
+
+	@Import("drawBoundingBoxes3D")
+	@Override
+	boolean getDrawBoundingBoxes3D();
+
+	@Import("drawBoundingBoxes3D")
+	@Override
+	void setDrawBoundingBoxes3D(boolean shouldDraw);
+
+	@Import("drawObjectGeometry2D")
+	@Override
+	boolean getdrawObjectGeometry2D();
+
+	@Import("drawObjectGeometry2D")
+	@Override
+	void setdrawObjectGeometry2D(boolean shouldDraw);
+
+	@Import("boundingBox3DDrawMode")
+	RSBoundingBox3DDrawMode getboundingBox3DDrawMode();
+
+	@Import("boundingBox3DDrawMode")
+	void setboundingBox3DDrawMode(RSBoundingBox3DDrawMode drawMode);
+
+	@Import("ON_MOUSEOVER")
+	RSBoundingBox3DDrawMode getON_MOUSEOVERDrawMode();
+
+	@Import("ALWAYS")
+	RSBoundingBox3DDrawMode getALWAYSDrawMode();
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	@Import("rasterProvider")
 	@Override
 	RSBufferProvider getBufferProvider();
@@ -612,6 +660,7 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("isDynamicRegion")
 	@Override
 	boolean isInInstancedRegion();
+<<<<<<< HEAD
 
 	@Import("itemPressedDuration")
 	int getItemPressedDuration();
@@ -631,4 +680,6 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("oculusOrbState")
 	@Override
 	void setOculusOrbState(int state);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

@@ -35,9 +35,13 @@ import net.runelite.api.Skill;
 import net.runelite.client.plugins.xptracker.XpTrackerService;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
+<<<<<<< HEAD
 import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import net.runelite.client.ui.overlay.components.TitleComponent;
+=======
+import net.runelite.client.ui.overlay.components.PanelComponent;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 class FishingOverlay extends Overlay
 {
@@ -83,6 +87,7 @@ class FishingOverlay extends Overlay
 			return null;
 		}
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
 		if (client.getLocalPlayer().getInteracting() != null && client.getLocalPlayer().getInteracting().getName()
 			.contains(FISHING_SPOT))
@@ -98,11 +103,25 @@ class FishingOverlay extends Overlay
 				.text("NOT fishing")
 				.color(Color.RED)
 				.build());
+=======
+		panelComponent.getLines().clear();
+		if (client.getLocalPlayer().getInteracting() != null && client.getLocalPlayer().getInteracting().getName()
+			.contains(FISHING_SPOT))
+		{
+			panelComponent.setTitle("Fishing");
+			panelComponent.setTitleColor(Color.GREEN);
+		}
+		else
+		{
+			panelComponent.setTitle("NOT fishing");
+			panelComponent.setTitleColor(Color.RED);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 
 		int actions = xpTrackerService.getActions(Skill.FISHING);
 		if (actions > 0)
 		{
+<<<<<<< HEAD
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left("Caught fish:")
 				.right(Integer.toString(actions))
@@ -114,6 +133,19 @@ class FishingOverlay extends Overlay
 					.left("Fish/hr:")
 					.right(Integer.toString(xpTrackerService.getActionsHr(Skill.FISHING)))
 					.build());
+=======
+			panelComponent.getLines().add(new PanelComponent.Line(
+				"Caught fish:",
+				Integer.toString(actions)
+			));
+
+			if (actions > 2)
+			{
+				panelComponent.getLines().add(new PanelComponent.Line(
+					"Fish/hr:",
+					Integer.toString(xpTrackerService.getActionsHr(Skill.FISHING))
+				));
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 

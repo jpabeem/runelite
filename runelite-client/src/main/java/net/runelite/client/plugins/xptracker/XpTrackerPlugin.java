@@ -1,6 +1,9 @@
 /*
  * Copyright (c) 2017, Cameron <moberg@tuta.io>
+<<<<<<< HEAD
  * Copyright (c) 2018, Levi <me@levischuck.com>
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -31,7 +34,14 @@ import com.google.inject.Binder;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.EnumSet;
+<<<<<<< HEAD
 import java.util.Objects;
+=======
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.ScheduledExecutorService;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import javax.imageio.ImageIO;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
@@ -39,7 +49,10 @@ import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.Player;
 import net.runelite.api.Skill;
+<<<<<<< HEAD
 import net.runelite.api.VarPlayer;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.api.events.ExperienceChanged;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.GameTick;
@@ -70,10 +83,20 @@ public class XpTrackerPlugin extends Plugin
 	@Inject
 	private SkillIconManager skillIconManager;
 
+<<<<<<< HEAD
 	private NavigationButton navButton;
 	private XpPanel xpPanel;
 
 	private final XpState xpState = new XpState();
+=======
+	@Inject
+	private ScheduledExecutorService executor;
+
+	private NavigationButton navButton;
+	private XpPanel xpPanel;
+
+	private final Map<Skill, SkillXPInfo> xpInfos = new HashMap<>();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	private WorldResult worlds;
 	private XpWorldType lastWorldType;
@@ -117,9 +140,14 @@ public class XpTrackerPlugin extends Plugin
 		}
 
 		navButton = NavigationButton.builder()
+<<<<<<< HEAD
 			.tooltip("XP Tracker")
 			.icon(icon)
 			.priority(2)
+=======
+			.name("XP Tracker")
+			.icon(icon)
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			.panel(xpPanel)
 			.build();
 
@@ -129,7 +157,10 @@ public class XpTrackerPlugin extends Plugin
 	@Override
 	protected void shutDown() throws Exception
 	{
+<<<<<<< HEAD
 		xpState.reset();
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		pluginToolbar.removeNavigation(navButton);
 	}
 
@@ -152,7 +183,11 @@ public class XpTrackerPlugin extends Plugin
 
 				lastUsername = client.getUsername();
 				lastWorldType = type;
+<<<<<<< HEAD
 				resetState();
+=======
+				xpPanel.resetAllInfoBoxes();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 		else if (event.getGameState() == GameState.LOGIN_SCREEN)
@@ -161,7 +196,23 @@ public class XpTrackerPlugin extends Plugin
 			String username = local != null ? local.getName() : null;
 			if (username != null)
 			{
+<<<<<<< HEAD
 				xpClient.update(username);
+=======
+				log.debug("Submitting xp track for {}", username);
+
+				executor.submit(() ->
+				{
+					try
+					{
+						xpClient.update(username);
+					}
+					catch (IOException ex)
+					{
+						log.warn("error submitting xp track", ex);
+					}
+				});
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			}
 		}
 	}
@@ -199,6 +250,7 @@ public class XpTrackerPlugin extends Plugin
 		return xpType;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Reset internal state and re-initialize all skills with XP currently cached by the RS client
 	 * This is called by the user manually clicking resetSkillState in the UI.
@@ -272,11 +324,23 @@ public class XpTrackerPlugin extends Plugin
 		xpPanel.updateSkillExperience(updated, skill, xpState.getSkillSnapshot(skill));
 		xpState.recalculateTotal();
 		xpPanel.updateTotal(xpState.getTotalSnapshot());
+=======
+	public SkillXPInfo getSkillXpInfo(Skill skill)
+	{
+		return xpInfos.computeIfAbsent(skill, SkillXPInfo::new);
+	}
+
+	@Subscribe
+	public void onXpChanged(ExperienceChanged event)
+	{
+		xpPanel.updateSkillExperience(event.getSkill());
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Subscribe
 	public void onGameTick(GameTick event)
 	{
+<<<<<<< HEAD
 		// Rebuild calculated values like xp/hr in panel
 		for (Skill skill : Skill.values())
 		{
@@ -400,5 +464,8 @@ public class XpTrackerPlugin extends Plugin
 			default:
 				return null;
 		}
+=======
+		xpPanel.updateAllInfoBoxes();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

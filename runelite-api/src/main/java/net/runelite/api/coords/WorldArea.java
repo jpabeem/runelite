@@ -33,6 +33,7 @@ import net.runelite.api.Constants;
 import net.runelite.api.Point;
 import net.runelite.api.Tile;
 
+<<<<<<< HEAD
 /**
  * Represents an area on the world.
  */
@@ -40,30 +41,52 @@ public class WorldArea
 {
 	/**
 	 * The western most point of the area.
+=======
+public class WorldArea
+{
+	/**
+	 * The western most point of the area
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	@Getter
 	private int x;
 
 	/**
+<<<<<<< HEAD
 	 * The southern most point of the area.
+=======
+	 * The southern most point of the area
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	@Getter
 	private int y;
 
 	/**
+<<<<<<< HEAD
 	 * The width of the area.
+=======
+	 * The width of the area
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	@Getter
 	private int width;
 
 	/**
+<<<<<<< HEAD
 	 * The height of the area.
+=======
+	 * The height of the area
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	@Getter
 	private int height;
 
 	/**
+<<<<<<< HEAD
 	 * The plane the area is on.
+=======
+	 * The plane the area is on
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	@Getter
 	private int plane;
@@ -87,10 +110,16 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Computes the shortest distance to another area.
 	 *
 	 * @param other the passed area
 	 * @return the distance along both x and y axis
+=======
+	 * Get the shortest distance to another WorldArea for both x and y axis
+	 * @param other The WorldArea to get the distance to
+	 * @return Returns a Point with the shortest distance
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	private Point getAxisDistances(WorldArea other)
 	{
@@ -100,10 +129,17 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Computes the shortest distance to another area.
 	 *
 	 * @param other the passed area
 	 * @return the distance, or {@link Integer#MAX_VALUE} if the planes differ
+=======
+	 * Get the shortest distance to another WorldArea
+	 *
+	 * @param other The other area
+	 * @return Returns the distance
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	public int distanceTo(WorldArea other)
 	{
@@ -117,10 +153,17 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Computes the shortest distance to a world coordinate.
 	 *
 	 * @param other the passed coordinate
 	 * @return the distance, or {@link Integer#MAX_VALUE} if the planes differ
+=======
+	 * Get the shortest distance to another WorldPoint
+	 *
+	 * @param other The other worldpoint
+	 * @return Returns the distance
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	public int distanceTo(WorldPoint other)
 	{
@@ -128,6 +171,7 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks whether this area is within melee distance of another.
 	 * <p>
 	 * Melee distance is exactly 1 tile, so this method computes and returns
@@ -136,6 +180,12 @@ public class WorldArea
 	 *
 	 * @param other the other area
 	 * @return true if in melee distance, false otherwise
+=======
+	 * Determines if this WorldArea is within melee distance of another WorldArea
+	 *
+	 * @param other The other world area to compare with
+	 * @return Returns true if it is in melee distance
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	public boolean isInMeleeDistance(WorldArea other)
 	{
@@ -149,11 +199,18 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks whether a coordinate is within melee distance of this area.
 	 *
 	 * @param other the coordinate
 	 * @return true if in melee distance, false otherwise
 	 * @see #isInMeleeDistance(WorldArea)
+=======
+	 * Determines if this WorldArea is within melee distance of another WorldPoint
+	 *
+	 * @param other The world pint to compare with
+	 * @return Returns true if it is in melee distance
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	public boolean isInMeleeDistance(WorldPoint other)
 	{
@@ -161,10 +218,17 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks whether this area intersects with another.
 	 *
 	 * @param other the other area
 	 * @return true if the areas intersect, false otherwise
+=======
+	 * Determines if a WorldArea intersects with another WorldArea
+	 *
+	 * @param other The other WorldArea to compare with
+	 * @return Returns true if the areas intersect
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	public boolean intersectsWith(WorldArea other)
 	{
@@ -178,6 +242,7 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Determines if the area can travel in one of the 9 directions
 	 * by using the standard collision detection algorithm.
 	 * <p>
@@ -190,6 +255,18 @@ public class WorldArea
 	 * @param dx the x-axis direction to travel (-1, 0, or 1)
 	 * @param dy the y-axis direction to travel (-1, 0, or 1)
 	 * @return true if the area can travel in the specified direction
+=======
+	 * Determines if the area can travel in one of the 8 directions
+	 * by using the standard collision detection algorithm.
+	 * Note that this method does not consider other actors as
+	 * a collision, but most non-boss NPCs do check for collision
+	 * with some actors.
+	 *
+	 * @param client The client to test in
+	 * @param dx The x direction to test against
+	 * @param dy The y direction to test against
+	 * @return Returns true if it's possible to travel in specified direction
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	public boolean canTravelInDirection(Client client, int dx, int dy)
 	{
@@ -197,6 +274,7 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Determines if the area can travel in one of the 9 directions
 	 * by using the standard collision detection algorithm.
 	 * <p>
@@ -214,6 +292,20 @@ public class WorldArea
 	 * @param extraCondition an additional condition to perform when checking valid tiles,
 	 *                       such as performing a check for un-passable actors
 	 * @return true if the area can travel in the specified direction
+=======
+	 * Determines if the area can travel in one of the 8 directions
+	 * by using the standard collision detection algorithm.
+	 * Note that this method does not consider other actors as
+	 * a collision, but most non-boss NPCs do check for collision
+	 * with some actors.
+	 *
+	 * @param client The client to test in
+	 * @param dx The x direction to test against
+	 * @param dy The y direction to test against
+	 * @param extraCondition Additional check for if movement is allowed through specific
+	 * tiles, which may be used if movement should be disabled through other actors
+	 * @return Returns true if it's possible to travel in specified direction
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	public boolean canTravelInDirection(Client client, int dx, int dy,
 										Predicate<? super WorldPoint> extraCondition)
@@ -391,10 +483,17 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Gets the point within this area that is closest to another.
 	 *
 	 * @param other the other area
 	 * @return the closest point to the passed area
+=======
+	 * Retrieves the Point within this WorldArea which is the closest to another WorldArea
+	 *
+	 * @param other The other WorldArea to compare to
+	 * @return Returns the closest Point
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	private Point getComparisonPoint(WorldArea other)
 	{
@@ -427,6 +526,7 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Calculates the next area that will be occupied if this area attempts
 	 * to move toward it by using the normal NPC travelling pattern.
 	 *
@@ -434,6 +534,16 @@ public class WorldArea
 	 * @param target the target area
 	 * @param stopAtMeleeDistance whether to stop at melee distance to the target
 	 * @return the next occupied area
+=======
+	 * Calculates the next area that will be occupied if this area
+	 * attempts to move toward it by using the normal NPC travelling
+	 * pattern.
+	 *
+	 * @param client The client to calculate with
+	 * @param target The target area
+	 * @param stopAtMeleeDistance Determine if it should stop at melee distance to the target
+	 * @return Returns the next occupied area
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	public WorldArea calculateNextTravellingPoint(Client client, WorldArea target,
 		boolean stopAtMeleeDistance)
@@ -442,6 +552,7 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Calculates the next area that will be occupied if this area attempts
 	 * to move toward it by using the normal NPC travelling pattern.
 	 *
@@ -451,6 +562,18 @@ public class WorldArea
 	 * @param extraCondition an additional condition to perform when checking valid tiles,
 	 * 	                     such as performing a check for un-passable actors
 	 * @return the next occupied area
+=======
+	 * Calculates the next area that will be occupied if this area
+	 * attempts to move toward it by using the normal NPC travelling
+	 * pattern.
+	 *
+	 * @param client The client to calculate with
+	 * @param target The target area
+	 * @param stopAtMeleeDistance Determine if it should stop at melee distance to the target
+	 * @param extraCondition Additional check for if movement is allowed through specific
+	 * tiles, which may be used if movement should be disabled through other actors
+	 * @return Returns the next occupied area
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 */
 	public WorldArea calculateNextTravellingPoint(Client client, WorldArea target,
 		boolean stopAtMeleeDistance, Predicate<? super WorldPoint> extraCondition)
@@ -528,7 +651,10 @@ public class WorldArea
 
 	/**
 	 * Determine if this WorldArea has line of sight to another WorldArea.
+<<<<<<< HEAD
 	 * <p>
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * Note that the reverse isn't necessarily true, meaning this can return true
 	 * while the other WorldArea does not have line of sight to this WorldArea.
 	 *
@@ -621,7 +747,10 @@ public class WorldArea
 
 	/**
 	 * Determine if this WorldArea has line of sight to another WorldArea.
+<<<<<<< HEAD
 	 * <p>
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 * Note that the reverse isn't necessarily true, meaning this can return true
 	 * while the other WorldArea does not have line of sight to this WorldArea.
 	 *
@@ -635,7 +764,11 @@ public class WorldArea
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieves the southwestern most point of this WorldArea.
+=======
+	 * Retrieves the southwestern most point of this WorldArea
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	 *
 	 * @return Returns the southwestern most WorldPoint in the area
 	 */

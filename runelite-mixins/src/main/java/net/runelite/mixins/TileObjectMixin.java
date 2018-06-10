@@ -58,8 +58,13 @@ public abstract class TileObjectMixin implements TileObject
 	@Inject
 	public int getId()
 	{
+<<<<<<< HEAD
 		long hash = getHash();
 		return (int) (hash >>> 17 & 4294967295L);
+=======
+		int hash = getHash();
+		return hash >> 14 & 32767;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Override

@@ -29,11 +29,19 @@ import java.awt.Graphics2D;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
+<<<<<<< HEAD
 import net.runelite.client.game.SkillIconManager;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.components.ImageComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
+=======
+import net.runelite.api.NPC;
+import net.runelite.client.game.SkillIconManager;
+import net.runelite.client.ui.overlay.Overlay;
+import net.runelite.client.ui.overlay.OverlayPosition;
+import net.runelite.client.ui.overlay.components.ImagePanelComponent;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 @Slf4j
 @Singleton
@@ -41,7 +49,10 @@ public class CerberusOverlay extends Overlay
 {
 	private final CerberusPlugin plugin;
 	private final SkillIconManager iconManager;
+<<<<<<< HEAD
 	private final PanelComponent panelComponent = new PanelComponent();
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 
 	@Inject
 	CerberusOverlay(final CerberusPlugin plugin, final SkillIconManager iconManager)
@@ -49,7 +60,10 @@ public class CerberusOverlay extends Overlay
 		this.plugin = plugin;
 		this.iconManager = iconManager;
 		setPosition(OverlayPosition.BOTTOM_RIGHT);
+<<<<<<< HEAD
 		panelComponent.setOrientation(PanelComponent.Orientation.HORIZONTAL);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 
 	@Override
@@ -60,6 +74,7 @@ public class CerberusOverlay extends Overlay
 			return null;
 		}
 
+<<<<<<< HEAD
 		panelComponent.getChildren().clear();
 
 		// Ghosts are already sorted
@@ -74,5 +89,17 @@ public class CerberusOverlay extends Overlay
 
 
 		return panelComponent.render(graphics);
+=======
+		final ImagePanelComponent imagePanelComponent = new ImagePanelComponent();
+		imagePanelComponent.setTitle("Ghost order");
+
+		for (final NPC npc : plugin.getGhosts())
+		{
+			CerberusGhost.fromNPC(npc).ifPresent(ghost -> imagePanelComponent
+				.getImages().add(iconManager.getSkillImage(ghost.getType())));
+		}
+
+		return imagePanelComponent.render(graphics);
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	}
 }

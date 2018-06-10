@@ -32,6 +32,7 @@ public interface RSWorldMapManager extends WorldMapManager
 	@Import("loaded")
 	@Override
 	boolean isLoaded();
+<<<<<<< HEAD
 
 	@Import("mapSurfaceBaseOffsetX")
 	int getSurfaceOffsetX();
@@ -41,4 +42,6 @@ public interface RSWorldMapManager extends WorldMapManager
 
 	@Import("getPixelsPerTile")
 	float getPixelsPerTile(int graphicsDiff, int worldDiff);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

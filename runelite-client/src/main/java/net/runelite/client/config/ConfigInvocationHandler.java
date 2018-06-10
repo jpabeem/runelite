@@ -78,6 +78,7 @@ class ConfigInvocationHandler implements InvocationHandler
 
 			// Convert value to return type
 			Class<?> returnType = method.getReturnType();
+<<<<<<< HEAD
 			
 			try
 			{
@@ -92,6 +93,18 @@ class ConfigInvocationHandler implements InvocationHandler
 				}
 				return null;
 			}
+=======
+			Object objectValue = ConfigManager.stringToObject(value, returnType);
+
+			// objectValue automatically gets unboxed
+//			if (!objectValue.getClass().equals(returnType))
+//			{
+//				log.warn("Unable to convert return type for configuration item {}.{}: {}", group.keyName(), item.keyName(), returnType);
+//				return null;
+//			}
+
+			return objectValue;
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 		}
 		else
 		{
@@ -116,6 +129,7 @@ class ConfigInvocationHandler implements InvocationHandler
 				}
 			}
 
+<<<<<<< HEAD
 			if (newValue == null)
 			{
 				manager.unsetConfiguration(group.keyName(), item.keyName());
@@ -125,6 +139,9 @@ class ConfigInvocationHandler implements InvocationHandler
 				String newValueStr = ConfigManager.objectToString(newValue);
 				manager.setConfiguration(group.keyName(), item.keyName(), newValueStr);
 			}
+=======
+			manager.setConfiguration(group.keyName(), item.keyName(), args[0].toString());
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			return null;
 		}
 	}

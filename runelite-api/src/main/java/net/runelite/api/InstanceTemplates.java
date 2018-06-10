@@ -27,9 +27,12 @@ package net.runelite.api;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+<<<<<<< HEAD
 /**
  * An enumeration of possible instance templates and the area they occupy.
  */
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 @AllArgsConstructor
 public enum InstanceTemplates
 {
@@ -53,6 +56,7 @@ public enum InstanceTemplates
 	RAIDS_VESPULA(3264, 5280, 2, 96, 32),
 	RAIDS_CRABS(3264, 5344, 2, 96, 32);
 
+<<<<<<< HEAD
 	/**
 	 * The base x-axis coordinate of the instance area.
 	 */
@@ -89,6 +93,23 @@ public enum InstanceTemplates
 	 * @param chunkData the chunk data
 	 * @return the instance the chunk is in
 	 */
+=======
+	@Getter
+	private final int baseX;
+
+	@Getter
+	private final int baseY;
+
+	@Getter
+	private final int plane;
+
+	@Getter
+	private final int width;
+
+	@Getter
+	private final int height;
+
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	public static InstanceTemplates findMatch(int chunkData)
 	{
 		int rotation = chunkData >> 1 & 0x3; //unused, but shows us the rotation of the chunk

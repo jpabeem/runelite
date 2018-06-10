@@ -75,11 +75,14 @@ import net.runelite.client.input.KeyManager;
 import net.runelite.client.input.MouseManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+<<<<<<< HEAD
 import static net.runelite.client.plugins.grounditems.config.ItemHighlightMode.OVERLAY;
 import net.runelite.client.plugins.grounditems.config.MenuHighlightMode;
 import static net.runelite.client.plugins.grounditems.config.MenuHighlightMode.BOTH;
 import static net.runelite.client.plugins.grounditems.config.MenuHighlightMode.NAME;
 import static net.runelite.client.plugins.grounditems.config.MenuHighlightMode.OPTION;
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.http.api.item.ItemPrice;
 
@@ -265,7 +268,10 @@ public class GroundItemsPlugin extends Plugin
 
 					if (groundItem != null)
 					{
+<<<<<<< HEAD
 						groundItem.setHeight(itemLayer.getHeight());
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 						groundItems.add(groundItem);
 					}
 				}
@@ -344,8 +350,12 @@ public class GroundItemsPlugin extends Plugin
 	@Subscribe
 	public void onMenuEntryAdded(MenuEntryAdded event)
 	{
+<<<<<<< HEAD
 		if (config.itemHighlightMode() != OVERLAY
 			&& event.getOption().equals("Take")
+=======
+		if ((config.highlightMenuOption() || config.highlightMenuItemName()) && event.getOption().equals("Take")
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			&& event.getType() == MenuAction.GROUND_ITEM_THIRD_OPTION.getId())
 		{
 			int itemId = event.getIdentifier();
@@ -380,7 +390,11 @@ public class GroundItemsPlugin extends Plugin
 			}
 
 			ItemPrice itemPrice = getItemPrice(itemComposition);
+<<<<<<< HEAD
 			int price = itemPrice == null ? (int)Math.floor(itemComposition.getPrice() * HIGH_ALCHEMY_CONSTANT) : itemPrice.getPrice();
+=======
+			int price = itemPrice == null ? itemComposition.getPrice() : itemPrice.getPrice();
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 			int cost = quantity * price;
 			Color color = overlay.getCostColor(cost, isHighlighted(itemComposition.getName()),
 				isHidden(itemComposition.getName()));
@@ -389,6 +403,7 @@ public class GroundItemsPlugin extends Plugin
 			{
 				String hexColor = Integer.toHexString(color.getRGB() & 0xFFFFFF);
 				String colTag = "<col=" + hexColor + ">";
+<<<<<<< HEAD
 				final MenuHighlightMode mode = config.menuHighlightMode();
 
 				if (mode == BOTH || mode == OPTION)
@@ -397,6 +412,13 @@ public class GroundItemsPlugin extends Plugin
 				}
 
 				if (mode == BOTH || mode == NAME)
+=======
+				if (config.highlightMenuOption())
+				{
+					lastEntry.setOption(colTag + "Take");
+				}
+				if (config.highlightMenuItemName())
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 				{
 					String target = lastEntry.getTarget().substring(lastEntry.getTarget().indexOf(">") + 1);
 					lastEntry.setTarget(colTag + target);

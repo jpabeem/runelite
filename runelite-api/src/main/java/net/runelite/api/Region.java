@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+<<<<<<< HEAD
 /**
  * Represents a region of chunks.
  * <p>
@@ -36,5 +37,9 @@ public interface Region
 	 *
 	 * @return the regions tile
 	 */
+=======
+public interface Region
+{
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 	Tile[][][] getTiles();
 }

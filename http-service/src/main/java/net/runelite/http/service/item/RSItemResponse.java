@@ -24,10 +24,26 @@
  */
 package net.runelite.http.service.item;
 
+<<<<<<< HEAD
 import lombok.Data;
 
 @Data
 public class RSItemResponse
 {
 	private RSItem item;
+=======
+public class RSItemResponse
+{
+	private RSItem item;
+
+	public RSItem getItem()
+	{
+		return item;
+	}
+
+	public void setItem(RSItem item)
+	{
+		this.item = item;
+	}
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }

@@ -48,6 +48,7 @@ public interface XpTrackerService
 	 * @return
 	 */
 	int getActionsLeft(Skill skill);
+<<<<<<< HEAD
 
 	/**
 	 * Get the amount of xp per hour
@@ -55,4 +56,6 @@ public interface XpTrackerService
 	 * @return
 	 */
 	int getXpHr(Skill skill);
+=======
+>>>>>>> c596e7bd5f6fc2aa4f49a75f6e372413b3a3f48b
 }
